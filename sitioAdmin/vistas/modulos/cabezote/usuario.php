@@ -10,7 +10,7 @@ USUARIOS
 	
 		<img src="vistas/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
 		
-		<span class="hidden-xs">Tutoriales a tu Alcance</span>
+		<span class="hidden-xs">Admin</span>
 	
 	</a>
 	<!-- dropdown-toggle -->
@@ -23,18 +23,18 @@ USUARIOS
 			<img src="vistas/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
 			<p>
-			Tutoriales a tu Alcance
+			Admin
 			</p>
 		
 		</li>
 
 		<li class="user-footer">
 		
-			<div class="pull-left">
+			<!--<div class="pull-left">
 				
 				<a href="perfil" class="btn btn-default btn-flat">Perfil</a>
 			
-			</div>
+			</div>-->
 			
 			<div class="pull-right">
 			

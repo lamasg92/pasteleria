@@ -30,7 +30,7 @@
 			
 				<?php
 
-					include "cabezote/notificaciones.php";
+					//include "cabezote/notificaciones.php";
 
 					include "cabezote/usuario.php";
 

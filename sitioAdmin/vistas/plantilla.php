@@ -205,7 +205,7 @@ session_start();
 JS PERSONALIZADO
 ======================================-->
 <script src="vistas/js/plantilla.js"></script>
-
+<script src="vistas/js/gestorDescripcion.js"></script>
 
 </body>
 </html>
