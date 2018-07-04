@@ -21,13 +21,14 @@ class ControladorPaginaPrincipal{
 
 		if(isset($_POST["descripcionPasteleria"])){
 
-			if(preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionPasteleria"]) ){
+			
 
 				/*=============================================
 				VALIDAR IMAGEN OFERTA
 				=============================================*/
 
-				$rutaOferta = $_POST["antiguaFoto"];
+				$rutaFoto = $_POST["antiguaFoto"];
+				
 
 				if(isset($_FILES["foto"]["tmp_name"]) && !empty($_FILES["foto"]["tmp_name"])){
 
@@ -56,7 +57,7 @@ class ControladorPaginaPrincipal{
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
 						=============================================*/
 
-						$rutaOferta = "vistas/img".$_POST["fecha"].".jpg";
+						$rutaFoto = "vistas/img".date('Y-m-d').".jpg";
 
 						$origen = imagecreatefromjpeg($_FILES["foto"]["tmp_name"]);	
 
@@ -74,7 +75,7 @@ class ControladorPaginaPrincipal{
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
 						=============================================*/
 
-						$rutaOferta = "vistas/img".$_POST["fecha"].".png";
+						$rutaFoto = "vistas/img".date('Y-m-d').".png";
 
 						$origen = imagecreatefrompng($_FILES["foto"]["tmp_name"]);						
 
@@ -97,20 +98,13 @@ class ControladorPaginaPrincipal{
 				Datos
 				=============================================*/
 
-					$datos = array("id"=>$_POST["editarIdInformacion"],
-								   "descripcion"=> $_POST["descripcionCategoria"],
+					$datos = array("id"=>1,
+								   "descripcion"=> $_POST["descripcionPasteleria"],
 								   "img"=>$rutaFoto,								   
-								   "fecha"=>$_POST["fecha"]);					
+								   "fecha"=>date('Y-m-d'));					
+
 
 				
-
-					if($_POST["antiguaFoto"] != ""){
-
-						unlink($_POST["antiguaFoto"]);
-
-					}
-
-				}
 
 
 				$respuesta = ModeloAdminInicio::mdlEditarDescripcion("informacion", $datos);
@@ -121,7 +115,7 @@ class ControladorPaginaPrincipal{
 
 					swal({
 						  type: "success",
-						  title: "La categoría ha sido editada correctamente",
+						  title: "La informacion se ha modificado correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -134,7 +128,7 @@ class ControladorPaginaPrincipal{
 
 					</script>';
 
-				}
+				
 
 			}else{
 
@@ -156,4 +150,5 @@ class ControladorPaginaPrincipal{
 	  }
 
 	}
+}
 
