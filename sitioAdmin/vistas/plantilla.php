@@ -147,8 +147,6 @@ session_start();
 
 <?php
 
-
-
  if(isset($_SESSION["validarSesionBackend"]) && $_SESSION["validarSesionBackend"] === "ok"){
 
     echo '<div class="wrapper">';
@@ -173,6 +171,7 @@ session_start();
 
         if($_GET["ruta"]== "inicio" ||
            $_GET["ruta"]== "paginaPrincipal" ||
+           $_GET["ruta"]== "contactos"||
            $_GET["ruta"]== "perfil" ||
            $_GET["ruta"]== "salir"){
 
