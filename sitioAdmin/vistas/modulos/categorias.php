@@ -27,8 +27,27 @@
             Agregar categoría
 
           </button>
+      </div>
+
+       <div class="box-body">
+         
+        <table class="table table-striped table-bordered dt-responsive tablaCategorias" width="100%">
+
+          <thead>
+            
+            <tr>
+              
+              <th style="width:10px">#</th>
+              <th>Categoría</th>
+              <th>Estado</th>
+            </tr>
+
+          </thead>
+
+        </table>
 
       </div>
+
       </div>
     </div>
   </section>

@@ -23,7 +23,7 @@ class ModeloCategoria{
 
 		}else { //solicito todas las categorias
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id DESC");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id_categoria DESC");
 
 			$stmt -> execute();
 
