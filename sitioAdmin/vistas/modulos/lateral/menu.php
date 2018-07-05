@@ -19,6 +19,7 @@ MENU
       <ul class="treeview-menu">
         
         <li><a href="paginaPrincipal"><i class="fa fa-circle-o"></i> Pagina Principal</a></li>
+        <li><a href="contactos"><i class="fa fa-circle-o"></i> Contactos</a></li>
       
       </ul>
 
