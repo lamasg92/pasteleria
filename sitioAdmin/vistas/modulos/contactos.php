@@ -15,21 +15,70 @@
   </section>
 
   <section class="content">
-
+    <!--========================Contacto=====================-->
     <div class="box">    
             
       <div class="box-body">
-
+      <h3>Contacto de la Pasteleria</h3> 
+       <?php
         
-      
+        $info = ControladorContacto::ctrMostrarContacto();
+ 
+        echo '<div class="">Dirección:&nbsp;&nbsp;&nbsp'.$info["direccion"].'</div>';  
+
+        echo '<div class="">Teléfono:&nbsp;&nbsp;&nbsp'.$info["telefono"].'</div>';  
+
+        echo '<div class="">Provincia:&nbsp;&nbsp;&nbsp'.$info["provincia"].'</div>'; 
+
+        echo '<div class="">Localidad:&nbsp;&nbsp;&nbsp'.$info["localidad"].'</div>';   
+      ?>
+
+       <div class="box-header with-border text-right"> 
+          <button class="btn btn-primary btnEditarContacto" idContacto="<?php echo $info['id'];?>"  data-toggle="modal" data-target="#modalEditarContacto"> Cambiar información</button>
+
       </div>
+      </div>     
     </div>
+    <!--========================Contacto=====================-->
+
+      <div class="box">
+      <h3>Redes Sociales de la Pasteleria</h3> 
+
+      <table class="table table-striped table-bordered dt-responsive tablaRedesSociales" width="100%">
+
+          <thead>
+            
+            <tr>
+              
+              <th style="width:10px">#</th>
+              <th>Red Social</th>
+              <th>Enlace</th>
+              <th>Estado</th>
+
+            </tr>
+
+          </thead>
+
+      </table>
+       <?php
+        
+        $redes = ControladorRedesSociales::ctrMostrarRedesSociales();
+
+        foreach ($redes as $red) {
+          echo '<div class="box-body">';
+          echo 'Res Social '.$red['id'].'-----Enlace: <a target="_blank" href="'.$red['cuenta'].'">'.$red['nombre'].'</a>-------Estado Actual: '.ucfirst($red['estado']);
+            
+        echo ' <div class="box-header with-border text-right">
+            <button class="btn btn-primary btnEditarRedSocial" idRedSocial="'.$red['id'].'" data-toggle="modal" data-target="#modalEditarRedSocial"> Cambiar información</button>
+        </div></div>';
+        require "contactosModales/redSocial.modal.php";
+        }
+        ?>
+        </div>
+
   </section>
 
   </div>
-
-
-
-
-
-  
+<?php
+require "contactosModales/contacto.modal.php";
+?>  
