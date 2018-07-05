@@ -173,6 +173,7 @@ session_start();
 
         if($_GET["ruta"]== "inicio" ||
            $_GET["ruta"]== "paginaPrincipal" ||
+            $_GET["ruta"]== "categorias" ||
            $_GET["ruta"]== "perfil" ||
            $_GET["ruta"]== "salir"){
 
@@ -206,6 +207,6 @@ JS PERSONALIZADO
 ======================================-->
 <script src="vistas/js/plantilla.js"></script>
 <script src="vistas/js/gestorDescripcion.js"></script>
-
+<script src="vistas/js/gestorCategorias.js"></script>
 </body>
 </html>
