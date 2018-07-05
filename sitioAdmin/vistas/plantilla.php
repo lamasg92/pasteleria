@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -146,59 +144,37 @@ session_start();
 <body class="hold-transition skin-blue sidebar-mini login-page">
 
 <?php
-
-
-
  if(isset($_SESSION["validarSesionBackend"]) && $_SESSION["validarSesionBackend"] === "ok"){
-
     echo '<div class="wrapper">';
-
     /*=============================================
      CABEZOTE
      =============================================*/
-
      include "modulos/cabezote.php";
-
     /*=============================================
      LATERAL
      =============================================*/
-
      include "modulos/lateral.php";
-
      /*=============================================
      CONTENIDO
      =============================================*/
-
      if(isset($_GET["ruta"])){
-
         if($_GET["ruta"]== "inicio" ||
            $_GET["ruta"]== "paginaPrincipal" ||
             $_GET["ruta"]== "categorias" ||
+           $_GET["ruta"]== "contactos" ||
            $_GET["ruta"]== "perfil" ||
            $_GET["ruta"]== "salir"){
-
-
           include "modulos/".$_GET["ruta"].".php";
-
         }
-
      }
-
      /*=============================================
      FOOTER
      =============================================*/
-
      include "modulos/footer.php";
-
-
     echo '</div>';
-
  }else{
-
   include "modulos/login.php";
-
  }
-
  
 ?>
 
