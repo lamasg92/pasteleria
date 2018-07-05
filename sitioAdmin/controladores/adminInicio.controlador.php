@@ -57,7 +57,7 @@ class ControladorPaginaPrincipal{
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
 						=============================================*/
 
-						$rutaFoto = "vistas/img".date('Y-m-d').".jpg";
+						$rutaFoto = "vistas/img/".date('Y-m-d').".jpg";
 
 						$origen = imagecreatefromjpeg($_FILES["foto"]["tmp_name"]);	
 
@@ -75,7 +75,7 @@ class ControladorPaginaPrincipal{
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
 						=============================================*/
 
-						$rutaFoto = "vistas/img".date('Y-m-d').".png";
+						$rutaFoto = "vistas/img/".date('Y-m-d').".png";
 
 						$origen = imagecreatefrompng($_FILES["foto"]["tmp_name"]);						
 
