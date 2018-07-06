@@ -2,7 +2,7 @@
 MODAL CAMBIAR RED SOCIAL
 ======================================-->
 
-<div id="modalEditarRedSocial" class="modal fade" role="dialog">
+<?php echo '<div id="modalEditarRedSocial'.$red['id'].'" class="modal fade" role="dialog">'; ?>
   
   <div class="modal-dialog">
     
@@ -31,7 +31,7 @@ MODAL CAMBIAR RED SOCIAL
           
           <div class="box-body">
              
-
+        <?php echo '<h2>'.$red['nombre'].'</h2>';?>
             <!--=====================================
                 ENTRADA EDITAR ENLACE RED SOCIAL
                 ======================================-->

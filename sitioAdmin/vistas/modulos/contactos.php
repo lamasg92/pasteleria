@@ -44,7 +44,7 @@
       <div class="box">
       <h3>Redes Sociales de la Pasteleria</h3> 
 
-      <table class="table table-striped table-bordered dt-responsive tablaRedesSociales" width="100%">
+      <table class="table table-striped table-bordered dt-responsive" width="100%">
 
           <thead>
             
@@ -54,29 +54,36 @@
               <th>Red Social</th>
               <th>Enlace</th>
               <th>Estado</th>
+              <th>Editar</th>
 
             </tr>
 
           </thead>
+          <tbody>
+            <?php
+              
+              $redes = ControladorRedesSociales::ctrMostrarRedesSociales();
 
+              foreach ($redes as $red) {
+
+                echo '<tr><th>';
+                echo $red['id'].'</th><th>';
+                echo $red['nombre'].'</th><th>';
+                echo '<a target="_blank" href="'.$red['cuenta'].'">'.$red['cuenta'].'</a></th><th>';
+                echo ucfirst($red['estado']).'</th><th>';
+                echo ' <div class="box-header with-border text-right">
+                  <button class="btn btn-primary btnEditarRedSocial" idRedSocial="'.$red['id'].'" data-toggle="modal" data-target="#modalEditarRedSocial'.$red['id'].'"> Cambiar información</button>
+                   </div>';
+
+                require "contactosModales/redSocial.modal.php";
+
+                echo '</th></tr>';
+              }
+              ?>
+         </tbody>
       </table>
-       <?php
-        
-        $redes = ControladorRedesSociales::ctrMostrarRedesSociales();
-
-        foreach ($redes as $red) {
-          echo '<div class="box-body">';
-          echo 'Res Social '.$red['id'].'-----Enlace: <a target="_blank" href="'.$red['cuenta'].'">'.$red['nombre'].'</a>-------Estado Actual: '.ucfirst($red['estado']);
-            
-        echo ' <div class="box-header with-border text-right">
-            <button class="btn btn-primary btnEditarRedSocial" idRedSocial="'.$red['id'].'" data-toggle="modal" data-target="#modalEditarRedSocial"> Cambiar información</button>
-        </div></div>';
-        require "contactosModales/redSocial.modal.php";
-        }
-        ?>
-        </div>
-
-  </section>
+    </div>
+</section>
 
   </div>
 <?php
