@@ -1,55 +1,41 @@
 <?php
 
-class ControladorPaginaPrincipal{
+class ControladorProductos{
 
-    /*=============================================
-	MOSTRAR INFO
-	=============================================*/
+   static public function ctrMostrarProductos($item,$valor){
 
-	static public function ctrMostrarInfo(){
+        $tabla="productos";
 
-		$tabla = "informacion";
+        $respuesta=ModeloProductos::mdlMostrarProductos($tabla,$item,$valor);
 
-		$respuesta = ModeloAdminInicio::mdlMostrarInfo($tabla);
-
-		return $respuesta;
-
-	}
+        return $respuesta;
+   }
 
 
-	static public function ctrEditarDescripcion(){
+   static public function ctrCrearProducto(){
 
-		if(isset($_POST["descripcionPasteleria"])){
+   	 if(isset($_POST["tituloProducto"])){
 
-			
-
-				/*=============================================
+   	 	      /*=============================================
 				VALIDAR IMAGEN 
 				=============================================*/
 
-				$rutaFoto = $_POST["antiguaFoto"];
-				
 
 				if(isset($_FILES["foto"]["tmp_name"]) && !empty($_FILES["foto"]["tmp_name"])){
-
-					/*=============================================
-					BORRAMOS ANTIGUA FOTO
-					=============================================*/
-
-					unlink($_POST["antiguaFoto"]);
 
 					/*=============================================
 					DEFINIMOS LAS MEDIDAS
 					=============================================*/
 
-					list($ancho, $alto) = getimagesize($_FILES["foto"]["tmp_name"]);
+					list($ancho, $alto) = getimagesize($_FILES["foto"]["tmp_name"]);	
 
-					$nuevoAncho = 640;
-					$nuevoAlto = 430;
+					$nuevoAncho = 1280;
+					$nuevoAlto = 720;
 
+                 
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-					=============================================*/	
+					=============================================*/
 
 					if($_FILES["foto"]["type"] == "image/jpeg"){
 
@@ -57,10 +43,11 @@ class ControladorPaginaPrincipal{
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
 						=============================================*/
 
-						$rutaFoto = "vistas/img/".date('Y-m-d').".jpg";
+						$aleatorio = mt_rand(100,999);
 
-						$origen = imagecreatefromjpeg($_FILES["foto"]["tmp_name"]);	
+						$rutaFoto = "../vistas/img/productos/".$_POST["tituloProducto"].".jpg";
 
+						$origen = imagecreatefromjpeg($$_FILES["foto"]["tmp_name"]);						
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -75,15 +62,17 @@ class ControladorPaginaPrincipal{
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
 						=============================================*/
 
-						$rutaFoto = "vistas/img/".date('Y-m-d').".png";
+						$aleatorio = mt_rand(100,999);
+
+						$rutaFoto = "../vistas/img/productos/".$_POST["tituloProducto"].".png";
 
 						$origen = imagecreatefrompng($_FILES["foto"]["tmp_name"]);						
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
-    					imagesavealpha($destino, TRUE);
+				
+						imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
 
@@ -91,23 +80,20 @@ class ControladorPaginaPrincipal{
 
 					}
 
-
-				}
-
-				/*=============================================
-				Datos
-				=============================================*/
-
-					$datos = array("id"=>1,
-								   "descripcion"=> $_POST["descripcionPasteleria"],
-								   "img"=>$rutaFoto,								   
-								   "fecha"=>date('Y-m-d'));					
+				} 
 
 
-				
+   	 	$datos = array("producto"=>strtoupper($_POST["tituloProducto"]),
+   	 		     "idCategoria"=>$_POST["seleccionarCategoria"],
+   	 		     "descripcion"=>$_POST["descripcionProducto"],
+   	 		     "precio"=>$_POST["precio"],
+   	 		     "imagen"=>$rutaFoto,
+   	 		     "fecha"=>date('Y-m-d'),
+   	 		     "estado"=>"activo"
 
+   	 		);
 
-				$respuesta = ModeloAdminInicio::mdlEditarDescripcion("informacion", $datos);
+   	 	$respuesta = ModeloProducto::mdlIngresarProducto("productos", $datos);
 
 				if($respuesta == "ok"){
 
@@ -115,40 +101,38 @@ class ControladorPaginaPrincipal{
 
 					swal({
 						  type: "success",
-						  title: "La informacion se ha modificado correctamente",
+						  title: "El producto ha sido guardado correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "paginaPrincipal";
+							window.location = "productos";
 
 							}
 						})
 
 					</script>';
 
-				
-
 			}else{
-
-				echo'<script>
+              
+              echo'<script>
 
 					swal({
 						  type: "error",
-						  title: "¡La descripcion no puede ir vacía o llevar caracteres especiales!",
+						  title: "El producto no se pudo guardar",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
-						  })
+						  
+						})
 
-			  	</script>';
-
-			  	return;
+					</script>';
 
 			}
+   	 }
 
-	  }
 
-	}
+
+   }
+
 }
-
