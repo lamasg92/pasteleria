@@ -11,11 +11,11 @@ class ModeloRedSocial{
 
 	static public function mdlMostrarRedesSociales($tabla){
 
-		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla" );
 
 		$stmt -> execute();
 
-		return $stmt -> fetch();
+		return $stmt -> fetchAll();
 
 		$stmt -> close();
 
@@ -30,9 +30,8 @@ class ModeloRedSocial{
 
 	static public function mdlEditarRedSocial($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre =:nombre, cuenta =:cuenta , estado=:estado WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET cuenta =:cuenta , estado=:estado WHERE id = :id");
 
-		$stmt->bindParam(":nombre", $datos["nomrbe"], PDO::PARAM_STR);
 		$stmt->bindParam(":cuenta", $datos["cuenta"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);

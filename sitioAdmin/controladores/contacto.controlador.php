@@ -19,18 +19,19 @@ class ControladorContacto{
 
 	static public function ctrEditarContacto(){
 
-		if(isset($_POST["telefono"]&&isset($_POST["direccion"]){
+		if(isset($_POST["telefono"])&&isset($_POST["direccion"])){
 				/*=============================================
 				Datos
 				=============================================*/
 
-					$datos = array("id"=>$_POST["id"],
-								   "telefono"=> $_POST["telefono"],
-								   "direccion"=>$_POST['direccion'],								   
+					$datos = array(
+						"direccion"=>$_POST['direccion'],
+						"telefono"=> $_POST["telefono"],
+						"localidad"=>$_POST['localidad'],
+						"provincia"=> $_POST["provincia"],
+								   );							   
 				
-
-
-				$respuesta = ModeloContacto::mdlEditarContacto("informacion", $datos);
+				$respuesta = ModeloContacto::mdlEditarContacto("contacto", $datos);
 
 				if($respuesta == "ok"){
 
@@ -51,7 +52,6 @@ class ControladorContacto{
 
 					</script>';
 
-				}
 
 			}else{
 
@@ -69,8 +69,7 @@ class ControladorContacto{
 			  	return;
 
 			}
-
-	  }
-
+		}
 	}
 
+}

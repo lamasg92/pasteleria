@@ -1,6 +1,6 @@
 <?php
 
-class ControladorContacto{
+class ControladorRedesSociales{
 
     /*=============================================
 	MOSTRAR INFO
@@ -8,7 +8,7 @@ class ControladorContacto{
 
 	static public function ctrMostrarRedesSociales(){
 
-		$tabla = "redesSociales";
+		$tabla = "redessociales";
 
 		$respuesta = ModeloRedSocial::mdlMostrarRedesSociales($tabla);
 
@@ -19,19 +19,18 @@ class ControladorContacto{
 
 	static public function ctrEditarRedSocial(){
 
-		if(isset($_POST["nombre"]&&isset($_POST["cuenta"])&&isset($_POST["estado"]){
+		if(isset($_POST["cuenta"])&&isset($_POST["estado"])){
 				/*=============================================
 				Datos
 				=============================================*/
 
 					$datos = array("id"=>$_POST["id"],
-								   "nombre"=> $_POST["nombre"],
 								   "cuenta"=>$_POST['cuenta'],
-								   "estado"=>$_POST['estado'],)								   
+								   "estado"=>$_POST['estado']);								   
 				
 
 
-				$respuesta = ModeloRedSocial::mdlEditarRedSocial("informacion", $datos);
+				$respuesta = ModeloRedSocial::mdlEditarRedSocial("redessociales", $datos);
 
 				if($respuesta == "ok"){
 
@@ -52,7 +51,7 @@ class ControladorContacto{
 
 					</script>';
 
-				}
+				
 
 			}else{
 
@@ -74,4 +73,4 @@ class ControladorContacto{
 	  }
 
 	}
-
+}
