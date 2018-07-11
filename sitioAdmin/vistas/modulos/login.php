@@ -8,7 +8,7 @@
 
    <form  method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email" name="ingEmail" required>
+        <input type="email" class="form-control" placeholder="Email" name="ingEmail"id="ingEmail" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -18,7 +18,7 @@
       <div class="row">
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" name="ingresar">Ingresar</button>
         </div>
         <!-- /.col -->
       </div>

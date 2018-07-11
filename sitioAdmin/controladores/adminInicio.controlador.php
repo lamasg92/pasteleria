@@ -24,7 +24,7 @@ class ControladorPaginaPrincipal{
 			
 
 				/*=============================================
-				VALIDAR IMAGEN OFERTA
+				VALIDAR IMAGEN 
 				=============================================*/
 
 				$rutaFoto = $_POST["antiguaFoto"];
@@ -33,7 +33,7 @@ class ControladorPaginaPrincipal{
 				if(isset($_FILES["foto"]["tmp_name"]) && !empty($_FILES["foto"]["tmp_name"])){
 
 					/*=============================================
-					BORRAMOS ANTIGUA FOTO OFERTA
+					BORRAMOS ANTIGUA FOTO
 					=============================================*/
 
 					unlink($_POST["antiguaFoto"]);
