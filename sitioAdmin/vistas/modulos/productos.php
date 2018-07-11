@@ -29,6 +29,29 @@
           </button>
       </div>
 
+      <div class="box-body">
+         
+        <table class="table table-striped table-bordered dt-responsive tablaProductos" width="100%">
+
+          <thead>
+            
+            <tr>
+              <th style="width:10px">#</th>
+              <th>Producto</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Imagen</th>
+              <th>Estado</th>
+              <th>Modificado</th>
+            </tr>
+
+          </thead>
+
+        </table>
+
+      </div>
+
       </div>
     </div>
   </section>
