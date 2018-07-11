@@ -77,3 +77,8 @@ $(".foto").change(function(){
   	}
 
 })
+
+
+
+
+

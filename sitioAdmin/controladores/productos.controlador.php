@@ -6,7 +6,7 @@ class ControladorProductos{
 
         $tabla="productos";
 
-        $respuesta=ModeloProductos::mdlMostrarProductos($tabla,$item,$valor);
+        $respuesta=ModeloProducto::mdlMostrarProductos($tabla,$item,$valor);
 
         return $respuesta;
    }
