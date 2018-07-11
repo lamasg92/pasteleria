@@ -128,7 +128,7 @@ MODAL AGREGAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span> 
 
-                <textarea type="text" maxlength="500" rows="3" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción" name="descripcionProducto"required></textarea>
+                <textarea type="text" maxlength="500" rows="3" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción" name="descripcionProducto" required></textarea>
 
               </div>
 
@@ -137,18 +137,42 @@ MODAL AGREGAR PRODUCTO
             <!--=====================================
             AGREGAR PRECIO
             ======================================-->
+            <div class="form-group row">
+               
+              <!-- PRECIO -->
 
-            <div class="form-group">
+              <div class="col-md-6 col-xs-12">
+  
+                <div class="panel">PRECIO</div>
                 
                 <div class="input-group">
                 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span> 
 
-                  <input type="number" class="form-control input-lg precio" min="0" step="any" placeholder="Ingresar precio" name="precio" required>
+                  <input type="number" class="form-control input-lg precio" min="0" step="any" name="precio" required>
 
                 </div>
 
+              </div>
+
+              <!-- STOCK -->
+
+              <div class="col-md-6 col-xs-12">
+  
+                <div class="panel">STOCK</div>
+              
+                <div class="input-group">
+              
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span> 
+
+                  <input type="number" class="form-control input-lg peso" min="0" name="stock" required>
+
+                </div>
+
+              </div>
+
             </div>
+
 
             <!--=====================================
             AGREGAR IMAGEN DEL PRODUCTO

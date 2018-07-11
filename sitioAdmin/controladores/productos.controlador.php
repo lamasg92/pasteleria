@@ -21,64 +21,12 @@ class ControladorProductos{
 				=============================================*/
 
 
-				if(isset($_FILES["foto"]["tmp_name"]) && !empty($_FILES["foto"]["tmp_name"])){
+				if(isset($_FILES["foto"]["tmp_name"]) && !empty($_FILES["foto"]["tmp_name"])){            
+					
+					$ruta_fichero_origen = $_FILES['foto']['tmp_name'];
+					$rutaFoto =  'vistas/img/productos/' . $_FILES['foto']['name'];
 
-					/*=============================================
-					DEFINIMOS LAS MEDIDAS
-					=============================================*/
-
-					list($ancho, $alto) = getimagesize($_FILES["foto"]["tmp_name"]);	
-
-					$nuevoAncho = 1280;
-					$nuevoAlto = 720;
-
-                 
-					/*=============================================
-					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-					=============================================*/
-
-					if($_FILES["foto"]["type"] == "image/jpeg"){
-
-						/*=============================================
-						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
-						=============================================*/
-
-						$aleatorio = mt_rand(100,999);
-
-						$rutaFoto = "../vistas/img/productos/".$_POST["tituloProducto"].".jpg";
-
-						$origen = imagecreatefromjpeg($$_FILES["foto"]["tmp_name"]);						
-						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-						imagejpeg($destino, $rutaFoto);
-
-					}
-
-					if($_FILES["foto"]["type"] == "image/png"){
-
-						/*=============================================
-						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
-						=============================================*/
-
-						$aleatorio = mt_rand(100,999);
-
-						$rutaFoto = "../vistas/img/productos/".$_POST["tituloProducto"].".png";
-
-						$origen = imagecreatefrompng($_FILES["foto"]["tmp_name"]);						
-
-						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-						imagealphablending($destino, FALSE);
-				
-						imagesavealpha($destino, TRUE);
-
-						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-						imagepng($destino, $rutaFoto);
-
-					}
+					move_uploaded_file ( $ruta_fichero_origen, $rutaFoto);
 
 				} 
 
@@ -87,6 +35,7 @@ class ControladorProductos{
    	 		     "idCategoria"=>$_POST["seleccionarCategoria"],
    	 		     "descripcion"=>$_POST["descripcionProducto"],
    	 		     "precio"=>$_POST["precio"],
+   	 		     "stock"=>$_POST["stock"],
    	 		     "imagen"=>$rutaFoto,
    	 		     "fecha"=>date('Y-m-d'),
    	 		     "estado"=>"activo"
