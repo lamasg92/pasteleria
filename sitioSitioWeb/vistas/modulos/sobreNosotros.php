@@ -1,9 +1,9 @@
-<section class="aboutus" id="aboutus">
+<section class="aboutus" id="aboutus"  >
 	<div class="container">
 		<div class="heading text-center">
-			<img class="dividerline" src="vistas/img/sep1.png" alt="">
+			<img class="dividerline" src="vistas/img/sep2.jpeg" alt="">
 			<h2> Sobre Nosotros</h2>
-			<img class="dividerline" src="vistas/img/sep1.png" alt="">
+			<img class="dividerline" src="vistas/img/sep2.jpeg" alt="">
 		</div>			
 		<div class="row">
 			<div class="col-md-12">
@@ -31,4 +31,6 @@
 			
 	</div>
 </section>
+
+
 	
