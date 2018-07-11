@@ -78,7 +78,6 @@ $(".foto").change(function(){
 
 })
 
-
 /*=======================================
 TABLA PARA MOSTRAR PRODUCTOS
 =========================================*/
@@ -116,3 +115,4 @@ $(".tablaProductos").DataTable({
 
 
 });
+
