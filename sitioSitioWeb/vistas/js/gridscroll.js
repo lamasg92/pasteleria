@@ -11,7 +11,7 @@
 ;( function( window ) {
 	
 	'use strict';
-
+	console.log('dsseuy');
 	var docElem = window.document.documentElement,
 		transEndEventNames = {
 			'WebkitTransition': 'webkitTransitionEnd',
@@ -65,6 +65,7 @@
 	CBPGridGallery.prototype._init = function() {
 		// main grid
 		this.grid = this.el.querySelector( 'section.grid-wrap > ul.grid' );
+		console.log(this.grid);
 		// main grid items
 		this.gridItems = [].slice.call( this.grid.querySelectorAll( 'li:not(.grid-sizer)' ) );
 		// items total

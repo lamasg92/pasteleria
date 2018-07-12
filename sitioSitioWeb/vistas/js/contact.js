@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
 		//start the ajax
 		$.ajax({
 			//this is the php file that processes the data and sends email
-			url: "contact.php",	
+			url: "vistas/modulos/enviarCorreo.php",	
 			
 			//GET method is used
 			type: "GET",
@@ -65,7 +65,8 @@ jQuery(document).ready(function ($) {
 			cache: false,
 			
 			//success
-			success: function (html) {				
+			success: function (html) {	
+			console.log(html);			
 				//if contact.php returned 1/true (send mail success)
 				if (html==1) {
 				
@@ -75,7 +76,7 @@ jQuery(document).ready(function ($) {
 					$(".form").find('input[type=text], textarea').val("");
 					
 				//if contact.php returned 0/false (send mail failed)
-				} else alert('Sorry, unexpected error. Please try again later.');				
+				} else alert('Disculpe, error inesperado. Por favor intentelo mas tarde.');				
 			}		
 		});
 		

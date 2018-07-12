@@ -28,16 +28,16 @@
 <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
 
 </head>
-<body>
+<body style="background-image: url(vistas/img/f5.jpg); background-repeat:repeat; background-size: 100% auto" >
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
 	
 	<!--header-->
 	<header>
 	<div class="banner row" id="banner">		
-		<div class="parallax text-center" style="background-image: url(vistas/img/imagen7.jpg);">
-			<div>
-				<div class="container text-center" style="height:580px;padding-top:150px; padding-left:500px;">
+		<div class="parallax text-center" style="background-image: url(vistas/img/fondo19.jpg);">
+			<div class="parallax-pattern-overlay">
+				<div class="container text-center" style="height:580px;padding-top:10%;">
 					<a href="#"><img id="site-title" class=" wow fadeInDown" wow-data-delay="0.0s" wow-data-duration="0.9s" src="vistas/img/logo2.png" alt="logo"/></a>
 					<h2 class="intro wow zoomIn" wow-data-delay="0.4s" wow-data-duration="0.9s">Bienvenidos</h2>
 				</div>
@@ -87,13 +87,6 @@
 		<a href="#wrapper" class="gototop"><i class="fa fa-angle-double-up fa-2x"></i></a>
 	</p>
 	<div class="container">
-		<ul>
-			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-			<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-			<li><a href="#"><i class="fa fa-flickr"></i></a></li>
-		</ul>
 		<p>
 			&copy; 2015 Copyright Your Website<br>
 			 Theme by <a href="http://www.wowthemes.net">WowThemes.Net</a>

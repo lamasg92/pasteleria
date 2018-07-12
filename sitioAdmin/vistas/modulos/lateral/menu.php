@@ -26,5 +26,6 @@ MENU
   </li>
 
   <li><a href="categorias"><i class="fa fa-list-ul"></i> <span>Gestor Categorías</span></a></li>
+    <li><a href="productos"><i class="fa fa-list-ul"></i> <span>Gestor Productos</span></a></li>
 
 </ul>	

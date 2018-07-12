@@ -16,6 +16,25 @@ class ControladorSitio{
 		return $respuesta;
 	}
 
+	static public function ctrMostrarContacto(){
+
+		$tabla = "contacto";
+
+		$respuesta = ModeloSitio::mdlMostrarContacto($tabla);
+
+		return $respuesta;
+	}
+
+	static public function ctrMostrarRedesSociales(){
+
+		$tabla = "redessociales";
+
+		$respuesta = ModeloSitio::mdlMostrarRedesSociales($tabla);
+
+		return $respuesta;
+
+	}
+
 	
 }
 
