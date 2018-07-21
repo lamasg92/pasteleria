@@ -144,7 +144,6 @@ session_start();
 <body class="hold-transition skin-blue sidebar-mini login-page">
 
 <?php
-echo $_GET["ruta"];
  if(isset($_SESSION["validarSesionBackend"]) && $_SESSION["validarSesionBackend"] === "ok"){
     echo '<div class="wrapper">';
     /*=============================================
