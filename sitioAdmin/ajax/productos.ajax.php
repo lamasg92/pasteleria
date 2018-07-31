@@ -23,7 +23,7 @@ class AjaxProductos{
 	}
 
 	/*==============================
-	EDITAR CATEGORIA
+	EDITAR PRODUCTO
 	================================*/
 
 	public $idProducto;

@@ -44,10 +44,39 @@ class ModeloCategoria{
 
 	static public function mdlIngresarCategoria($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre_categoria,fecha_categoria,estado_categoria) VALUES (:categoria, :fecha, :estado)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre_categoria,imagen_categoria,fecha_categoria,estado_categoria) VALUES (:categoria, :foto, :fecha, :estado)");
 
 		$stmt->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
 		$stmt->bindParam(":fecha", $datos["fecha"], PDO::PARAM_STR);
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	EDITAR CATEGORIA
+	=============================================*/
+
+	static public function mdlEditarCategoria($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre_categoria=:categoria,imagen_categoria=:foto,estado_categoria=:estado WHERE id_categoria=:id");
+
+		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
+		$stmt->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
