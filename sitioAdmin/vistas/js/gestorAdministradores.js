@@ -78,6 +78,3 @@ $(".foto").change(function(){
   	}
 
 })
-
-
-})

@@ -90,3 +90,35 @@ $(".validarCategoria").change(function(){
 
 	  })
 });
+
+
+/*=========================================
+			EDITAR CATEGORIA
+==========================================*/
+
+$(".tablaCategorias tbody").on("click",".btnEditarCategoria",function(){
+	var idCategoria=$(this).attr("idCategoria");
+
+	var datos = new FormData();
+	datos.append("idCategoria",idCategoria);
+
+	$.ajax({
+		url:"ajax/categorias.ajax.php",
+	    method:"POST",
+	    data: datos,
+	    cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType: "json",
+	    success:function(respuesta){
+	    	console.log(respuesta);
+	    	$("#modalEditarCategoria .idCategoria").val(respuesta["id_categoria"]);
+	    	$("#modalEditarCategoria .tituloCategoria").val(respuesta["nombre_categoria"]);
+	    	$("#modalEditarCategoria .previsualizarFoto").attr("src",respuesta["imagen_categoria"]);
+	    	$("#modalEditarCategoria .antiguaFoto").val(respuesta["imagen_categoria"]);
+	    	
+	    }
+	})
+
+})
+
