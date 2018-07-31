@@ -116,7 +116,7 @@ $(".tablaProductos").DataTable({
 
 });
 /*=========================================
-			EDITAR CATEGORIA
+			EDITAR PRODUCTO
 ==========================================*/
 
 $(".tablaProductos tbody").on("click",".btnEditarProducto",function(){
