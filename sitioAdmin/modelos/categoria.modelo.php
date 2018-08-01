@@ -44,9 +44,10 @@ class ModeloCategoria{
 
 	static public function mdlIngresarCategoria($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre_categoria,imagen_categoria,fecha_categoria,estado_categoria) VALUES (:categoria, :foto, :fecha, :estado)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre_categoria,ruta_categoria,imagen_categoria,fecha_categoria,estado_categoria) VALUES (:categoria,:ruta, :foto, :fecha, :estado)");
 
 		$stmt->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 		$stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
 		$stmt->bindParam(":fecha", $datos["fecha"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);

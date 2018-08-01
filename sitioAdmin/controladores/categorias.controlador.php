@@ -37,6 +37,7 @@ class ControladorCategorias{
 				} 
 
 					$datos = array("categoria"=>strtoupper($_POST["tituloCategoria"]),
+						           "ruta"=>$_POST["rutaCategoria"],
 								   "foto" => $rutaFoto,
 						           "fecha"=>date('Y-m-d'),
 						           "estado"=>"activo");

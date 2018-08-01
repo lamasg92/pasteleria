@@ -91,6 +91,35 @@ $(".validarCategoria").change(function(){
 	  })
 });
 
+/*=============================================
+RUTA CATEGORÍA
+=============================================*/
+
+function limpiarUrl(texto){
+
+	var texto = texto.toLowerCase();
+	texto = texto.replace(/[á]/, 'a');
+	texto = texto.replace(/[é]/, 'e');
+	texto = texto.replace(/[í]/, 'i');
+	texto = texto.replace(/[ó]/, 'o');
+	texto = texto.replace(/[ú]/, 'u');
+	texto = texto.replace(/[ñ]/, 'n');
+	texto = texto.replace(/ /g, '-');
+	return texto;
+
+}
+
+
+$(".tituloCategoria").change(function(){
+
+	$(".rutaCategoria").val(
+
+		limpiarUrl($(".tituloCategoria").val())
+        
+	);
+
+});
+
 
 /*=========================================
 			EDITAR CATEGORIA
