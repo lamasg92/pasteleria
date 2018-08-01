@@ -136,6 +136,7 @@ $(".tablaProductos tbody").on("click",".btnEditarProducto",function(){
 	    success:function(respuesta){
 
 	    	$("#modalEditarProducto .idProducto").val(respuesta["id"]);
+	    	$("#modalEditarProducto .estadoProducto").val(respuesta["estado"]);
 	    	$("#modalEditarProducto .tituloProducto").val(respuesta["nombre"]);
 	    	$("#modalEditarProducto .seleccionarCategoria").val(respuesta["id_categoria"]);
 	    	$("#modalEditarProducto .descripcionProducto").val(respuesta["descripcion"]);

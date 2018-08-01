@@ -37,6 +37,7 @@ class ControladorCategorias{
 				} 
 
 					$datos = array("categoria"=>strtoupper($_POST["tituloCategoria"]),
+						           "ruta"=>$_POST["rutaCategoria"],
 								   "foto" => $rutaFoto,
 						           "fecha"=>date('Y-m-d'),
 						           "estado"=>"activo");
@@ -93,20 +94,17 @@ class ControladorCategorias{
 
 	static public function ctrEditarCategoria(){ 
 
-		if(isset($_POST["tituloCategoriaEditado"])){
-
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["tituloCategoriaEditado"])){
+		if(isset($_POST["idCategoria"])){
 
 				$rutaFoto = $_POST["antiguaFoto"];
-		
 
-					if(isset($_FILES["foto"]["tmp_name"]) && !empty($_FILES["foto"]["tmp_name"])){
+				if(isset($_FILES["foto"]["tmp_name"]) && !empty($_FILES["foto"]["tmp_name"])){
 
 						/*=============================================
 						BORRAMOS ANTIGUA FOTO
 						=============================================*/
 
-						unlink($_POST["antiguaFoto"]);
+						//unlink($_POST["antiguaFoto"]);
 
 						/*=============================================
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
@@ -117,19 +115,16 @@ class ControladorCategorias{
 
 						move_uploaded_file($ruta_fichero_origen, $rutaFoto);
 
-					}
-
-					$datos = array("id"=>$_POST["idCategoria"],
-								   "categoria"=>strtoupper($_POST["tituloCategoriaEditado"]),
-								   "foto" => $rutaFoto,
-						           "estado"=>"activo");
-
-
 				}
 
-				$respuesta = ModeloCategoria::mdlEditarCategoria("categorias", $datos);
+					$datos = array("id"=>$_POST["idCategoria"],
+								   "foto" => $rutaFoto,
+						           "estado"=>$_POST["estadoCategoria"]);
 
-				if($respuesta == "ok"){
+
+		$respuesta = ModeloCategoria::mdlEditarCategoria("categorias", $datos);
+
+		if($respuesta == "ok"){
 
 					echo'<script>
 
@@ -166,6 +161,6 @@ class ControladorCategorias{
 			}
 
 		}
+	}
 
-   }
 }

@@ -124,7 +124,7 @@ class ControladorProductos{
    	 		     "precio"=>$_POST["precio"],
    	 		     "stock"=>$_POST["stock"],
    	 		     "imagen"=>$rutaFoto,
-   	 		     "estado"=>"activo"
+   	 		     "estado"=>$_POST["estadoProducto"]
 
    	 		);					
 

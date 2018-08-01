@@ -43,6 +43,8 @@ MODAL AGREGAR CATEGORIA
                 <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                 <input type="text" class="form-control input-lg validarCategoria tituloCategoria" placeholder="Ingresar Categoria" name="tituloCategoria" required> 
+                
+                <input type="hidden" class="rutaCategoria" name="rutaCategoria">
 
               </div> 
 

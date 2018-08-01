@@ -20,7 +20,7 @@ MODAL AGREGAR CATEGORIA
           
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           
-          <h4 class="modal-title">Agregar categoría</h4>
+          <h4 class="modal-title">Editar categoría</h4>
 
         </div>
 
@@ -45,14 +45,40 @@ MODAL AGREGAR CATEGORIA
 
                 <input type="hidden" class="idCategoria" name="idCategoria">
 
-                <input type="text" class="form-control input-lg validarCategoria tituloCategoria" placeholder="Ingresar Categoria" name="tituloCategoriaEditado" required> 
+                <input type="text" class="form-control input-lg validarCategoria tituloCategoria" placeholder="Ingresar Categoria" name="tituloCategoriaEditado" disabled> 
 
               </div> 
 
             </div>
 
             <!--=====================================
-            AGREGAR IMAGEN DE CATEGORIA
+            EDITAR ESTADO DE CATEGORIA
+            ======================================-->
+
+
+            <div class="form-group">
+
+              <h3>Estado:</h3>
+              
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                    <select class="form-control estadoCategoria" name="estadoCategoria">
+                    <?php if (estadoCategoria=='activo') { ?>
+                          <option value="activo" selected>Activo</option>
+                          <option value="inactivo" >Inactivo</option>
+                    <?php    } else {     ?>
+                          <option value="activo" >Activo</option>
+                          <option value="inactivo" selected>Inactivo</option>
+                     <?php   }            ?>
+                    </select>
+
+                </div> 
+
+            </div>
+
+            <!--=====================================
+            EDITAR IMAGEN DE CATEGORIA
             ======================================-->
 
             <div class="form-group">
@@ -68,6 +94,7 @@ MODAL AGREGAR CATEGORIA
               <img src="" class="img-thumbnail previsualizarFoto" width="100%">
 
             </div>
+
 
           </div>
         </div>
