@@ -154,7 +154,7 @@ MODAL EDITAR PRODUCTO
                     <select class="form-control estadoProducto" name="estadoProducto">
                     <?php if (estadoProducto=='activo') { ?>
                           <option value="activo" >Activo</option>
-                          <option value="inactivo" selected >Inactivo</option>
+                          <option value="inactivo" xselected >Inactivo</option>
                     <?php    } else {     ?>
                           <option value="activo" selected>Activo</option>
                           <option value="inactivo" >Inactivo</option>

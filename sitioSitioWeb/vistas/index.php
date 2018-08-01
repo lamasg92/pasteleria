@@ -11,6 +11,12 @@
 <meta charset="UTF-8"/>
 
 <title>Pasteleria Doña Lupe</title>
+<?php
+
+		session_start();
+		$url = Ruta::ctrRuta();
+
+?>
 
 <meta name="description" content="Pasteleria">
 
@@ -32,6 +38,7 @@
 <body style="background-image: url(vistas/img/f5.jpg); background-repeat:repeat; background-size: 100% auto" >
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
+
 	
 	<!--header-->
 	<?php
@@ -53,6 +60,42 @@
           include "modulos/contacto.php";
 
 	?>
+
+<?php
+/*=============================================
+CONTENIDO DINÁMICO
+=============================================*/
+
+$rutas = array();
+$ruta = null;
+$infoProducto = null;
+
+if(isset($_GET["ruta"])){
+
+	$rutas = explode("/", $_GET["ruta"]);
+
+	$item = "ruta";
+	$valor =  $rutas[0];
+
+	if( $rutas[0] == "salir" ){
+
+		include "modulos/".$rutas[0].".php";
+
+	}else{
+
+		include "modulos/error404.php";
+
+	}
+
+}else{
+
+	include "modulos/slide.php";
+
+	include "modulos/destacados.php";
+
+}
+
+?>
 
 	<!--footer-->
 	<section class="footer" id="footer">

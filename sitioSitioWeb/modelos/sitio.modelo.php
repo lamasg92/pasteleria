@@ -90,7 +90,6 @@ static public function mdlMostrarRedesSociales($tabla){
 		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
 		$stmt -> execute();
-
 		return $stmt -> fetch(PDO::FETCH_ASSOC);
 
 		$stmt-> close();
