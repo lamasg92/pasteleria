@@ -69,7 +69,7 @@ class ControladorSitio{
 							   "email"=> $_POST["regEmail"],
 							   "foto"=>$rutaFoto,
 							   "modo"=> "directo",
-							   "verificacion"=> 1,
+							   "verificacion"=> 0,
 							   "emailEncriptado"=>$encriptarEmail);
 
 				$tabla = "usuarios";
@@ -191,7 +191,6 @@ class ControladorSitio{
 
 	public function ctrIngresoUsuario(){
 
-		var_dump('llego ctrIngresoUsuario');
 		if(isset($_POST["ingEmail"])){
 
 			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["ingEmail"]) &&
@@ -204,9 +203,7 @@ class ControladorSitio{
 				$valor = $_POST["ingEmail"];
 
 				$respuesta = ModeloSitio::mdlMostrarUsuario($tabla, $item, $valor);
-				var_dump($respuesta);
-				if($respuesta["email"] == $_POST["ingEmail"] && $respuesta["password"] == $encriptar){
-
+				if($respuesta["email"] == $_POST["ingEmail"] && $respuesta["contraseña"] == $encriptar){
 					if($respuesta["verificacion"] == 1){
 
 						echo'<script>
@@ -234,7 +231,7 @@ class ControladorSitio{
 						$_SESSION["nombre"] = $respuesta["nombre"];
 						$_SESSION["foto"] = $respuesta["foto"];
 						$_SESSION["email"] = $respuesta["email"];
-						$_SESSION["password"] = $respuesta["password"];
+						$_SESSION["password"] = $respuesta["contraseña"];
 						$_SESSION["modo"] = $respuesta["modo"];
 
 						echo '<script>
