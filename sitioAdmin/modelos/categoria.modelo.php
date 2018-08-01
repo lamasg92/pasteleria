@@ -73,10 +73,9 @@ class ModeloCategoria{
 
 	static public function mdlEditarCategoria($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre_categoria=:categoria,imagen_categoria=:foto,estado_categoria=:estado WHERE id_categoria=:id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET imagen_categoria=:foto,estado_categoria=:estado WHERE id_categoria=:id");
 
 		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
-		$stmt->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 

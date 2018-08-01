@@ -139,6 +139,32 @@ MODAL EDITAR PRODUCTO
 
             </div>
 
+            <!--=====================================
+            EDITAR ESTADO DE PRODUCTO
+            ======================================-->
+
+
+            <div class="form-group">
+
+              <div class="panel">ESTADO</div>
+              
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                    <select class="form-control estadoProducto" name="estadoProducto">
+                    <?php if (estadoProducto=='activo') { ?>
+                          <option value="activo" >Activo</option>
+                          <option value="inactivo" selected >Inactivo</option>
+                    <?php    } else {     ?>
+                          <option value="activo" selected>Activo</option>
+                          <option value="inactivo" >Inactivo</option>
+                     <?php   }            ?>
+                    </select>
+
+                </div> 
+
+            </div>
+
 
             <!--=====================================
             AGREGAR IMAGEN DEL PRODUCTO

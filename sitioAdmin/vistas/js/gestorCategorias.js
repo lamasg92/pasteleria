@@ -142,6 +142,7 @@ $(".tablaCategorias tbody").on("click",".btnEditarCategoria",function(){
 	    success:function(respuesta){
 	    	console.log(respuesta);
 	    	$("#modalEditarCategoria .idCategoria").val(respuesta["id_categoria"]);
+	    	$("#modalEditarCategoria .estadoCategoria").val(respuesta["estado_categoria"]);
 	    	$("#modalEditarCategoria .tituloCategoria").val(respuesta["nombre_categoria"]);
 	    	$("#modalEditarCategoria .previsualizarFoto").attr("src",respuesta["imagen_categoria"]);
 	    	$("#modalEditarCategoria .antiguaFoto").val(respuesta["imagen_categoria"]);
