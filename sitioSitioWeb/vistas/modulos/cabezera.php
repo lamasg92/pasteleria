@@ -1,4 +1,22 @@
+<?php
+$url = Ruta::ctrRuta();
+/*=============================================
+INICIO DE SESIÓN USUARIO
+=============================================*/
+if(isset($_SESSION["validarSesion"])){
 
+	if($_SESSION["validarSesion"] == "ok"){
+
+		echo '<script>
+		
+			localStorage.setItem("usuario","'.$_SESSION["id"].'");
+
+		</script>';
+
+	}
+
+}
+?>
 
 <!--header-->
 	<header>
@@ -7,9 +25,67 @@
 				<div class="row">
 					<div class="registro">
 						<ul>
-							<li><a href="./vistas/modulos/cabezera/#modalIngreso" data-toggle="modal">Ingresar</a></li>
-							<li>|</li>
-							<li><a  data-toggle="modal" href="./sitioSitioWeb/vistas/modulos/cabezera/#modalRegistroUsuarios">Crear una cuenta</a></li>
+						<?php
+							if(isset($_SESSION["validarSesion"])){
+								if($_SESSION["validarSesion"] == "ok"){
+									/*MODO DIRECTO*/
+									if($_SESSION["modo"] == "directo"){
+										if($_SESSION["foto"] != ""){
+											echo '<li>
+												<img class="img-circle" src="'.$url.$_SESSION["foto"].'" width="4%">
+												</li>';
+										}else{
+											echo '<li>
+													<img class="img-circle" src="'.$url.'vistas/img/usuarios/default/anonymous.png" width="5%">
+												</li>';
+										}
+										echo '<li>|</li>
+										  <li><a href="'.$url.'perfil">Ver Perfil</a></li>
+										  <li>|</li>
+										  <li><a href="'.$url.'salir">Salir</a></li>';
+									}
+									/*MODO FACEBOOK*/
+									if($_SESSION["modo"] == "facebook"){
+
+										echo '<li>
+
+												<img class="img-circle" src="'.$_SESSION["foto"].'" width="4%">
+
+											   </li>
+											   <li>|</li>
+									 		   <li><a href="'.$url.'perfil">Ver Perfil</a></li>
+									 		   <li>|</li>
+									 		   <li><a href="'.$url.'salir" class="salir">Salir</a></li>';
+									}
+
+									/*MODO GOOGLE*/
+
+									if($_SESSION["modo"] == "google"){
+
+										echo '<li>
+
+												<img class="img-circle" src="'.$_SESSION["foto"].'" width="10%">
+
+											   </li>
+											   <li>|</li>
+									 		   <li><a href="'.$url.'perfil">Ver Perfil</a></li>
+									 		   <li>|</li>
+									 		   <li><a href="'.$url.'salir">Salir</a></li>';
+
+								}
+
+							}
+
+				}else{
+
+					echo'<li><a href="./vistas/modulos/cabezera/#modalIngreso" data-toggle="modal">Ingresar</a></li>
+						<li>|</li>
+						<li><a  data-toggle="modal" href="./sitioSitioWeb/vistas/modulos/cabezera/#modalRegistroUsuarios">Crear una cuenta</a></li>';
+
+				}
+
+				?>
+							
 						</ul>
 					</div>	
 				</div>	
