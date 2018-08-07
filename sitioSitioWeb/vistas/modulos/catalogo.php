@@ -18,6 +18,7 @@ require_once "modelos/producto.modelo.php";
 
 <title>Pasteleria Doña Lupe</title>
 
+
 <meta name="description" content="Pasteleria">
 
 <meta name="author" content="">
@@ -36,11 +37,11 @@ require_once "modelos/producto.modelo.php";
 <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
 
 </head>
-<body style="background-image: url(vistas/img/fondo1.png); background-repeat:repeat; background-size: 100% auto" >
-<!--wrapper start-->
-<div class="wrapper" id="wrapper">
-	
+<body style="background-image: url(vistas/img/fondo1.png) !important; background-repeat:repeat; background-size: 100% auto" >
 
+<!--wrapper start-->
+<div class="wrapper" id="wrapper" style="background-image: url(vistas/img/fondo1.png) !important; background-repeat:repeat; background-size: 100% auto">
+	
 <!--productos-->
 	<section class="catalogo" id="catalogo">
 	<div class="container">

@@ -12,10 +12,8 @@
 
 <title>Pasteleria Doña Lupe</title>
 <?php
-
 		session_start();
 		$url = Ruta::ctrRuta();
-
 ?>
 
 <meta name="description" content="Pasteleria">
@@ -39,33 +37,19 @@
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
 
+	<?php
+    
+          include "modulos/barraSuperiorCabezera.php";
+
+	?>
+
 	
-	<!--header-->
-	<?php
-    
-          include "modulos/cabezera.php";
 
-	?>
-		
-	<!--sobreNosotros-->
-	<?php
-    
-          include "modulos/sobreNosotros.php";
-
-	?>
-	
-	<!--contacto-->
-	<?php
-    
-          include "modulos/contacto.php";
-
-	?>
 
 <?php
 /*=============================================
 CONTENIDO DINÁMICO
 =============================================*/
-
 $rutas = array();
 $ruta = null;
 $infoProducto = null;
@@ -73,14 +57,19 @@ $infoProducto = null;
 if(isset($_GET["ruta"])){
 
 	$rutas = explode("/", $_GET["ruta"]);
-
-	$item = "ruta";
-	$valor =  $rutas[0];
-
 	if( $rutas[0] == "salir" ){
 
 		include "modulos/".$rutas[0].".php";
 	}
+
+	if( $rutas[0] == "catalogo" ){
+
+		include "modulos/".$rutas[0].".php";
+	}
+
+
+}else{
+	include "modulos/cuerpo.php";
 }
 
 ?>
