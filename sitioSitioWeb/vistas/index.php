@@ -54,6 +54,7 @@
 
 	?>
 	
+	
 	<!--contacto-->
 	<?php
     
@@ -80,18 +81,34 @@ if(isset($_GET["ruta"])){
 	if( $rutas[0] == "salir" ){
 
 		include "modulos/".$rutas[0].".php";
+
+	}else{
+
+		include "modulos/error404.php";
+
 	}
+
+}else{
+
+	//include "modulos/slide.php";
+
+	//include "modulos/destacados.php";
+
 }
 
 ?>
 
 	<!--footer-->
-	<section class="footer" id="footer">
+	<!--<section class="footer" id="footer">
 		<div class="container">
 			<p> SofwareGym</p>
 		</div>
-	</section>
-	
+	</section>-->
+	<?php
+    
+          include "modulos/footer.php";
+
+	?>
 </div><!--wrapper end-->
 
 <!--Javascripts-->
