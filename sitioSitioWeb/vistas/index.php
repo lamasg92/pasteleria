@@ -17,7 +17,6 @@
 ?>
 
 <meta name="description" content="Pasteleria">
-
 <meta name="author" content="">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +27,7 @@
 <link rel="stylesheet" href="vistas/css/animate.css">
 <link rel="stylesheet" href="vistas/css/theme.css">
 <link rel="stylesheet" href="vistas/css/plugins/sweetalert.css">
+<link rel="stylesheet" href="vistas/css/plantilla.css">
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
@@ -37,35 +37,34 @@
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
 
-	<?php
+<?php
     
           include "modulos/barraSuperiorCabezera.php";
 
-	?>
-
-<?php
 /*=============================================
 CONTENIDO DINÁMICO
 =============================================*/
 $rutas = array();
 $ruta = null;
 $infoProducto = null;
+$categorias = ModeloProductos::mdlNombresCategorias();
 
 if(isset($_GET["ruta"])){
 
 	$rutas = explode("/", $_GET["ruta"]);
-	if( $rutas[0] == "salir" ){
-
-		include "modulos/".$rutas[0].".php";
-	}
-
-	if( $rutas[0] == "catalogo" ){
-
-		include "modulos/".$rutas[0].".php";
-
+	$ruta=strval($rutas[0]);
+	if(  $ruta == "salir" 
+	  || $ruta == "catalogo"
+	){
+		if (in_array($ruta,$categorias)){
+			include "modulos/catalogo.php";
+		}else{
+			include "modulos/".$rutas[0].".php";
+		}
+	
 	}else{
 
-		include "modulos/error404.php";
+		//include "modulos/error404.php";
 
 	}
 
@@ -111,8 +110,6 @@ if(isset($_GET["ruta"])){
 <script src="vistas/js/plugins/jquery.easing.js"></script>
 <script src="vistas/js/plugins/jquery.scrollUp.js"></script>
 <script src="vistas/js/plugins/jquery.flexslider.js"></script>
-
-
 
 <script type="text/javascript">
 jQuery(function($) {

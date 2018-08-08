@@ -17,7 +17,6 @@ if(isset($_SESSION["validarSesion"])){
 }
 ?>
 <div class=" barraSuperior" id="top" style="background-color: #ad0943fa;">
-			<div class="container">
 				<div class="row">
 					<div class="registro">
 						<ul>
