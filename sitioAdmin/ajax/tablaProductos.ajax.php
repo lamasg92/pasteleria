@@ -52,7 +52,6 @@ class TablaProductos{
 				      "'.$productos[$i]["nombre"].'",
 				      "'.$productos[$i]["descripcion"].'",
 				      "$'.$productos[$i]["precio"].'",
-				      "'.$productos[$i]["stock"].'",
 				      "'.$imagen.'",
 				      "'.$estado.'",
 				      "'.$productos[$i]["fecha"].'" ,
