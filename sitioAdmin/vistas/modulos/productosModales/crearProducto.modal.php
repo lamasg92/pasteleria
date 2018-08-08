@@ -121,7 +121,7 @@ MODAL AGREGAR PRODUCTO
 
               <!-- STOCK -->
 
-              <div class="col-md-6 col-xs-12">
+           <!--   <div class="col-md-6 col-xs-12">
   
                 <div class="panel">STOCK</div>
               
@@ -135,7 +135,7 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-            </div>
+            </div> -->
 
 
             <!--=====================================

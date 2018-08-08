@@ -12,14 +12,11 @@
 
 <title>Pasteleria Doña Lupe</title>
 <?php
-
 		session_start();
 		$url = Ruta::ctrRuta();
-
 ?>
 
 <meta name="description" content="Pasteleria">
-
 <meta name="author" content="">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +27,7 @@
 <link rel="stylesheet" href="vistas/css/animate.css">
 <link rel="stylesheet" href="vistas/css/theme.css">
 <link rel="stylesheet" href="vistas/css/plugins/sweetalert.css">
+<link rel="stylesheet" href="vistas/css/plantilla.css">
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
@@ -39,71 +37,54 @@
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
 
-	
-	<!--header-->
-	<?php
-    
-          include "modulos/cabezera.php";
-
-	?>
-		
-	<!--sobreNosotros-->
-	<?php
-    
-          include "modulos/sobreNosotros.php";
-
-	?>
-	
-	<!--contacto-->
-	<?php
-    
-          include "modulos/contacto.php";
-
-	?>
-
 <?php
+    
+          include "modulos/barraSuperiorCabezera.php";
+
 /*=============================================
 CONTENIDO DINÁMICO
 =============================================*/
-
 $rutas = array();
 $ruta = null;
 $infoProducto = null;
+$categorias = ModeloProductos::mdlNombresCategorias();
 
 if(isset($_GET["ruta"])){
 
 	$rutas = explode("/", $_GET["ruta"]);
-
-	$item = "ruta";
-	$valor =  $rutas[0];
-
-	if( $rutas[0] == "salir" ){
-
-		include "modulos/".$rutas[0].".php";
-
+	$ruta=strval($rutas[0]);
+	if(  $ruta == "salir" 
+	  || $ruta == "catalogo"
+	){
+		if (in_array($ruta,$categorias)){
+			include "modulos/catalogo.php";
+		}else{
+			include "modulos/".$rutas[0].".php";
+		}
+	
 	}else{
 
-		include "modulos/error404.php";
+		//include "modulos/error404.php";
 
 	}
 
 }else{
-
-	include "modulos/slide.php";
-
-	include "modulos/destacados.php";
-
+	include "modulos/cuerpo.php";
 }
 
 ?>
 
 	<!--footer-->
-	<section class="footer" id="footer">
+	<!--<section class="footer" id="footer">
 		<div class="container">
 			<p> SofwareGym</p>
 		</div>
-	</section>
-	
+	</section>-->
+	<?php
+    
+          include "modulos/footer.php";
+
+	?>
 </div><!--wrapper end-->
 
 <!--Javascripts-->
@@ -129,8 +110,6 @@ if(isset($_GET["ruta"])){
 <script src="vistas/js/plugins/jquery.easing.js"></script>
 <script src="vistas/js/plugins/jquery.scrollUp.js"></script>
 <script src="vistas/js/plugins/jquery.flexslider.js"></script>
-
-
 
 <script type="text/javascript">
 jQuery(function($) {

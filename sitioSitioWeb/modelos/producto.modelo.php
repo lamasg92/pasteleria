@@ -91,4 +91,17 @@ class ModeloProductos{
 		$stmt = null;
 
 	}
+
+	static public function mdlNombresCategorias(){
+		$lista=array();
+		$item = null;
+        $valor = null;
+        $categorias = ControladorProductos::ctrMostrarCategorias($item,$valor);
+
+		foreach ($categorias as $key => $value) {
+			$nombre=strval($value["ruta_categoria"]);
+			array_push($lista, $nombre);
+		}
+		return $lista;
+	}
 }
