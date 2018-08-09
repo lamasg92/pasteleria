@@ -47,7 +47,6 @@ CONTENIDO DINÁMICO
 $rutas = array();
 $ruta = null;
 $infoProducto = null;
-$categorias = ModeloProductos::mdlNombresCategorias();
 
 if(isset($_GET["ruta"])){
 
@@ -55,17 +54,11 @@ if(isset($_GET["ruta"])){
 	$ruta=strval($rutas[0]);
 	if(  $ruta == "salir" 
 	  || $ruta == "catalogo"
+	  || $ruta == "carrito"
 	){
-		if (in_array($ruta,$categorias)){
-			include "modulos/catalogo.php";
-		}else{
-			include "modulos/".$rutas[0].".php";
-		}
-	
+		include "modulos/".$ruta.".php";
 	}else{
-
 		//include "modulos/error404.php";
-
 	}
 
 }else{
@@ -104,6 +97,7 @@ if(isset($_GET["ruta"])){
 <script src="vistas/js/contact.js"></script>
 <script src="vistas/js/common.js"></script>
 <script src="vistas/js/usuarios.js"></script>
+<script src="vistas/js/carrito.js"></script>
 <script src="ajax/usuarios.ajax.php"></script>
 <script src="vistas/js/registroFacebook.js"></script>
 <script src="vistas/js/plugins/sweetalert.min.js"></script>

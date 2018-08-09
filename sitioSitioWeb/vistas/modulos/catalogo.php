@@ -9,7 +9,6 @@
 		<div class="heading text-center">
 			
 			<h2>Nuestros productos</h2>
-			<!--<img class="dividerline" src="../img/sep2.jpeg" alt="">-->
 		</div>
 
 		<!-- CATEGORIAS-->
@@ -91,26 +90,23 @@
 
                                 <article>
                                  
-                               	   <a href="./index.php?ruta=catalogo&url=infoproducto'.'&id='.$value["id"].'">
+                               	<a href="./index.php?ruta=catalogo&url=infoproducto'.'&id='.$value["id"].'">
                                       <span class="thumb-wrap">
-
 			                              <span class="thumb" style="background-image:url(../sitioAdmin/'.$value["imagen"].');">
-	        
-                                           </span>
-
-
+                                     		</span>
                                       </span>
+                                 </a>
+                                 
 									<span class="txt">
 									  <div class="row">
 									   
 									   <h5>'.$value["nombre"].' - $'.$value["precio"].'</h5>
+									   <button class="agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$value["imagen"].'" precio="'.$value["precio"].'" nombre="'.$value["nombre"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button>
 									  
 									  </div>
 										
 									</span>
-							  </a>
-
-
+								
                                 </article>
                               </li>';
                                               
