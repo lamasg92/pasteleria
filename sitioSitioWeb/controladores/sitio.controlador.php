@@ -2,6 +2,7 @@
 
 class ControladorSitio{
 
+
  	public function index(){
 
 		require "vistas/index.php";
@@ -68,7 +69,7 @@ class ControladorSitio{
 							   "email"=> $_POST["regEmail"],
 							   "foto"=>$rutaFoto,
 							   "modo"=> "directo",
-							   	"verificacion"=>0,
+							   "verificacion"=>1,
 							   "emailEncriptado"=>$encriptarEmail);
 
 				$tabla = "usuarios";
@@ -84,16 +85,16 @@ class ControladorSitio{
 					date_default_timezone_set("America/Argentina/Salta");//defino zona horaria
 
 					$url = Ruta::ctrRuta();	
-
+					var_dump($url);
 					$mail = new PHPMailer;
 
 					$mail->CharSet = 'UTF-8';
 
 					$mail->isMail();
 
-					$mail->setFrom('yaninadaianamartinez@.com', 'PATELERIA DOÑA LUPE');
+					$mail->setFrom('yaninadaianamartinez@gmail.com', 'PATELERIA DOÑA LUPE');
 
-					$mail->addReplyTo('yaninadaianamartinez@.com', 'PATELERIA DOÑA LUPE');
+					$mail->addReplyTo('yaninadaianamartinez@gmail.com', 'PATELERIA DOÑA LUPE');
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
@@ -117,11 +118,11 @@ class ControladorSitio{
 
 							<hr style="border:1px solid #ccc; width:80%">
 
-							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de Tienda Virtual, debe confirmar su dirección de correo electrónico</h4>
+							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta en PASTELERIA LUPE, debe confirmar su dirección de correo electrónico</h4>
 
-							<a href="'.$url.'verificar/'.$encriptarEmail.'" target="_blank" style="text-decoration:none">
+							<a href="https://www.pastelerialupe.com/verificar/'.$encriptarEmail.'" target="_blank" style="text-decoration:none">
 
-							<div style="line-height:60px; background:#0aa; width:60%; color:white">Verifique su dirección de correo electrónico</div>
+							<div style="line-height:60px; background:#ff005a; width:60%; color:white">Verifique su dirección de correo electrónico</div>
 
 							</a>
 
@@ -222,6 +223,20 @@ class ControladorSitio{
 		$tabla = "usuarios";
 
 		$respuesta = ModeloSitio::mdlMostrarUsuario($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
+	ACTUALIZAR USUARIO
+	=============================================*/
+
+	static public function ctrActualizarUsuario($id, $item, $valor){
+
+		$tabla = "usuarios";
+
+		$respuesta = ModeloSitio::mdlActualizarUsuario($tabla, $id, $item, $valor);
 
 		return $respuesta;
 
@@ -375,7 +390,7 @@ class ControladorSitio{
 				}else{
 
 					echo'<script>
-
+								
 							swal({
 								  title: "¡ERROR AL INGRESAR!",
 								  text: "¡Por favor revise que el email exista o la contraseña coincida con la registrada!",

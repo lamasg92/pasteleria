@@ -1,7 +1,7 @@
 <!--body style="background-image: url(vistas/img/fondo1.png) !important; background-repeat:repeat; background-size: 100% auto" -->
 
 <!--wrapper start-->
-<!--div class="wrapper" id="wrapper" style="background-image: url(vistas/img/fondo1.png) !important; background-repeat:repeat; background-size: 100% auto"-->
+<!--<div class="wrapper" id="wrapper" style="background-image: url(vistas/img/fondo1.png) !important; background-repeat:repeat; background-size: 100% auto">-->
 	
 <!--productos-->
 	<section class="catalogo" id="catalogo">
@@ -160,7 +160,7 @@
 
 	</section>
 	
-</div><!--wrapper end-->
+<!--</div><!--wrapper end-->
 
 <!--Javascripts-->
 <script src="vistas/js/jquery.js"></script>

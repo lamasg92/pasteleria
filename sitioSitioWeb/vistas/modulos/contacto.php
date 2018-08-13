@@ -23,7 +23,7 @@
 					</div>
         		</div>
 
-		        <form action="vistas/modulos/enviarCorreo.php" method="post" class="form_contact">
+		        <form action="./enviarCorreo" method="post" class="form_contact">
 		            <h2>Envia un mensaje</h2>
 		            <div class="user_info">
 		                <label for="names">Nombres *</label>

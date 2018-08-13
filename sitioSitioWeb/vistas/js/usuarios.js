@@ -33,7 +33,7 @@ $("#regEmail").change(function(){
 
 	$.ajax({
 
-		url:"/ajax/usuarios.ajax.php",
+		url:"https://www.pastelerialupe.com/ajax/usuarios.ajax.php",
 		method: "POST",
 		data: datos,
 		cache: false,
