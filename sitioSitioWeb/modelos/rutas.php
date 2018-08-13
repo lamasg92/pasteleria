@@ -8,7 +8,7 @@ class Ruta{
 
 	public function ctrRuta(){
 
-		return "http://localhost/pasteleria/sitioSitioWeb/";
+		return "http://localhost:8080/pasteleria/sitioSitioWeb/";
 	
 	}
 

@@ -20,6 +20,18 @@ if(isset($_SESSION["validarSesion"])){
 				<div class="row">
 					<div class="registro">
 						<ul>
+							<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
+				
+							<a href="<?php echo $url;?>carrito">
+								<button class="btn btn-default pull-left backColor"> 
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								</button>
+							</a>	
+
+							<p>TU CESTA <span class="cantidadCesta"></span> <br> $ <span class="sumaCesta"></span></p>	
+							</div>
+						</ul>
+						<ul>
 						<?php
 						$enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 							if(isset($_SESSION["validarSesion"])){
