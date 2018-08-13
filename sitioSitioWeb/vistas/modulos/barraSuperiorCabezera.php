@@ -58,10 +58,9 @@ if(isset($_SESSION["validarSesion"])){
 							}
 
 				}else{
-					$enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-					echo'<li><a href="'.$enlace_actual.'#modalIngreso" data-toggle="modal">Ingresar</a></li>
+					echo'<li><a href="#" data-target="#modalIngreso" data-toggle="modal">Ingresar</a></li>
 						<li>|</li>
-						<li><a  data-toggle="modal" href="#modalRegistroUsuarios">Crear una cuenta</a></li>';
+						<li><a href="#" data-target="#modalRegistroUsuarios" data-toggle="modal">Crear una cuenta</a></li>';
 
 				}
 
@@ -226,7 +225,7 @@ VENTANA MODAL PARA EL REGISTRO
         
         <!-- Modal footer -->
         <div class="modal-footer">
-         ¿Ya tienes una cuenta registrada? | <strong><a id="modal_url" href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
+         ¿Ya tienes una cuenta registrada? | <strong><a id="modal_url" href="#" data-target="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
         </div>
       
     </div>
@@ -341,7 +340,7 @@ VENTANA MODAL PARA EL INGRESO
 
         <div class="modal-footer">
           
-			¿No tienes una cuenta registrada? | <strong><a href="./sitioSitioWeb/vistas/modulos/barraSuperiorCabezera/#modalRegistroUsuarios" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
+			¿No tienes una cuenta registrada? | <strong><a href="#" data-target="#modalRegistroUsuarios" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
 
         </div>
       

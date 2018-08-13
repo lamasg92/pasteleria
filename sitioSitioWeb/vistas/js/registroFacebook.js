@@ -88,9 +88,9 @@ function testApi(){
 			datos.append("nombre",nombre);
 			datos.append("foto",foto);
 
-			var ruta=window.location.pathname;
+			
 			$.ajax({
-				url:ruta+"/ajax/usuarios.ajax.php",
+				url:"https://www.pastelerialupe.com/ajax/usuarios.ajax.php",
 				method:"POST",
 				data:datos,
 				cache:false,

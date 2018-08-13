@@ -21,19 +21,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="shortcut icon" href="vistas/img/logoIco.ico" />
-<link rel="stylesheet" type="text/css" media="screen" href="vistas/css/bootstrap.css">
-<link rel="stylesheet" href="vistas/css/font-awesome.css">
-<link rel="stylesheet" href="vistas/css/animate.css">
-<link rel="stylesheet" href="vistas/css/theme.css">
-<link rel="stylesheet" href="vistas/css/plugins/sweetalert.css">
-<link rel="stylesheet" href="vistas/css/plantilla.css">
+<link rel="shortcut icon" href="<?php echo $url; ?>vistas/img/logoIco.ico" />
+<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $url; ?>vistas/css/bootstrap.css">
+<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/font-awesome.css">
+<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/animate.css">
+<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/theme.css">
+<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
+<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
 
 </head>
-<body style="background-image: url(vistas/img/f5.jpg); background-repeat:repeat; background-size: 100% auto" >
+<body style="background-image: url(<?php echo $url; ?>vistas/img/f5.jpg); background-repeat:repeat; background-size: 100% auto" >
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
 
@@ -54,6 +54,8 @@ if(isset($_GET["ruta"])){
 	$ruta=strval($rutas[0]);
 	if(  $ruta == "salir" 
 	  || $ruta == "catalogo"
+	  || $ruta == 'verificar'
+	  || $ruta == 'enviarCorreo'
 	  || $ruta == "carrito"
 	){
 		include "modulos/".$ruta.".php";
@@ -81,29 +83,30 @@ if(isset($_GET["ruta"])){
 </div><!--wrapper end-->
 
 <!--Javascripts-->
-<script src="vistas/js/jquery.js"></script>
-<script src="vistas/js/modernizr.js"></script>
-<script src="vistas/js/bootstrap.js"></script>
-<script src="vistas/js/menustick.js"></script>
-<script src="vistas/js/parallax.js"></script>
-<script src="vistas/js/easing.js"></script>
-<script src="vistas/js/wow.js"></script>
-<script src="vistas/js/smoothscroll.js"></script>
-<script src="vistas/js/masonry.js"></script>
-<script src="vistas/js/imgloaded.js"></script>
-<script src="vistas/js/classie.js"></script>
-<script src="vistas/js/colorfinder.js"></script>
-<script src="vistas/js/gridscroll.js"></script>
-<script src="vistas/js/contact.js"></script>
-<script src="vistas/js/common.js"></script>
-<script src="vistas/js/usuarios.js"></script>
-<script src="vistas/js/carrito.js"></script>
-<script src="ajax/usuarios.ajax.php"></script>
-<script src="vistas/js/registroFacebook.js"></script>
-<script src="vistas/js/plugins/sweetalert.min.js"></script>
-<script src="vistas/js/plugins/jquery.easing.js"></script>
-<script src="vistas/js/plugins/jquery.scrollUp.js"></script>
-<script src="vistas/js/plugins/jquery.flexslider.js"></script>
+
+<script src="<?php echo $url; ?>vistas/js/jquery.js"></script>
+<script src="<?php echo $url; ?>vistas/js/modernizr.js"></script>
+<script src="<?php echo $url; ?>vistas/js/bootstrap.js"></script>
+<script src="<?php echo $url; ?>vistas/js/menustick.js"></script>
+<script src="<?php echo $url; ?>vistas/js/parallax.js"></script>
+<script src="<?php echo $url; ?>vistas/js/easing.js"></script>
+<script src="<?php echo $url; ?>vistas/js/wow.js"></script>
+<script src="<?php echo $url; ?>vistas/js/smoothscroll.js"></script>
+<script src="<?php echo $url; ?>vistas/js/masonry.js"></script>
+<script src="<?php echo $url; ?>vistas/js/imgloaded.js"></script>
+<script src="<?php echo $url; ?>vistas/js/classie.js"></script>
+<script src="<?php echo $url; ?>vistas/js/colorfinder.js"></script>
+<script src="<?php echo $url; ?>vistas/js/gridscroll.js"></script>
+<script src="<?php echo $url; ?>vistas/js/contact.js"></script>
+<script src="<?php echo $url; ?>vistas/js/common.js"></script>
+<script src="<?php echo $url; ?>vistas/js/usuarios.js"></script>
+<script src="<?php echo $url; ?>ajax/usuarios.ajax.php"></script>
+<script src="<?php echo $url; ?>vistas/js/carrito.js"></script>
+<script src="<?php echo $url; ?>vistas/js/registroFacebook.js"></script>
+<script src="<?php echo $url; ?>vistas/js/plugins/sweetalert.min.js"></script>
+<script src="<?php echo $url; ?>vistas/js/plugins/jquery.easing.js"></script>
+<script src="<?php echo $url; ?>vistas/js/plugins/jquery.scrollUp.js"></script>
+<script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></scrip
 
 <script type="text/javascript">
 jQuery(function($) {
