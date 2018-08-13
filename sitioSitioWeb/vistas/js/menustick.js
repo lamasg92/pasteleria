@@ -2,7 +2,7 @@ jQuery(
 function($) {
 	
 	$(document).ready(function(){
-		console.log('hola');
+		//console.log('hola');
 		var contentButton = [];
 		var contentTop = [];
 		var content = [];
