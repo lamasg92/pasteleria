@@ -47,7 +47,6 @@ CONTENIDO DINÁMICO
 $rutas = array();
 $ruta = null;
 $infoProducto = null;
-$categorias = ModeloProductos::mdlNombresCategorias();
 
 if(isset($_GET["ruta"])){
 
@@ -57,17 +56,11 @@ if(isset($_GET["ruta"])){
 	  || $ruta == "catalogo"
 	  || $ruta == 'verificar'
 	  || $ruta == 'enviarCorreo'
+	  || $ruta == "carrito"
 	){
-		if (in_array($ruta,$categorias)){
-			include "modulos/catalogo.php";
-		}else{
-			include "modulos/".$rutas[0].".php";
-		}
-	
+		include "modulos/".$ruta.".php";
 	}else{
-
 		//include "modulos/error404.php";
-
 	}
 
 }else{
@@ -90,6 +83,7 @@ if(isset($_GET["ruta"])){
 </div><!--wrapper end-->
 
 <!--Javascripts-->
+
 <script src="<?php echo $url; ?>vistas/js/jquery.js"></script>
 <script src="<?php echo $url; ?>vistas/js/modernizr.js"></script>
 <script src="<?php echo $url; ?>vistas/js/bootstrap.js"></script>
@@ -107,11 +101,12 @@ if(isset($_GET["ruta"])){
 <script src="<?php echo $url; ?>vistas/js/common.js"></script>
 <script src="<?php echo $url; ?>vistas/js/usuarios.js"></script>
 <script src="<?php echo $url; ?>ajax/usuarios.ajax.php"></script>
+<script src="<?php echo $url; ?>vistas/js/carrito.js"></script>
 <script src="<?php echo $url; ?>vistas/js/registroFacebook.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plugins/sweetalert.min.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plugins/jquery.easing.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plugins/jquery.scrollUp.js"></script>
-<script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></script>
+<script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></scrip
 
 <script type="text/javascript">
 jQuery(function($) {
