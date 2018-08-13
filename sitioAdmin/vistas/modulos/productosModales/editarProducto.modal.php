@@ -135,9 +135,9 @@ MODAL EDITAR PRODUCTO
 
                 </div>
 
-              </div>
+              </div>-->
 
-            </div>-->
+            </div>
 
             <!--=====================================
             EDITAR ESTADO DE PRODUCTO
