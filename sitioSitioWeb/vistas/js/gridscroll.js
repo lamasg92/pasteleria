@@ -11,7 +11,7 @@
 ;( function( window ) {
 	
 	'use strict';
-	console.log('dsseuy');
+	//console.log('dsseuy');
 	var docElem = window.document.documentElement,
 		transEndEventNames = {
 			'WebkitTransition': 'webkitTransitionEnd',
