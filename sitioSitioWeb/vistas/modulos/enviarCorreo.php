@@ -18,7 +18,7 @@ if (!$comment) $errors[count($errors)] = 'Por favor ingrese su mensaje.';
 if (!$errors) {
 
 	//recipient - replace your email here
-	$to = 'yaninadaianamartinez@gmail.com';	
+	$to = 'cintialupemartinez@pastelerialipe.com';	
 	//sender - from the form
 	$from = $name . ' <' . $email . '>';
 	
@@ -33,8 +33,58 @@ if (!$errors) {
 	
 	//if POST was used, display the message straight away
 	if ($_POST) {
-		if ($result) echo 'Gracias! Hemos recibido tu mensaje.';
-		else echo 'Perdon, error inesperado. Por favor, intentelo mas tarde';
+		if ($result) echo '<div style="width:70%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px; margin-left:15%; margin-right:11%;">
+						
+						<center>
+							
+							<img style="padding:20px; width:25%" src="https://pastelerialupe.com/vistas/img/logo2.png">
+
+						</center>
+
+						<div style="position:relative; margin:auto; width:90%; background:white; padding:20px">
+						
+							<center>
+							
+							<img style="padding:20px; width:25%" src="https://pastelerialupe.com/vistas/img/icon-email.png">
+
+							<h3 style="font-weight:100; color:#999;">Gracias! Hemos recibido tu mensaje.</h3>
+
+							<br>
+
+							<hr style="border:1px solid #ccc; width:80%">
+
+							</center>
+
+						</div>
+
+					</div>';
+		else echo '<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
+						
+						<center>
+							
+							<img style="padding:20px; width:10%" src="https://pastelerialupe.com/vistas/img/logo2.png">
+
+						</center>
+
+						<div style="position:relative; margin:auto; width:600px; background:white; padding:20px">
+						
+							<center>
+							
+							<img style="padding:20px; width:15%" src="https://pastelerialupe.com/vistas/img/icon-email.png">
+
+							<h3 style="font-weight:100; color:#999">Perdon, error inesperado. Por favor, intentelo mas tarde</h3>
+
+							<hr style="border:1px solid #ccc; width:80%">
+
+							<br>
+
+							<hr style="border:1px solid #ccc; width:80%">
+
+							</center>
+
+						</div>
+
+					</div>';
 		
 	//else if GET was used, return the boolean value so that 
 	//ajax script can react accordingly
