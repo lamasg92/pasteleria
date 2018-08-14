@@ -51,6 +51,8 @@
 		<div class="row">
 
 		   <?php
+
+		   		if (isset($_GET["url"])){
                    
                    if($_GET["url"]=="catalogo"){
 
@@ -66,7 +68,14 @@
                          
 
                      }
+
+                 }else{
+                 		 $item= null;
+                         $valor=null;
+                         $productos = ControladorProductos::ctrMostrarProductosCategorias($item,$valor);
+                 }
 				     
+				 
                    if($_GET["url"]!="infoproducto"){
 
 		             if (!$productos){
@@ -125,7 +134,7 @@
 				<div class="papers text-center">
 					<div class="row">';
 					
-					    $item =  "id";
+				$item =  "id";
 				$valor = $_GET["id"];
 				$infoproducto = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
@@ -142,11 +151,10 @@
 								<p> '.$infoproducto["descripcion"].'</p>
 								
 			    			 </div>   
-					
-						
-					</div>	
-				</div>
-			</div>';}
+								</div>	
+							</div>
+						</div>';
+		}
 					
 			?>
 					
@@ -156,7 +164,7 @@
 
 	</section>
 	
-<!--</div><!--wrapper end-->
+<!--</div><wrapper end-->
 
 <!--Javascripts-->
 <script src="vistas/js/jquery.js"></script>
