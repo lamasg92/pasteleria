@@ -6,38 +6,43 @@ require_once "../modelos/carrito.modelo.php";
 class AjaxCarrito{
 
 	public $total;
-	public $tituloArray;
 	public $cantidadArray;
 	public $valorItemArray;
 	public $idProductoArray;
 	public $fechaArray;
+	public $id_usuario;
 
 	public function ajaxCargarCompra(){
 
-		if(md5($this->total) == $this->totalEncriptado){
+		$datos = array(
+				"id_usuario"=>$this->id_usuario,
+				"total"=>$this->total,
+				"cantidadArray"=>$this->cantidadArray,
+				"valorItemArray"=>$this->valorItemArray,
+				"idProductoArray"=>$this->idProductoArray,
+				"fechaArray"=>$this->fechaArray,
+			);
 
-				$datos = array(
-						"total"=>$this->total,
-						"tituloArray"=>$this->tituloArray,
-						"cantidadArray"=>$this->cantidadArray,
-						"valorItemArray"=>$this->valorItemArray,
-						"idProductoArray"=>$this->idProductoArray,
-						"fechaArray"=>$this->cantidadArray,
-					);
+		$respuesta = ControladorCarrito::ctrNuevasCompras($datos);
 
-				$respuesta = ControladorCarrito::ctrNuevasCompras($datos);
+		echo $respuesta;
 
-				echo $respuesta;
 
-		}
 	}
 
 }
 
-if(isset($_POST["metodoPago"]){
+if(isset($_POST["fechaArray"])){
 
-	$payu = new AjaxCarrito();
-	$payu -> ajaxCargarCompra();
+	$reserva = new AjaxCarrito();
 
+	$reserva-> total=$_POST["total"];
+	$reserva-> cantidadArray=$_POST["cantidadArray"];
+	$reserva-> valorItemArray=$_POST["valorItemArray"];
+	$reserva-> idProductoArray=$_POST["idProductoArray"];
+	$reserva-> fechaArray=$_POST["fechaArray"];
+	$reserva-> id_usuario=$_POST["id_usuario"];
+
+	$reserva -> ajaxCargarCompra();
 
 }

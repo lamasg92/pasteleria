@@ -48,8 +48,6 @@ if(isset($_SESSION["validarSesion"])){
 
 							<p>TU CESTA <span class="cantidadCesta"></span> <br> $ <span class="sumaCesta"></span></p>	
 							</div>
-						</ul>
-						<ul>
 						<?php
 						$enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 							if(isset($_SESSION["validarSesion"])){
@@ -58,7 +56,7 @@ if(isset($_SESSION["validarSesion"])){
 									if($_SESSION["modo"] == "directo"){
 										if($_SESSION["foto"] != ""){
 											echo '<li>
-												<img class="img-circle" src="'.$enlace_actual.$_SESSION["foto"].'" width="4%">
+												<img class="img-circle" src="'.$url.$_SESSION["foto"].'" width="4%">
 												</li>';
 										}else{
 											echo '<li>

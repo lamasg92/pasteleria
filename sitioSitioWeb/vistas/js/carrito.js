@@ -562,6 +562,8 @@ $(".btnPagar").click(function(){
 	var fecha = $(".fechaEntregaItem");
 	var valorItem = $(".valorItem");
 	var idProducto = $('.cuerpoCarrito button, .comprarAhora button');
+	var ruta=document.getElementById("rutaOculta").value;
+	var id_usuario=document.getElementById("id_usuario").value;
 
 	var tituloArray = [];
 	var cantidadArray = [];
@@ -575,7 +577,7 @@ $(".btnPagar").click(function(){
 		cantidadArray[i] = $(cantidad[i]).html();
 		valorItemArray[i] = $(valorItem[i]).html();
 		idProductoArray[i] = $(idProducto[i]).attr("idProducto");
-		fechaArray[i] = $(fecha[i]).html();
+		fechaArray[i] = $(fecha[i]).val();
 
 	}
 
@@ -587,20 +589,56 @@ $(".btnPagar").click(function(){
 	datos.append("valorItemArray",valorItemArray);
 	datos.append("idProductoArray",idProductoArray);
 	datos.append("fechaArray",fechaArray);
+	datos.append("id_usuario",id_usuario);	
 
 	$.ajax({
-		 url:rutaOculta+"ajax/carrito.ajax.php",
+		 url:ruta+"ajax/carrito.ajax.php",
 		 method:"POST",
 		 data: datos,
 		 cache: false,
          contentType: false,
          processData: false,
          success:function(respuesta){
-         	
-               window.location = respuesta;
+
+             console.log(respuesta);
+             if(respuesta == "ok"){
+
+							swal({
+								  type: "success",
+								  title: "Su pedido ha sido registrado exitosamente",
+								  showConfirmButton: true,
+								  confirmButtonText: "Cerrar"
+								  }).then(function(result){
+									if (result.value) {
+
+									window.location = "carrito";
+
+									}
+								})
+
+
+					}else{
+
+							swal({
+								  type: "error",
+								  title: "Hemos tenido problemas",
+								  showConfirmButton: true,
+								  confirmButtonText: "Cerrar"
+								  
+								})
+
+
+
+					}
 
          }
 
 	})
+
+	localStorage.removeItem("listaProductos");
+
+	localStorage.setItem("cantidadCesta","0");
+	
+	localStorage.setItem("sumaCesta","0");
 
 })

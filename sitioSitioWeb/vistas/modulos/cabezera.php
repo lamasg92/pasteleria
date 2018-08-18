@@ -11,7 +11,7 @@
 				<div class="container text-center" style="height:580px;padding-top:5%;">
 					<a href="#"><img id="site-title" class=" wow fadeInDown" wow-data-delay="0.0s" wow-data-duration="0.9s" src="vistas/img/logo2.png" alt="logo"/></a>
 					<h2 class="intro wow zoomIn" wow-data-delay="0.4s" wow-data-duration="0.9s">Bienvenidos</h2>
-					<a href="./index.php?ruta=catalogo&url=catalogo"  style="text-decoration:none">
+					<a href="./catalogo"  style="text-decoration:none">
 						<div style="line-height:60px; background:#68e00e; width:50%; color:white:; margin-left: 25%;"><b>VER CATALOGO</b></div>     
                     </a>
 

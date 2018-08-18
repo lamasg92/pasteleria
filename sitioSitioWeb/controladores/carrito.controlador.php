@@ -8,74 +8,47 @@ class ControladorCarrito{
 
 	static public function ctrNuevasCompras($datos){
 
-		$tituloArray=$datos["tituloArray"];
-		$cantidadArray=$datos["cantidadArray"];
-		$cantidadArray=$datos["fechaArray"];
-		$valorItemArray=$datos["valorItemArray"];
-		$idProductoArray=$datos["idProductoArray"];
+		$datosCabezera= array(
+			"id_usuario"=>intval($datos["id_usuario"]),
+			"fecha_pedido"=>date("Y-m-d"),
+			"total"=>$datos["total"],
+			"estado"=>"pendiente"
+		);
 
-		for($i = 0; $i < count($tituloArray); $i ++){
+		//var_dump($datosCabezera);
 
-			$datosDetalle= array(
-						"tituloArray"=>$tituloArray[$i],
-						"cantidadArray"=>$cantidadArray[$i],
-						"valorItemArray"=>$valorItemArray[$i],
-						"idProductoArray"=>$idProductoArray[$i],
-						"fechaArray"=>$fechaArray[$i],
-					);
+		$tabla = "carrito";
 
-			$tabla = "compras";
+		$respuestaVec = ModeloCarrito::mdlNuevasCompras($tabla, $datosCabezera);
 
-			$respuesta = ModeloCarrito::mdlDetalleCompra($tabla, $datosDetalle);
+		if($respuestaVec["resp"] == "ok"){
 
-		}
+			$cantidadArray=explode(",",$datos["cantidadArray"]);
+			$fechaArray=explode(",",$datos["fechaArray"]);
+			$valorItemArray=explode(",",$datos["valorItemArray"]);
+			$idProductoArray=explode(",",$datos["idProductoArray"]);
 
-		if($respuesta == "ok"){
-			$datosCabezera= array(
-				"total"=>$datos["total"],
-			);
+			for($i = 0; $i < count($cantidadArray); $i ++){
 
-			$tabla = "compras";
+				$datosDetalle= array(
+							"id_carrito"=>$respuestaVec["id"],
+							"id_producto"=>$idProductoArray[$i],
+							"cantidad"=>$cantidadArray[$i],
+							"subtotal"=>$valorItemArray[$i],
+							"fecha_reserva"=>$fechaArray[$i],
+							"estado_reserva"=>"pendiente"
+						);		
 
-			$respuesta = ModeloCarrito::mdlNuevasCompras($tabla, $datosCabezera);
-		}
+				//var_dump($datosDetalle);
+				$tabla = "detalle_carrito";
 
-		if($respuesta == "ok"){
-
-					echo'<script>
-
-					swal({
-						  type: "success",
-						  title: "Su pedido ha sido registrado exitosamente",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-							if (result.value) {
-
-							window.location = "carrito";
-
-							}
-						})
-
-					</script>';
-
-			}else{
-              
-              echo'<script>
-
-					swal({
-						  type: "error",
-						  title: "Hemos tenido problemas",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  
-						})
-
-					</script>';
+				$respuesta = ModeloCarrito::mdlDetalleCompra($tabla, $datosDetalle);
 
 			}
 
-		return $respuesta;
+				return $respuesta;
+
+		}
 
 	}
 

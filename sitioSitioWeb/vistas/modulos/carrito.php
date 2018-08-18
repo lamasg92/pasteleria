@@ -165,7 +165,7 @@ VENTANA MODAL PARA CHECKOUT
 	 	
 		<div class="modal-body modalTitulo">
 			
-			<h3 class="backColor">REALIZAR PAGO</h3>
+			<h3 class="backColor">REALIZAR PEDIDO</h3>
 
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
 

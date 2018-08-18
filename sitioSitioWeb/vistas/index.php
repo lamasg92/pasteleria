@@ -14,6 +14,7 @@
 <?php
 		session_start();
 		$url = Ruta::ctrRuta();
+		$admin = Ruta::ctrRutaServidor();
 ?>
 
 <meta name="description" content="Pasteleria">
@@ -84,8 +85,9 @@ if(isset($_GET["ruta"])){
 </div><!--wrapper end-->
 
 <!--Javascripts-->
-<input type="hidden" value="<?php echo Ruta::ctrRutaServidor(); ?>" id="urlOculta">
-<input type="hidden" value="<?php echo $url.'index.php?ruta='; ?>" id="rutaOculta">
+<input type="hidden" value="<?php echo $_SESSION['id'] ?>" id="id_usuario">
+<input type="hidden" value="<?php echo $admin; ?>" id="urlOculta">
+<input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
 
 <script src="<?php echo $url; ?>vistas/js/jquery.js"></script>
 <script src="<?php echo $url; ?>vistas/js/modernizr.js"></script>
