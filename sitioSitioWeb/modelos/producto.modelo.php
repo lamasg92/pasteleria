@@ -91,4 +91,5 @@ class ModeloProductos{
 		$stmt = null;
 
 	}
+
 }

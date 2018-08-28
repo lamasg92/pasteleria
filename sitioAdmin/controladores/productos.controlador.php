@@ -35,7 +35,7 @@ class ControladorProductos{
    	 		     "idCategoria"=>$_POST["seleccionarCategoria"],
    	 		     "descripcion"=>$_POST["descripcionProducto"],
    	 		     "precio"=>$_POST["precio"],
-   	 		     "stock"=>$_POST["stock"],
+   	 		    // "stock"=>$_POST["stock"],
    	 		     "imagen"=>$rutaFoto,
    	 		     "fecha"=>date('Y-m-d'),
    	 		     "estado"=>"activo"
@@ -122,7 +122,7 @@ class ControladorProductos{
    	 		     "idCategoria"=>$_POST["seleccionarCategoria"],
    	 		     "descripcion"=>$_POST["descripcionProducto"],
    	 		     "precio"=>$_POST["precio"],
-   	 		     "stock"=>$_POST["stock"],
+   	 		    // "stock"=>$_POST["stock"],
    	 		     "imagen"=>$rutaFoto,
    	 		     "estado"=>$_POST["estadoProducto"]
 

@@ -11,8 +11,9 @@
 					<div class="row">
 					 <?php
         				$info = ControladorSitio::ctrMostrarSobreNosotros();
+
         				echo '<div class="col-md-5">
-								<img src="'.$info["img"].'" alt="100%" width="100%"><br/>
+								<img src="'.$admin.$info["img"].'" alt="100%" width="100%"><br/>
 							</div>';
 
 

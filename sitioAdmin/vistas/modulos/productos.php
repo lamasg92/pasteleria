@@ -40,7 +40,6 @@
               <th>Producto</th>
               <th>Descripción</th>
               <th>Precio</th>
-              <th>Stock</th>
               <th>Imagen</th>
               <th>Estado</th>
               <th>Creado</th>

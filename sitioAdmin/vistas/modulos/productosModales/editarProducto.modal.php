@@ -123,7 +123,7 @@ MODAL EDITAR PRODUCTO
 
               <!-- STOCK -->
 
-              <div class="col-md-6 col-xs-12">
+             <!-- <div class="col-md-6 col-xs-12">
   
                 <div class="panel">STOCK</div>
               
@@ -135,7 +135,7 @@ MODAL EDITAR PRODUCTO
 
                 </div>
 
-              </div>
+              </div>-->
 
             </div>
 

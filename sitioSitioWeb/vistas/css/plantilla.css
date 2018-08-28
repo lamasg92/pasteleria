@@ -38,6 +38,11 @@
     border-radius: 0 0 10px 10px !important;
 }
 
+.fondoBreadcrumb{
+  margin-bottom:0px;
+  background: rgba(0,0,0,0);
+}
+
 .grid-gallery figcaption p {
     margin: 0;
     font-size: 15px !important;
