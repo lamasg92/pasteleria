@@ -47,7 +47,7 @@ if(localStorage.getItem("listaProductos") != null){
 					
 					'<figure>'+
 						
-						'<img src="'+document.getElementById("urlOculta").value+item.imagen+'" class="img-thumbnail">'+
+						'<img src="'+item.imagen+'" class="img-thumbnail">'+
 
 					'</figure>'+
 
@@ -194,7 +194,7 @@ $(".agregarCarrito").click(function(){
 		}
 
 		listaCarrito.push({"idProducto":idProducto,
-						   "imagen":imagen,
+						   "imagen":document.getElementById("urlOculta").value+imagen,
 						   "nombre":nombre,
 						   "precio":precio,
 				           "cantidad":"1",

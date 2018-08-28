@@ -105,7 +105,54 @@
 							</div>
 						</div>';
 					}else{
-							//pegar todo el else una ves solucionado los estilos
+												//desde aqui
+				     if (!$productos){
+
+		                           echo '<div class="col-xs-12 error404 text-center">
+
+								           <h1><small>¡Oops!</small></h1>
+
+								           <h2>Aún no hay productos</h2>
+
+							             </div>';
+		                        }else{		
+
+		                        	echo '<ul class="productos">';
+                                
+                                  foreach ($productos as $key => $value) {
+
+					                 if($value["estado"] != "inactivo"){
+											
+									    echo '
+                              <li class="color">
+
+                                <article>
+                                 
+                               	<a href="./index.php?ruta=catalogo&url=infoproducto'.'&id='.$value["id"].'">
+                                      <span class="thumb-wrap">
+			                              <span class="thumb" style="background-image:url(../sitioAdmin/'.$value["imagen"].');">
+                                     		</span>
+                                      </span>
+                                 </a>
+                                 
+									<span class="txt">
+									  <div class="row">
+									   
+									   <h5>'.$value["nombre"].' - $'.$value["precio"].'</h5>
+									   <button class="agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$value["imagen"].'" precio="'.$value["precio"].'" nombre="'.$value["nombre"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button>
+									  
+									  </div>
+										
+									</span>
+								
+                                </article>
+                              </li>';
+            
+
+							}
+						}
+						echo '</ul>';
+					}//hasta aqui
             		}
 					
 			}else{
