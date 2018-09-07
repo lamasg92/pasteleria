@@ -30,9 +30,9 @@
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/theme.css">
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
 
 </head>
 <body style="background-image: url(<?php echo $url; ?>vistas/img/f5.jpg); background-repeat:repeat; background-size: 100% auto" >

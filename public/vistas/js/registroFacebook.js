@@ -81,7 +81,7 @@ function testApi(){
 
 			var email = response.email;
 			var nombre = response.name;
-			var foto = "http://graph.facebook.com/"+response.id+"/picture?type=large";
+			var foto = "https://graph.facebook.com/"+response.id+"/picture?type=large";
 
 			var datos = new FormData();
 			datos.append("email", email);

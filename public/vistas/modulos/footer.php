@@ -10,7 +10,7 @@
 								{
 									if (strcmp($redSocial['estado'], 'activo') === 0)
 									{
-										echo'<a href="'.$redSocial['cuenta'].'"> <img  src="vistas/img/'.$redSocial['nombre'].'.png" alt="30px" width="30px"></a>';	
+										echo'<a href="'.$redSocial['cuenta'].'"> <img  src="'.$url.'vistas/img/'.$redSocial['nombre'].'.png" alt="30px" width="30px"></a>';	
 									}	
 								}
 							?>

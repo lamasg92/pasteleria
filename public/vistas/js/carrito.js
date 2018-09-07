@@ -551,7 +551,7 @@ $("#btnCheckout").click(function(){
 
 
 /*=============================================
-BOTÓN RECERVAR
+BOTÓN RESERVAR
 =============================================*/
 
 $(".btnPagar").click(function(){
@@ -600,12 +600,14 @@ $(".btnPagar").click(function(){
          processData: false,
          success:function(respuesta){
 
+             console.log(respuesta);
              if(respuesta == "ok"){
 
 							swal({
 								  type: "success",
 								  title: "Su pedido ha sido registrado exitosamente",
 								  showConfirmButton: true,
+								   confirmButtonColor: "#DD6B55",
 								  confirmButtonText: "Cerrar"
 								  }).then(function(result){
 									if (result.value) {

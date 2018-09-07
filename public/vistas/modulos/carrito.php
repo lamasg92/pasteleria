@@ -135,7 +135,7 @@ TABLA CARRITO DE COMPRAS
 
 					if($_SESSION["validarSesion"] == "ok"){
 
-						echo '<a id="btnCheckout" href="#modalCheckout" data-toggle="modal" idUsuario="'.$_SESSION["id"].'"><button class="btn btn-default backColor btn-lg pull-right">REALIZAR PAGO</button></a>';
+						echo '<a id="btnCheckout" href="#modalCheckout" data-toggle="modal" idUsuario="'.$_SESSION["id"].'"><button class="btn btn-default backColor btn-lg pull-right">REALIZAR RESERVA</button></a>';
 
 					}
 
@@ -183,6 +183,7 @@ VENTANA MODAL PARA CHECKOUT
 								<th>Producto</th>
 								<th>Cantidad</th>
 								<th>Precio</th>
+								<th>Fecha</th>
 							</tr>
 
 						 </thead>

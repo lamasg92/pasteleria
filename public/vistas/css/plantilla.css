@@ -181,11 +181,12 @@ article a .txt .bordless, article a:active .txt .bordless, article a:focus .txt 
 
 ul.productos li.color article a:hover .txt {
  border:1px solid #e86b8d;
- background-color:#e86b8d
+ background-color:#e86b8d;
 }
 ul.productos li.color article a:hover span.thumb-wrap .thumb {
  border:1px dashed black;
  border-bottom:none;
+ background-color: #e86b8d;
 }
 
 article a:hover .txt h3,article a:hover .txt p {

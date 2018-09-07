@@ -92,9 +92,9 @@ class ControladorSitio{
 
 					$mail->isMail();
 
-					$mail->setFrom('yaninadaianamartinez@gmail.com', 'PATELERIA DOÑA LUPE');
+					$mail->setFrom('cintialupemartinez@pastelerialupe.com', 'PATELERIA DOÑA LUPE');
 
-					$mail->addReplyTo('yaninadaianamartinez@gmail.com', 'PATELERIA DOÑA LUPE');
+					$mail->addReplyTo('cintialupemartinez@pastelerialupe.com', 'PATELERIA DOÑA LUPE');
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
@@ -261,7 +261,7 @@ class ControladorSitio{
 
 						swal({
 							  title: "¡ERROR!",
-							  text: "¡El correo electrónico '.$datos["email"].', ya está registrado en el sistema con un método diferente a Google!",
+							  text: "¡El correo electrónico '.$datos["email"].', ya está registrado en el sistema.",
 							  type:"error",
 							  confirmButtonText: "Cerrar",
 							  closeOnConfirm: false

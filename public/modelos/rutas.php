@@ -7,7 +7,9 @@ class Ruta{
 	=============================================*/	
 
 	public function ctrRutaServidor(){
-		return "http://localhost:8080/pasteleria/sitioAdmin/";
+		//return "https://www.pastelerialupe.com/sitioAdmin/";
+		//return "http://localhost:8080/pasteleria/public/sitioadmin/"
+		//return "http://localhost/pasteleria/public/sitioadmin/"
 	}
 
 	/*=============================================
@@ -15,9 +17,9 @@ class Ruta{
 	=============================================*/	
 
 	public function ctrRuta(){
-
-		return "http://localhost:8080/pasteleria/sitioSitioWeb/";
-	
+		//return "https://www.pastelerialupe.com/";
+		//return "http://localhost:8080/pasteleria/public/"
+		//return "http://localhost/pasteleria/public/"
 	}
 
 }

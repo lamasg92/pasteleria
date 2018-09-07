@@ -49,7 +49,7 @@ if(isset($_SESSION["validarSesion"])){
 							<p>TU CESTA <span class="cantidadCesta"></span> <br> $ <span class="sumaCesta"></span></p>	
 							</div>
 						<?php
-						$enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+						$enlace_actual = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 							if(isset($_SESSION["validarSesion"])){
 								if($_SESSION["validarSesion"] == "ok"){
 									/*MODO DIRECTO*/
