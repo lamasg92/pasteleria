@@ -600,7 +600,6 @@ $(".btnPagar").click(function(){
          processData: false,
          success:function(respuesta){
 
-             console.log(respuesta);
              if(respuesta == "ok"){
 
 							swal({
