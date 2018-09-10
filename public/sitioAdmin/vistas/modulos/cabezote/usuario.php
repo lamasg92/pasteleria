@@ -15,7 +15,7 @@ USUARIOS
 
             $usuario = ControladorAdministradores::ctrMostrarAdministradores($item,$valor);
 	
-		echo '<img src="'.$usuario["foto"].'" class="user-image" alt="User Image">'?>
+		echo '<img src="'.$admin.$usuario["foto"].'" class="user-image" alt="User Image">'?>
 		
 		<span class="hidden-xs"><?php echo $usuario["nombre"]; ?></span>
 	    

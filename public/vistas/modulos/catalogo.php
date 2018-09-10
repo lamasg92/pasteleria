@@ -16,7 +16,7 @@
 
 		 <?php
             $item = null;
-                $valor = null;
+            $valor = null;
             $categorias = ControladorProductos::ctrMostrarCategorias($item,$valor);
             
             if (!$categorias){
@@ -35,7 +35,7 @@
 					 
 					 echo '<div class="prueba">
 						<a href="./index.php?ruta=catalogo&url='.$value["ruta_categoria"].'&id='.$value["id_categoria"].'">
-							<div class="categorias"><img src="../sitioAdmin/'.$value["imagen_categoria"].'"></div>
+							<div class="categorias"><img src="'.$admin.$value["imagen_categoria"].'"></div>
 							<span class="txt text-center">
 							  <h5>'.$value["nombre_categoria"].'</h5>
 					       </span>
@@ -89,7 +89,7 @@
 
 	        				
 	        				echo '<div class="col-md-7">
-									<img src="../sitioAdmin/'.$infoproducto["imagen"].'" width="100%"><br/>
+									<img src="'.$admin.$infoproducto["imagen"].'" width="100%"><br/>
 								</div>';
 
 
@@ -130,7 +130,7 @@
                                  
                                	<a href="./index.php?ruta=catalogo&url=infoproducto'.'&id='.$value["id"].'">
                                       <span class="thumb-wrap">
-			                              <span class="thumb" style="background-image:url(../sitioAdmin/'.$value["imagen"].');">
+			                              <span class="thumb" style="background-image:url('.$admin.$value["imagen"].');">
                                      		</span>
                                       </span>
                                  </a>
@@ -181,7 +181,7 @@
                                  
                                	<a href="./index.php?ruta=catalogo&url=infoproducto'.'&id='.$value["id"].'">
                                       <span class="thumb-wrap">
-			                              <span class="thumb" style="background-image:url(../sitioAdmin/'.$value["imagen"].');">
+			                              <span class="thumb" style="background-image:url('.$admin.$value["imagen"].');">
                                      		</span>
                                       </span>
                                  </a>
