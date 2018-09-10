@@ -166,6 +166,7 @@ session_start();
            $_GET["ruta"]== "paginaPrincipal" ||
            $_GET["ruta"]== "categorias" ||
            $_GET["ruta"]== "productos" ||
+           $_GET["ruta"]== "stock" ||
            $_GET["ruta"]== "contactos" ||
            $_GET["ruta"]== "usuarios" ||
            $_GET["ruta"]== "perfil" ||
@@ -197,6 +198,6 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorCategorias.js"></script>
 <script src="vistas/js/gestorProductos.js"></script>
 <script src="vistas/js/gestorAdministradores.js"></script>
-
+<script src="vistas/js/gestorStock.js"></script>
 </body>
 </html>

@@ -1,10 +1,5 @@
 <?php
-
-class Ruta{
-
-	/*=============================================
-	RUTA INGRESO ADMIN
-	=============================================*/	
+class ruta{
 
 	public function ctrRutaServidor(){
 		//return "https://www.pastelerialupe.com/sitioAdmin/";
@@ -20,6 +15,10 @@ class Ruta{
 		//return "https://www.pastelerialupe.com/";
 		return "http://localhost:8080/pasteleria/public/";
 		//return "http://localhost/pasteleria/public/";
-	}
+	}	
+
 
 }
+
+
+?>
