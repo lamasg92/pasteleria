@@ -37,6 +37,16 @@ if(isset($_SESSION["validarSesion"])){
 								</button>
 							</a>	
 							</div>
+
+							<div class="col-lg-1 col-md-2 col-sm-2 col-xs-8" id="carrito">
+				
+							<a href="<?php echo $url;?>compras">
+								<button class="btn btn-default pull-left backColor"> 
+									<i class="fa fa-list" aria-hidden="true"></i>
+								</button>
+							</a>	
+							</div>
+							
 						
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8" id="carrito">
 				
@@ -47,26 +57,25 @@ if(isset($_SESSION["validarSesion"])){
 							</a>	
 
 							<p>TU CESTA <span class="cantidadCesta"></span> <br> $ <span class="sumaCesta"></span></p>	
-							</div>
+							</div>			
+
+
+
 						<?php
 						$enlace_actual = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 							if(isset($_SESSION["validarSesion"])){
 								if($_SESSION["validarSesion"] == "ok"){
 									/*MODO DIRECTO*/
-									if($_SESSION["modo"] == "directo"){
-										if($_SESSION["foto"] != ""){
-											echo '<li>
-												<img class="img-circle" src="'.$url.$_SESSION["foto"].'" width="4%">
-												</li>';
-										}else{
-											echo '<li>
-													<img class="img-circle" src="'.$enlace_actual.'vistas/img/usuarios/default/anonymous.png" width="5%">
-												</li>';
-										}
-										echo '<li>|</li>
-										  <li><a href="/perfil">Ver Perfil</a></li>
-										  <li>|</li>
-										  <li><a href="./salir">Salir</a></li>';
+									echo '<div class="navbar-custom-menu"> 
+
+		    							<ul class="nav navbar-nav">';
+
+											include "cabezote/usuario.php";
+	
+										 echo '</ul>
+
+										  </div>';
+									
 									}
 									/*MODO FACEBOOK*/
 									if($_SESSION["modo"] == "facebook"){
@@ -83,8 +92,6 @@ if(isset($_SESSION["validarSesion"])){
 									}
 
 
-							}
-
 				}else{
 					echo'<li><a href="#" data-target="#modalIngreso" data-toggle="modal">Ingresar</a></li>
 						<li>|</li>
@@ -93,6 +100,7 @@ if(isset($_SESSION["validarSesion"])){
 				}
 
 				?>
+
 							
 						</ul>
 					</div>	
@@ -117,7 +125,7 @@ VENTANA MODAL PARA EL REGISTRO
 			REGISTRO FACEBOOK
 			======================================-->
 
-			<div class="col-sm-6 col-xs-12 facebook">
+			<div  class="col-sm-12 facebook">
 				
 				<p>
 				  <i class="fa fa-facebook"></i>
@@ -126,23 +134,9 @@ VENTANA MODAL PARA EL REGISTRO
 
 			</div>
 
-			<!--=====================================
-			REGISTRO GOOGLE
-			======================================-->
-			<a href="">
-
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Registro con Google
-					</p>
-
-				</div>
-			</a>
-
+			
         </div>
-
+<hr>
         <!--=====================================
 			REGISTRO DIRECTO
 		======================================-->
@@ -278,7 +272,7 @@ VENTANA MODAL PARA EL INGRESO
 			INGRESO FACEBOOK
 			======================================-->
 
-			<div class="col-sm-6 col-xs-12 facebook">
+			<div class="col-sm- facebook">
 				
 				<p>
 				  <i class="fa fa-facebook"></i>
@@ -287,21 +281,7 @@ VENTANA MODAL PARA EL INGRESO
 
 			</div>
 
-			<!--=====================================
-			INGRESO GOOGLE
-			======================================-->
-			<a href="<?php echo $rutaGoogle; ?>">
-			
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Ingreso con Google
-					</p>
-
-				</div>
-
-			</a>
+			<hr>
 
 			<!--=====================================
 			INGRESO DIRECTO

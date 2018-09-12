@@ -1,25 +1,14 @@
 <?php
-
-class Ruta{
-
-	/*=============================================
-	RUTA INGRESO ADMIN
-	=============================================*/	
+class ruta{
 
 	public function ctrRutaServidor(){
-		//return "https://www.pastelerialupe.com/sitioAdmin/";
-		//return "http://localhost:8080/pasteleria/public/sitioadmin/"
-		//return "http://localhost/pasteleria/public/sitioadmin/"
-	}
-
-	/*=============================================
-	RUTA LADO DEL CLIENTE
-	=============================================*/	
+		return "http://localhost:8080/pasteleria/sitioAdmin/"
+	}	
 
 	public function ctrRuta(){
-		//return "https://www.pastelerialupe.com/";
-		//return "http://localhost:8080/pasteleria/public/"
-		//return "http://localhost/pasteleria/public/"
+		return "http://localhost:8080/pasteleria/"
 	}
-
 }
+
+
+?>

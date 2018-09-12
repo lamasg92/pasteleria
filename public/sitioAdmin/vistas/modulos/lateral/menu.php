@@ -26,6 +26,11 @@ MENU
   </li>
 
   <li><a href="index.php?ruta=categorias"><i class="fa fa-list-ul"></i> <span>Gestor Categorías</span></a></li>
+
   <li><a href="index.php?ruta=productos"><i class="fa fa-list-ul"></i> <span>Gestor Productos</span></a></li>
+<li><a href="index.php?ruta=stock"><i class="fa fa-list-ul"></i> <span>Gestor Stock</span></a></li>
+
+
+
 
 </ul>	
