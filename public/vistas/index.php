@@ -23,6 +23,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="shortcut icon" href="<?php echo $url; ?>vistas/img/logoIco.ico" />
+
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $url; ?>vistas/css/bootstrap.css">
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/font-awesome.css">
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/animate.css">
@@ -30,6 +31,9 @@
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/theme.css">
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
+<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/nav.css">
+
+
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
@@ -59,6 +63,7 @@ if(isset($_GET["ruta"])){
 	  || $ruta == 'verificar'
 	  || $ruta == 'enviarCorreo'
 	  || $ruta == "carrito"
+	  || $ruta == "compras"
 	){
 		include "modulos/".$ruta.".php";
 	}else{
