@@ -58,7 +58,7 @@ MODAL AGREGAR PRODUCTO
               
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <select class="form-control input-lg seleccionarCategoria" name="seleccionarCategoria" required>
+                <select class="form-control input-lg seleccionarCategoria" name="seleccionarCategoria" id="seleccionarCategoria" required>
                   
                   <option value="">Selecionar categoría</option>
 

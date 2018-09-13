@@ -71,6 +71,9 @@ session_start();
   <!--=====================================
   PLUGINS DE JAVASCRIPT
   ======================================-->
+    <!-- fullCalendar -->
+  <link rel="stylesheet" href="vistas/bower_components/fullcalendar/dist/fullcalendar.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
 
   <!-- jQuery 3 -->
   <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
@@ -170,6 +173,7 @@ session_start();
            $_GET["ruta"]== "contactos" ||
            $_GET["ruta"]== "usuarios" ||
            $_GET["ruta"]== "perfil" ||
+           $_GET["ruta"]== "calendario" ||
            $_GET["ruta"]== "salir"){
           include "modulos/".$_GET["ruta"].".php";
         }
@@ -199,5 +203,10 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorProductos.js"></script>
 <script src="vistas/js/gestorAdministradores.js"></script>
 <script src="vistas/js/gestorStock.js"></script>
+
+<!-- fullCalendar -->
+<script src="vistas/bower_components/moment/moment.js"></script>
+<script src="vistas/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+
 </body>
 </html>
