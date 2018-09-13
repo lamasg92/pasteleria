@@ -151,7 +151,7 @@ MODAL AGREGAR PRODUCTO
        
         <div class="modal-footer">
           
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" name="agregar" data-dismiss="modal">Salir</button>
 
           <button type="submit" class="btn btn-primary">Guardar</button>
 

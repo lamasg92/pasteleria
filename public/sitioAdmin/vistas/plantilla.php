@@ -140,6 +140,10 @@ session_start();
 
 
 </head>
+<?php
+    $url = Ruta::ctrRuta();
+    $admin = Ruta::ctrRutaServidor();
+?>
 
 <body class="hold-transition skin-blue sidebar-mini login-page">
 
@@ -162,7 +166,7 @@ session_start();
            $_GET["ruta"]== "paginaPrincipal" ||
            $_GET["ruta"]== "categorias" ||
            $_GET["ruta"]== "productos" ||
-            $_GET["ruta"]== "stock" ||
+           $_GET["ruta"]== "stock" ||
            $_GET["ruta"]== "contactos" ||
            $_GET["ruta"]== "usuarios" ||
            $_GET["ruta"]== "perfil" ||
@@ -181,6 +185,10 @@ session_start();
  }
  
 ?>
+
+<input type="hidden" value="<?php echo $_SESSION['id'] ?>" id="id_usuario">
+<input type="hidden" value="<?php echo $admin; ?>" id="urlOculta">
+<input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
 
 <!--=====================================
 JS PERSONALIZADO

@@ -26,7 +26,7 @@
 
               $usuario = ControladorAdministradores::ctrMostrarAdministradores($item,$valor);
 
-             echo '<img class="profile-user-img img-responsive img-circle" src="'.$usuario["foto"].'" alt="User profile picture">'
+             echo '<img class="profile-user-img img-responsive img-circle" src="'.$admin.$usuario["foto"].'" alt="User profile picture">'
               ?>
               <h3 class="profile-username text-center"><?php echo $usuario["nombre"]; ?></h3>
 

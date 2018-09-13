@@ -9,7 +9,7 @@ require_once "controladores/contacto.controlador.php";
 require_once "controladores/redesSociales.controlador.php";
 require_once "controladores/stock.controlador.php";
 
-
+require_once "modelos/rutas.php";
 require_once "modelos/administradores.modelo.php";
 require_once "modelos/adminInicio.modelo.php";
 require_once "modelos/categoria.modelo.php";

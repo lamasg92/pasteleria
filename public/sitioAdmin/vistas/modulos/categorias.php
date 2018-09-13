@@ -22,7 +22,7 @@
            
        <div class="box-header with-border text-left">
          
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
+            <button class="btn btn-primary" name="agregarCategoria" data-toggle="modal" data-target="#modalAgregarCategoria">
 
             Agregar categoría
 
