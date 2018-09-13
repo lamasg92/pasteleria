@@ -18,17 +18,17 @@ MENU
 
       <ul class="treeview-menu">
         
-        <li><a href="index.php?ruta=paginaPrincipal"><i class="fa fa-circle-o"></i> Pagina Principal</a></li>
-        <li><a href="index.php?ruta=contactos"><i class="fa fa-circle-o"></i> Contactos</a></li>
+        <li><a href="paginaPrincipal"><i class="fa fa-circle-o"></i> Pagina Principal</a></li>
+        <li><a href="contactos"><i class="fa fa-circle-o"></i> Contactos</a></li>
       
       </ul>
 
   </li>
 
-  <li><a href="index.php?ruta=categorias"><i class="fa fa-list-ul"></i> <span>Gestor Categorías</span></a></li>
-
-  <li><a href="index.php?ruta=productos"><i class="fa fa-list-ul"></i> <span>Gestor Productos</span></a></li>
-<li><a href="index.php?ruta=stock"><i class="fa fa-list-ul"></i> <span>Gestor Stock</span></a></li>
+  <li><a href="categorias"><i class="fa fa-list-ul"></i> <span>Gestor Categorías</span></a></li>
+  <li><a href="productos"><i class="fa fa-list-ul"></i> <span>Gestor Productos</span></a></li>
+  <li><a href="stock"><i class="fa fa-list-ul"></i> <span>Gestor Stock</span></a></li>
+  <li><a href="calendario"><i class="fa fa-list-ul"></i> <span>Calendario</span></a></li>
 
 
 
