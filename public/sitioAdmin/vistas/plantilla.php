@@ -174,6 +174,8 @@ session_start();
            $_GET["ruta"]== "usuarios" ||
            $_GET["ruta"]== "perfil" ||
            $_GET["ruta"]== "calendario" ||
+              $_GET["ruta"]== "ventas" ||
+           
            $_GET["ruta"]== "salir"){
           include "modulos/".$_GET["ruta"].".php";
         }
@@ -203,6 +205,7 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorProductos.js"></script>
 <script src="vistas/js/gestorAdministradores.js"></script>
 <script src="vistas/js/gestorStock.js"></script>
+<script src="vistas/js/gestorVentas.js"></script>
 
 <!-- fullCalendar -->
 <script src="vistas/bower_components/moment/moment.js"></script>

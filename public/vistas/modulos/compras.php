@@ -1,11 +1,18 @@
-<section class="compras" id="compras">
+ <div class="content-wrapper">
+    
+  <section class="content-header">
+
+<
   <div class="container">
     <div class="heading text-center">
       
       <h2>Mis Compras</h2>
     </div>
-
+ </div>
+  
+   
   </section>
+
 <hr>
 <?php
 
@@ -21,14 +28,16 @@
     <!--========================Compras pendientes=====================-->
 
 
-    <div class="box">    
-           
+    <div class="box">   
+     <div class="box-body">    
+    <div class="box-header with-border text-left">
+
+    </div>
       
 
       <table class="table table-striped table-bordered dt-responsive" width="100%">
 
           <thead>
-            
             <tr>
               
      
@@ -68,6 +77,7 @@
          </tbody>
       </table>
     </div>
+    </div>
 
 
 <hr>
@@ -77,8 +87,10 @@
 
     <!--========================Compras Parciales=====================-->
     <div class="box">    
-            
-      
+    <div class="box-body">    
+      <div class="box-header with-border text-left">
+
+      </div>
 
       <table  class="table table-striped table-bordered dt-responsive" width="100%">
 
@@ -124,14 +136,17 @@
          </tbody>
       </table>
     </div>
-
+    </div>
 <hr>
 
 <h2 class="text-center">Compras Entregadas</h2>
 
     <!--========================Compras Entregadas=====================-->
     <div class="box">    
-            
+    <div class="box-body">  
+      <div class="box-header with-border text-left">
+
+      </div>
       
 
       <table class="table table-striped table-bordered dt-responsive" width="100%">
@@ -177,6 +192,7 @@
          </tbody>
       </table>
     </div>
+    </div>
 </section>
   </div>
- 
+ </div>

@@ -43,6 +43,46 @@
 <!--wrapper start-->
 <div class="wrapper" id="wrapper">
 
+
+	 <!-- iCheck -->
+  <link rel="stylesheet" href="vistas/plugins/iCheck/square/blue.css">
+
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="vistas/bower_components/morris.js/morris.css">
+
+   <!-- jvectormap -->
+  <link rel="stylesheet" href="vistas/bower_components/jvectormap/jquery-jvectormap.css">
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+   <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+
+  <!-- bootstrap slider -->
+  <link rel="stylesheet" href="vistas/plugins/bootstrap-slider/slider.css">
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+
+    <!-- bootstrap tags input -->
+  <link rel="stylesheet" href="vistas/plugins/tags/bootstrap-tagsinput.css">
+
+   <!-- bootstrap datepicker -->
+   <link rel="stylesheet" href="vistas/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+
+    <!--=====================================
+  CSS PERSONALIZADO
+  ======================================-->
+
+  <link rel="stylesheet" href="vistas/css/plantilla.css">
+
+   <link rel="stylesheet" href="vistas/css/slide.css">
+
+
+
 <?php
     
           include "modulos/barraSuperiorCabezera.php";
@@ -118,6 +158,46 @@ if(isset($_GET["ruta"])){
 <script src="<?php echo $url; ?>vistas/js/plugins/jquery.scrollUp.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></script>
 
+
+ <!-- ChartJS -->
+  <script src="vistas/bower_components/Chart.js/Chart.js"></script>
+
+  <!-- SweetAlert 2 https://sweetalert2.github.io/-->
+  <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+
+  <!-- bootstrap color picker https://farbelous.github.io/bootstrap-colorpicker/v2/-->
+  <script src="vistas/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+
+  <!-- Bootstrap slider http://seiyria.com/bootstrap-slider/-->
+  <script src="vistas/plugins/bootstrap-slider/bootstrap-slider.js"></script>
+
+  <!-- DataTables https://datatables.net/-->
+  <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
+
+    <!-- bootstrap tags input https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/-->
+  <script src="vistas/plugins/tags/bootstrap-tagsinput.min.js"></script>
+
+   <!-- bootstrap datetimepicker http://bootstrap-datepicker.readthedocs.io-->
+  <script src="vistas/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+  <script>
+    $(function () {
+      $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+      });
+      /* jQueryKnob */
+      $('.knob').knob();
+      /* SideBar Menu */
+      $('.sidebar-menu').tree();
+    });
+    </script>
+
+
 <script type="text/javascript">
 jQuery(function($) {
 $(document).ready( function() {
@@ -157,5 +237,10 @@ $(document).ready( function() {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+<!--=====================================
+JS PERSONALIZADO
+======================================-->
+<script src="vistas/js/plantilla.js"></script>
+
 </body>
 </html>

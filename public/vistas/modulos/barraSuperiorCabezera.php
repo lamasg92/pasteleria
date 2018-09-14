@@ -272,7 +272,7 @@ VENTANA MODAL PARA EL INGRESO
 			INGRESO FACEBOOK
 			======================================-->
 
-			<div class="col-sm- facebook">
+			<div class="col-sm-12 facebook">
 				
 				<p>
 				  <i class="fa fa-facebook"></i>
@@ -289,7 +289,7 @@ VENTANA MODAL PARA EL INGRESO
 
 			<form method="post">
 				
-			<hr>
+			
 
 				<div class="form-group">
 					
