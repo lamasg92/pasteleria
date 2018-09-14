@@ -13,7 +13,7 @@ class AjaxProductos{
 
 	public function ajaxValidarProducto(){
 
-		$item = "nombre";
+		$item = "nombre_producto";
 		$valor = $this->validarProducto;
 
 		$respuesta = ControladorProductos::ctrMostrarProductos($item, $valor);

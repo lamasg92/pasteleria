@@ -38,8 +38,8 @@ class TablaVentas1{
 			$datosJson	 .= '[
 				      "'.($i+1).'",
 				      "'.$detalles[$i]["fecha_pedido"].'",
-				      "'.$detalles[$i]["nombre_usuario"].'",
 				      "'.$detalles[$i]["nombre"].'",
+				      "'.$detalles[$i]["nombre_producto"].'",
 				      "'.$detalles[$i]["cantidad"].'",
 				      "'.$detalles[$i]["subtotal"].'",
 				      "'.$detalles[$i]["fecha_reserva"].'",

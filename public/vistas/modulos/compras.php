@@ -63,7 +63,7 @@
                                 echo $detalle['id_carrito'].'</th><th>';
                                 echo $detalle['fecha_pedido'].'</th><th>';
                                
-                                echo $detalle['nombre'].'</th><th>';
+                                echo $detalle['nombre_producto'].'</th><th>';
                              
                                 echo $detalle['cantidad'].'</th><th>';
                                 echo $detalle['subtotal'].'</th><th>';
@@ -122,7 +122,7 @@
                                 echo $detalle['id_carrito'].'</th><th>';
                                 echo $detalle['fecha_pedido'].'</th><th>';
                                
-                                echo $detalle['nombre'].'</th><th>';
+                                echo $detalle['nombre_producto'].'</th><th>';
                              
                                 echo $detalle['cantidad'].'</th><th>';
                                 echo $detalle['subtotal'].'</th><th>';
@@ -178,7 +178,7 @@
                                 echo $detalle['id_carrito'].'</th><th>';
                                 echo $detalle['fecha_pedido'].'</th><th>';
                                
-                                echo $detalle['nombre'].'</th><th>';
+                                echo $detalle['nombre_producto'].'</th><th>';
                              
                                 echo $detalle['cantidad'].'</th><th>';
                                 echo $detalle['subtotal'].'</th><th>';

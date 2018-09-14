@@ -94,13 +94,13 @@
 
 
 	       					 echo '<div  class="col-md-5">
-									<h3 class="notopmarg nobotmarg">'.$infoproducto["nombre"].'</h3>
+									<h3 class="notopmarg nobotmarg">'.$infoproducto["nombre_producto"].'</h3>
 									<hr>
 									<h4 class="notopmarg nobotmarg">$'.$infoproducto["precio"].'</h4>
 									<p> '.$infoproducto["descripcion"].'</p>
 									
 				    			 	</div>  
-				    			 	<button class="agregarCarrito" idProducto="'.$infoproducto["id"].'" imagen="'.$infoproducto["imagen"].'" precio="'.$infoproducto["precio"].'" nombre="'.$infoproducto["nombre"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button> 
+				    			 	<button class="agregarCarrito" idProducto="'.$infoproducto["id"].'" imagen="'.$infoproducto["imagen"].'" precio="'.$infoproducto["precio"].'" nombre="'.$infoproducto["nombre_producto"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button> 
 								</div>	
 							</div>
 						</div>';
@@ -138,7 +138,7 @@
 									<span class="txt">
 									  <div class="row" color="red">
 									   
-									   <h5>'.$value["nombre"].' - $'.$value["precio"].'</h5>
+									   <h5>'.$value["nombre_producto"].' - $'.$value["precio"].'</h5>
 									   <button class="agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$value["imagen"].'" precio="'.$value["precio"].'" nombre="'.$value["nombre"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button>
 									  
 									  </div>
@@ -189,8 +189,8 @@
 									<span class="txt">
 									  <div class="row">
 									   
-									   <h5>'.$value["nombre"].' - $'.$value["precio"].'</h5>
-									   <button class="agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$value["imagen"].'" precio="'.$value["precio"].'" nombre="'.$value["nombre"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button>
+									   <h5>'.$value["nombre_producto"].' - $'.$value["precio"].'</h5>
+									   <button class="agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$value["imagen"].'" precio="'.$value["precio"].'" nombre="'.$value["nombre_producto"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button>
 									  
 									  </div>
 										
