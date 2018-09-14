@@ -31,7 +31,7 @@ class AjaxUsuarios{
 
 	public function ajaxRegistroFacebook(){
 
-		$datos = array("nombre"=>$this->nombre,
+		$datos = array("nombre_usuario"=>$this->nombre_usuario,
 					   "email"=>$this->email,
 					   "foto"=>$this->foto,
 					   "password"=>"null",
@@ -67,7 +67,7 @@ if(isset($_POST["email"])){
 
 	$regFacebook = new AjaxUsuarios();
 	$regFacebook -> email = $_POST["email"];
-	$regFacebook -> nombre = $_POST["nombre"];
+	$regFacebook -> nombre_usuario = $_POST["nombre_usuario"];
 	$regFacebook -> foto = $_POST["foto"];
 	$regFacebook -> ajaxRegistroFacebook();
 

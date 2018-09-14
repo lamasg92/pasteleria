@@ -13,7 +13,7 @@ USUARIOS
 	        $item="id";
             $valor=$_SESSION["id"];
 	
-		echo '<img src="'.$_SESSION["foto"].'" class="user-image" alt="User Image">'?>
+		echo '<img src="'.$_SESSION["foto"].'" class="user-image" alt="User Image" onerror=this.src="sitioAdmin/vistas/img/usuarios/default/anonymous.png" >'?>
 		
 		<span class="hidden-xs"><?php echo $_SESSION["nombre"]; ?></span>
 	    

@@ -1,11 +1,18 @@
-<section class="compras" id="compras">
+ <div class="content-wrapper">
+    
+  <section class="content-header">
+
+<
   <div class="container">
     <div class="heading text-center">
       
       <h2>Mis Compras</h2>
     </div>
-
+ </div>
+  
+   
   </section>
+
 <hr>
 <?php
 
@@ -21,14 +28,16 @@
     <!--========================Compras pendientes=====================-->
 
 
-    <div class="box">    
-           
+    <div class="box">   
+     <div class="box-body">    
+    <div class="box-header with-border text-left">
+
+    </div>
       
 
       <table class="table table-striped table-bordered dt-responsive" width="100%">
 
           <thead>
-            
             <tr>
               
      
@@ -54,7 +63,7 @@
                                 echo $detalle['id_carrito'].'</th><th>';
                                 echo $detalle['fecha_pedido'].'</th><th>';
                                
-                                echo $detalle['nombre'].'</th><th>';
+                                echo $detalle['nombre_producto'].'</th><th>';
                              
                                 echo $detalle['cantidad'].'</th><th>';
                                 echo $detalle['subtotal'].'</th><th>';
@@ -68,6 +77,7 @@
          </tbody>
       </table>
     </div>
+    </div>
 
 
 <hr>
@@ -77,8 +87,10 @@
 
     <!--========================Compras Parciales=====================-->
     <div class="box">    
-            
-      
+    <div class="box-body">    
+      <div class="box-header with-border text-left">
+
+      </div>
 
       <table  class="table table-striped table-bordered dt-responsive" width="100%">
 
@@ -110,7 +122,7 @@
                                 echo $detalle['id_carrito'].'</th><th>';
                                 echo $detalle['fecha_pedido'].'</th><th>';
                                
-                                echo $detalle['nombre'].'</th><th>';
+                                echo $detalle['nombre_producto'].'</th><th>';
                              
                                 echo $detalle['cantidad'].'</th><th>';
                                 echo $detalle['subtotal'].'</th><th>';
@@ -124,14 +136,17 @@
          </tbody>
       </table>
     </div>
-
+    </div>
 <hr>
 
 <h2 class="text-center">Compras Entregadas</h2>
 
     <!--========================Compras Entregadas=====================-->
     <div class="box">    
-            
+    <div class="box-body">  
+      <div class="box-header with-border text-left">
+
+      </div>
       
 
       <table class="table table-striped table-bordered dt-responsive" width="100%">
@@ -163,7 +178,7 @@
                                 echo $detalle['id_carrito'].'</th><th>';
                                 echo $detalle['fecha_pedido'].'</th><th>';
                                
-                                echo $detalle['nombre'].'</th><th>';
+                                echo $detalle['nombre_producto'].'</th><th>';
                              
                                 echo $detalle['cantidad'].'</th><th>';
                                 echo $detalle['subtotal'].'</th><th>';
@@ -177,6 +192,7 @@
          </tbody>
       </table>
     </div>
+    </div>
 </section>
   </div>
- 
+ </div>

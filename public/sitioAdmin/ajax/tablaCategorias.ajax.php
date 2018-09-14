@@ -45,7 +45,7 @@ class TablaCategorias{
 
 		 	$imagen="<img src='".$categorias[$i]["imagen_categoria"]."' width='50' heihth='50' >";
 
-		 	$acciones="<button class='btn btn-warning btnEditarCategoria' idCategoria='".$categorias[$i]['id_categoria']."' data-toggle='modal' data-target='#modalEditarCategoria'><Span class = 'glyphicon glyphicon-pencil'> </ span></button>";
+		 	$acciones="<button class='btn btn-warning btnEditarCategoria' idCategoria='".$categorias[$i]['id_categoria']."' data-toggle='modal' data-target='#modalEditarCategoria'><Span class = 'glyphicon glyphicon-pencil'> </span></button>";
 
 			$datosJson	 .= '[
 				      "'.($i+1).'",
