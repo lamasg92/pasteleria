@@ -241,6 +241,7 @@ $(document).ready( function() {
 JS PERSONALIZADO
 ======================================-->
 <script src="vistas/js/plantilla.js"></script>
+<script src="vistas/js/gestorCompras.js"></script>
 
 </body>
 </html>
