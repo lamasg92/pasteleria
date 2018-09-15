@@ -8,7 +8,6 @@
     <section class="content-header">
       <h1>
         Calendario
-        <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -19,25 +18,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-md-3">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h4 class="box-title">Eventos</h4>
-            </div>
-            <div class="box-body">
-              <!-- the events -->
-              <div id="external-events">
-                <div class="external-event bg-green">Lunch</div>
-                <div class="external-event bg-yellow">Go home</div>
-                <div class="external-event bg-aqua">Do homework</div>
-                <div class="external-event bg-light-blue">Work on UI design</div>
-                <div class="external-event bg-red">Sleep tight</div>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-        </div>
-        <!-- /.col -->
+        
         <div class="col-md-9">
           <div class="box box-primary">
             <div class="box-body no-padding">
@@ -96,7 +77,41 @@
     init_events($('#external-events div.external-event'))
 
     /* initialize the calendar
+
      -----------------------------------------------------------------*/
+        var eventos=[];
+        <?php $detalles = ControladorVentas::ctrMostrarDetalle(); ?>;
+        var order=<?php echo json_encode($detalles);?>;
+        console.log(order);
+        
+        for(var i=0;i<order.length;i++){
+
+           if (order[i][2]=='pendiente'){
+                eventos.push({ id: order[i][0],
+                        title: order[i][2],
+                        start: order[i][1],
+                        backgroundColor: '#dd4b39',//red
+                        borderColor    : '#dd4b39',//red
+                        });
+            }
+
+            if (order[i][2]=='proceso'){
+                eventos.push({ id: order[i][0],
+                        title: order[i][2],
+                        start: order[i][1],
+                        backgroundColor: '#3c8dbc', //Blue
+                        borderColor    : '#3c8dbc', //Blue                       
+                        });
+            }
+            if (order[i][2]=='entregado'){
+                eventos.push({ id: order[i][0],
+                        title: order[i][2],
+                        start: order[i][1],
+                        backgroundColor: '#00a65a', //Success (green)
+                        borderColor    : '#00a65a', //Success (green)
+                        });
+            }
+          }
     //Date for the calendar events (dummy data)
     var date = new Date()
     var d    = date.getDate(),
@@ -115,52 +130,8 @@
         day  : 'Día'
       },
       //Random default events
-      events    : [
-        {
-          title          : 'All Day Event',
-          start          : new Date(y, m, 1),
-          backgroundColor: '#f56954', //red
-          borderColor    : '#f56954' //red
-        },
-        {
-          title          : 'Long Event',
-          start          : new Date(y, m, d - 5),
-          end            : new Date(y, m, d - 2),
-          backgroundColor: '#f39c12', //yellow
-          borderColor    : '#f39c12' //yellow
-        },
-        {
-          title          : 'Meeting',
-          start          : new Date(y, m, d, 10, 30),
-          allDay         : false,
-          backgroundColor: '#0073b7', //Blue
-          borderColor    : '#0073b7' //Blue
-        },
-        {
-          title          : 'Lunch',
-          start          : new Date(y, m, d, 12, 0),
-          end            : new Date(y, m, d, 14, 0),
-          allDay         : false,
-          backgroundColor: '#00c0ef', //Info (aqua)
-          borderColor    : '#00c0ef' //Info (aqua)
-        },
-        {
-          title          : 'Birthday Party',
-          start          : new Date(y, m, d + 1, 19, 0),
-          end            : new Date(y, m, d + 1, 22, 30),
-          allDay         : false,
-          backgroundColor: '#00a65a', //Success (green)
-          borderColor    : '#00a65a' //Success (green)
-        },
-        {
-          title          : 'Click for Google',
-          start          : new Date(y, m, 28),
-          end            : new Date(y, m, 29),
-          url            : 'http://google.com/',
-          backgroundColor: '#3c8dbc', //Primary (light-blue)
-          borderColor    : '#3c8dbc' //Primary (light-blue)
-        }
-      ],
+
+      events    : eventos,
       editable  : true,
       droppable : true, // this allows things to be dropped onto the calendar !!!
       drop      : function (date, allDay) { // this function is called when something is dropped
