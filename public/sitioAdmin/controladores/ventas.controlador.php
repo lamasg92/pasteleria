@@ -17,6 +17,15 @@ class ControladorVentas{
 
 	}
 
+	static public function ctrMostrarDetalle(){
+
+
+		$respuesta = ModeloVentas::mdlMostrarDetalle();
+
+		return $respuesta;
+
+	}
+
 
 
 }
