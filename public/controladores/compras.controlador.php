@@ -20,10 +20,11 @@ class ControladorCompras{
 	MOSTRAR DETALLE
 	=============================================*/
 
-	static public function ctrMostrarDetalleCompras( $item, $valor){
+	
+	static public function ctrMostrarDetalleCompras($item1, $item2, $valor1, $valor2){
 
 
-		$respuesta = ModeloCompras::mdlMostrarDetalleCompras($item, $valor);
+		$respuesta = ModeloCompras::mdlMostrarDetalleCompras($item1, $item2, $valor1, $valor2);
 
 		return $respuesta;
 
