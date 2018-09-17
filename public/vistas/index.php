@@ -157,19 +157,17 @@ if(isset($_GET["ruta"])){
 <script src="<?php echo $url; ?>vistas/js/plugins/jquery.easing.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plugins/jquery.scrollUp.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></script>
-
-
  <!-- ChartJS -->
   <script src="vistas/bower_components/Chart.js/Chart.js"></script>
 
   <!-- SweetAlert 2 https://sweetalert2.github.io/-->
-  <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <script src="<?php echo $admin; ?>vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
 
   <!-- bootstrap color picker https://farbelous.github.io/bootstrap-colorpicker/v2/-->
   <script src="vistas/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 
   <!-- Bootstrap slider http://seiyria.com/bootstrap-slider/-->
-  <script src="vistas/plugins/bootstrap-slider/bootstrap-slider.js"></script>
+  <script src="<?php echo $admin; ?>vistas/plugins/bootstrap-slider/bootstrap-slider.js"></script>
 
   <!-- DataTables https://datatables.net/-->
   <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -178,7 +176,7 @@ if(isset($_GET["ruta"])){
   <script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
 
     <!-- bootstrap tags input https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/-->
-  <script src="vistas/plugins/tags/bootstrap-tagsinput.min.js"></script>
+  <script src="<?php echo $admin; ?>vistas/plugins/tags/bootstrap-tagsinput.min.js"></script>
 
    <!-- bootstrap datetimepicker http://bootstrap-datepicker.readthedocs.io-->
   <script src="vistas/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
