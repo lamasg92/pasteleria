@@ -4,13 +4,13 @@ require_once "../controladores/ventas.controlador.php";
 require_once "../modelos/ventas.modelo.php";
 
 
-class TablaVentas1{
+class TablaVentas{
 
   /*=============================================
   MOSTRAR LA TABLA DE Ventas
   =============================================*/ 
 
- 	public function mostrarTabla1(){	
+ 	public function mostrarTabla(){	
 
  	$item1 = "fecha_reserva";
  	$valor1 = "2018-09-20";
@@ -29,11 +29,12 @@ class TablaVentas1{
 				
 				$colorEstado = "btn-danger";
 				$textoEstado = "Pendiente";
-				$estado_reserva = "activo";
+				$estado_reserva = "pendiente";
 
-		 	$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estado_reserva='".$estado_reserva."' id_detallle_carrito='".$detalles[$i]["id_detalle_carrito"]."'>".$textoEstado."</button>";
+$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estado_reserva='".$estado_reserva."' id_detalle_carrito='".$detalles[$i]["id_detalle_carrito"]."'>".$textoEstado."</button>";
 
-		 	$acciones="<button class='btn btn-warning btnEditarCategoria' id_detalle_carrito='".$detalles[$i]['id_detalle_carrito']."' data-toggle='modal' data-target='#modalEditarVenta'><Span class = 'glyphicon glyphicon-pencil'> </span></button>";
+
+$acciones="<button class='btn btn-warning btnEditarVenta' id_detalle_carrito='".$detalles[$i]['id_detalle_carrito']."' data-toggle='modal' data-target='#modalEditarVenta'><Span class = 'glyphicon glyphicon-pencil'> </ span></button>";
 
 			$datosJson	 .= '[
 				      "'.($i+1).'",
@@ -68,5 +69,5 @@ class TablaVentas1{
 /*=============================================
 ACTIVAR TABLA DE STOCK
 =============================================*/ 
-$activar = new TablaVentas1();
-$activar -> mostrarTabla1();
+$activar = new TablaVentas();
+$activar -> mostrarTabla();

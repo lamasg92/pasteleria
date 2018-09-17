@@ -4,20 +4,24 @@ require_once "../controladores/compras.controlador.php";
 require_once "../modelos/compras.modelo.php";
 
 
-class TablaVentas1{
+class TablaCompras{
 
   /*=============================================
   MOSTRAR LA TABLA DE Ventas
   =============================================*/ 
-
+    public $id_usuario;
  	public function mostrarTabla1(){	
 
  	$item1 = "id_usuario";
- 	 $valor1 = "43";
-  //  $valor1 = $_SESSION["id"];
+ 	// $valor1 = "43";
+    $valor1 =$this->id_usuario;
+var_dump("USUARIO:",$id_usuario);
+   // $reserva-> id_usuario=$_POST["id_usuario"];
  	$item2 = "estado_reserva";
  	$valor2 = "pendiente";
-    //traigo vem
+
+   
+    
  	$detalles = ControladorCompras::ctrMostrarDetalleCompras($item1,$item2, $valor1, $valor2);	
 
  	$datosJson = '{
@@ -58,7 +62,11 @@ class TablaVentas1{
 
 
 /*=============================================
-ACTIVAR TABLA DE STOCK
+ACTIVAR TABLA DE 
 =============================================*/ 
-$activar = new TablaVentas1();
+
+$activar = new TablaCompras();
+$activar-> id_usuario= $_POST["id_usuario"];
+
 $activar -> mostrarTabla1();
+//var_dump($_POST["id_usuario"]);
