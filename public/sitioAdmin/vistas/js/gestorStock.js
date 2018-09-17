@@ -39,7 +39,7 @@ $(".tablaStock tbody").on("click",".btnEditarStock",function(){
 	var id_dia=$(this).attr("id_dia");
 	var datos = new FormData();
 	datos.append("id_dia",id_dia);
-
+    console.log("chau");
 	$.ajax({
 		url:"ajax/stock.ajax.php",
 	    method:"POST",

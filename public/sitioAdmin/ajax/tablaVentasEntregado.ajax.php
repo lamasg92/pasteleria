@@ -28,12 +28,12 @@ class TablaVentas1{
 			
 				
 				$colorEstado = "btn-success";
-				$textoEstado = "Pendiente";
-				$estado_reserva = "activo";
+				$textoEstado = "Entregado";
+				$estado_reserva = "entregado";
 
-		 	$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estado_reserva='".$estado_reserva."' id_detallle_carrito='".$detalles[$i]["id_detalle_carrito"]."'>".$textoEstado."</button>";
+		 	$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estado_reserva='".$estado_reserva."' id_detalle_carrito='".$detalles[$i]["id_detalle_carrito"]."'>".$textoEstado."</button>";
 
-		 	$acciones="<button class='btn btn-warning btnEditarCategoria' id_detalle_carrito='".$detalles[$i]['id_detalle_carrito']."' data-toggle='modal' data-target='#modalEditarVenta'><Span class = 'glyphicon glyphicon-pencil'> </span></button>";
+		 	$acciones="<button class='btn btn-warning btnEditarVenta' id_detalle_carrito='".$detalles[$i]['id_detalle_carrito']."' data-toggle='modal' data-target='#modalEditarVenta'><Span class = 'glyphicon glyphicon-pencil'> </span></button>";
 
 			$datosJson	 .= '[
 				      "'.($i+1).'",

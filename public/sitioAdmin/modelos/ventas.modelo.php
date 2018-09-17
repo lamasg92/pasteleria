@@ -31,6 +31,28 @@ class ModeloVentas{
 		}
 
 
+		static public function mdlMostrarVentas($item, $valor){
+
+
+			$stmt = Conexion::conectar()->prepare("SELECT id_detalle_carrito, fecha_pedido,nombre, nombre_producto, cantidad, subtotal, fecha_reserva, estado_reserva FROM productos 
+											INNER JOIN detalle_carrito ON productos.id=detalle_carrito.id_producto
+											INNER JOIN carrito ON detalle_carrito.id_carrito=carrito.id_carrito 
+											INNER JOIN usuarios ON usuarios.id=carrito.id_usuario
+											WHERE $item = :$item");
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+	
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		$stmt->close();
+		$stmt = null;
+
+		}
+
+
 	
 
 	/*=============================================
@@ -43,9 +65,11 @@ class ModeloVentas{
 	}
 
 	static public function mdlEditarVenta($tabla,$datos){
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET estado_reserva=:estado_reserva WHERE id=:id");
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET estado_reserva=:estado_reserva WHERE id_detalle_carrito=:id_detalle_carrito");
         
       
+		$stmt->bindParam(":id_detalle_carrito", $datos["id_detalle_carrito"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado_reserva", $datos["estado_reserva"], PDO::PARAM_STR);
 
 		if($stmt->execute()){

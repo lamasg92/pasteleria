@@ -17,9 +17,10 @@ class AjaxVenta{
     
     $item = "id_detalle_carrito";
     $valor = $this->id_detalle_carrito;
+   
 
     $respuesta = ControladorVentas::ctrMostrarVentas($item, $valor);
-
+    
     echo json_encode($respuesta);
   }
 

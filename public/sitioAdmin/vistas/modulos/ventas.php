@@ -93,6 +93,6 @@
      </section>
   </div>
   <?php
-require "ventasModales/crearVenta.modal.php";
+//require "ventasModales/crearVenta.modal.php";
 require "ventasModales/editarVenta.modal.php";
 ?> 

@@ -106,15 +106,16 @@ $(".tablaVentasEntregado").DataTable({
 
 });
 /*=========================================
-			EDITAR PRODUCTO
+			EDITAR Venta
 ==========================================*/
 
 $(".tablaVentas tbody").on("click",".btnEditarVenta",function(){
+	console.log("hola");
 	var id_detalle_carrito=$(this).attr("id_detalle_carrito");
 
 	var datos = new FormData();
 	datos.append("id_detalle_carrito",id_detalle_carrito);
-
+console.log("chau");
 	$.ajax({
 		url:"ajax/ventas.ajax.php",
 	    method:"POST",
@@ -124,16 +125,17 @@ $(".tablaVentas tbody").on("click",".btnEditarVenta",function(){
 	    processData: false,
 	    dataType: "json",
 	    success:function(respuesta){
-
+	    console.log("respuesta",respuesta);
 	    	$("#modalEditarVenta .id_detalle_carrito").val(respuesta["id_detalle_carrito"]);
-	    	$("#modalEditarVenta .estado_reserva").val(respuesta["estado_reserva"]);
 	    	$("#modalEditarVenta .nombre").val(respuesta["nombre"]);
+	    	$("#modalEditarVenta .nombre_producto").val(respuesta["nombre_producto"]);
 	    	$("#modalEditarVenta .cantidad").val(respuesta["cantidad"]);
 	    	$("#modalEditarVenta .subtotal").val(respuesta["subtotal"]);
 	    	$("#modalEditarVenta .fecha_reserva").val(respuesta["fecha_reserva"]);
 	    	$("#modalEditarVenta .fecha_pedido").val(respuesta["fecha_pedido"]);
+	    	$("#modalEditarVenta .estado_reserva").val(respuesta["estado_reserva"]);
 	    	
 	    }
 	})
 
-})
+});

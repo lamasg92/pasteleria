@@ -29,7 +29,6 @@ class TablaStock{
 
 			$datosJson	 .= '[
 				      "'.($i+1).'",
-				   
 				      "'.$dias[$i]["dia"].'",
 				      "'.$dias[$i]["stock"].'",
 				      
