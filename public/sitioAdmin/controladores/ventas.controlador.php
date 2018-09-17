@@ -17,10 +17,6 @@ class ControladorVentas{
 
 	}
 
- /*=============================================
-	EDITAR ventas
-	=============================================*/
-
 	static public function ctrEditarVenta(){ 
 	
 		if(isset($_POST["id_detalle_carrito"])){
@@ -72,7 +68,14 @@ class ControladorVentas{
 		}
 	}
 
-	
 
+	static public function ctrMostrarDetalle(){
+
+
+		$respuesta = ModeloVentas::mdlMostrarDetalle();
+
+		return $respuesta;
+
+	}
 
 }

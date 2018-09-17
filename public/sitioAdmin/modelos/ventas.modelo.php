@@ -30,6 +30,20 @@ class ModeloVentas{
 
 		}
 
+		static public function mdlMostrarDetalle(){
+
+
+			$stmt = Conexion::conectar()->prepare("SELECT id_detalle_carrito,fecha_reserva,estado_reserva FROM  detalle_carrito ");
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		$stmt->close();
+		$stmt = null;
+
+		}
+
 
 		static public function mdlMostrarVentas($item, $valor){
 
