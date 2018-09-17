@@ -52,4 +52,28 @@ class ControladorCarrito{
 
 	}
 
+	private function saberDia($nombredia){
+		$dias=["domingo","lunes","martes","miercoles","jueves","viernes","sabado"];
+		$fecha=$dias[date("N",strtotime($nombredia))];
+		return $fecha;
+	}
+
+	static public function crtFechasInvalidas(){
+		$fechasDesabilitadas=[];
+
+		$item = "dia";
+
+		$fechas = ModeloCarrito::mdlCantidadReserva();
+
+		foreach ($fechas as $fecha) {
+			$valor = ControladorCarrito::saberDia($fecha["fecha_reserva"]);
+ 			$dia = ControladorStock::ctrMostrarStock($item, $valor);
+			if ($fecha["cant"]>=$dia["stock"]){
+				array_push($fechasDesabilitadas,$fecha["fecha_reserva"]);
+			}
+		}
+
+		return $fechasDesabilitadas;
+	}
+
 }

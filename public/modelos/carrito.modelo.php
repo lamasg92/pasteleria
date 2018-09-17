@@ -66,4 +66,17 @@ class ModeloCarrito{
 		$stmt =null;
 	}
 
+	static public function mdlCantidadReserva(){
+
+		$stmt = Conexion::conectar()->prepare("SELECT fecha_reserva,COUNT(fecha_reserva) as cant FROM detalle_carrito GROUP BY fecha_reserva");
+
+		$stmt -> execute();
+
+		return $stmt -> fetchAll();
+
+	$stmt->close();
+	$stmt = null;
+
+	}
+
 }

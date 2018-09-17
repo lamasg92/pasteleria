@@ -2,8 +2,17 @@
     
     $url = Ruta::ctrRuta();
 
+    $fechasDesabilitadas=ControladorCarrito::crtFechasInvalidas();
+
+    foreach ($fechasDesabilitadas as $fecha) {
+    	echo '<tr>';
+    	echo '<input type="hidden" id=fechasDesabilitadas" name="fechasDesabilitadas[]" value="'.$fecha.'">';
+    	echo '</tr>';
+    }
+
  ?>
 
+  
 <!--=====================================
 BREADCRUMB CARRITO DE COMPRAS
 ======================================-->
@@ -195,8 +204,8 @@ VENTANA MODAL PARA CHECKOUT
 						 </tbody>
 
 					</table>
-
-										<div class="col-sm-6 col-xs-12 pull-right">
+					
+					<div class="col-sm-6 col-xs-12 pull-right">
 						
 						<table class="table table-striped tablaTasas">
 							

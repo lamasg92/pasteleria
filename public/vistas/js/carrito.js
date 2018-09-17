@@ -19,6 +19,22 @@ VISUALIZAR LOS PRODUCTOS EN LA PÁGINA CARRITO DE COMPRAS
 if(localStorage.getItem("listaProductos") != null){
 
 	var listaCarrito = JSON.parse(localStorage.getItem("listaProductos"));
+	var fecha= new Date();
+	var anio=fecha.getFullYear();
+	var _mes=fecha.getMonth();
+	_mes=_mes+1;
+	if (_mes<10){
+		var mes ="0"+_mes;
+	}else{
+		var mes=_mes.toString;
+	}
+	var dia=fecha.getDate();
+
+	fechaActual=anio+'-'+mes+'-'+dia;
+
+	//var fechasDesabilitadas=document.getElementById("fechasDesabilitadas").value;
+
+	//console.log(fechasDesabilitadas);
 
 	listaCarrito.forEach(funcionForEach);
 
@@ -105,7 +121,7 @@ if(localStorage.getItem("listaProductos") != null){
 
 						'<center>'+
 
-						'<input type="date" class="form-control fechaEntregaItem" value="'+item.fecha+'" idProducto="'+item.idProducto+'">'+
+						'<input type="date" id="fechaEntregaItem" min="'+fechaActual+'" class="form-control fechaEntregaItem" value="'+item.fecha+'" idProducto="'+item.idProducto+'">'+
 
 						'</center>'+
 
@@ -117,7 +133,7 @@ if(localStorage.getItem("listaProductos") != null){
 
 			'<div class="clearfix"></div>'+
 
-			'<hr>');
+			'<hr>');			
 
 		/*=============================================
 		ACTUALIZAR SUBTOTAL
@@ -146,6 +162,7 @@ if(localStorage.getItem("listaProductos") != null){
 	$(".sumaCarrito").hide();
 	$(".cabeceraCheckout").hide();
 }
+
 
 /*======================================
 AGREGAR AL CARRITO
@@ -505,6 +522,7 @@ $("#btnCheckout").click(function(){
 		var tituloArray = $(titulo[i]).html();
 		var cantidadArray = $(cantidad[i]).val();		
 		var subtotalArray = $(subtotal[i]).html();
+		var fechaEntrega =$(fecha[i]).val();
 
 		/*=============================================
 		EVALUAR EL PESO DE ACUERDO A LA CANTIDAD DE PRODUCTOS
@@ -528,6 +546,7 @@ $("#btnCheckout").click(function(){
 															   '<td class="valorTitulo">'+tituloArray+'</td>'+
 															   '<td class="valorCantidad">'+cantidadArray+'</td>'+
 															   '<td>$<span class="valorItem" valor="'+subtotalArray+'">'+subtotalArray+'</span></td>'+
+															   '<td class="fechaEntregaItem">'+fechaEntrega+'</td>'+
 															   '<tr>');
 
 		tipoArray.push($(cantidad[i]).attr("tipo"));//ESTA PORQUE SIN ESTO NO FUNCIONA
