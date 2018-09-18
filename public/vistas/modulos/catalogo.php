@@ -139,7 +139,7 @@
 									  <div class="row" color="red">
 									   
 									   <h5>'.$value["nombre_producto"].' - $'.$value["precio"].'</h5>
-									   <button class="agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$value["imagen"].'" precio="'.$value["precio"].'" nombre="'.$value["nombre"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button>
+									   <button class="agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$value["imagen"].'" precio="'.$value["precio"].'" nombre="'.$value["nombre_producto"].'" title="Agregar al carrito"><i class="fa fa-shopping-cart"></i></button>
 									  
 									  </div>
 										

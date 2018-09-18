@@ -23,9 +23,9 @@ USUARIOS
 	<!-- dropdown-menu -->
 	<ul class="dropdown-menu">
 
-		<li class="user-header">
+		<li class="user-header center">
 		   <?php
-			echo '<img src="'.$_SESSION["foto"].'" class="img-circle" alt="User Image">'
+			echo '<img src="'.$_SESSION["foto"].'" class="img-circle" alt="User Image" onerror=this.src="sitioAdmin/vistas/img/usuarios/default/anonymous.png" >'
            ?>
 			<p>
 			<?php echo $_SESSION["nombre"]; ?>
@@ -38,7 +38,19 @@ USUARIOS
 		
 			<div class="pull-left">
 				
-				<a href="index.php?ruta=perfil" class="btn btn-default btn-flat">Perfil</a>
+				<a href="<?php echo $url;?>compras" class="btn btn-default btn-flat">Mis Compras</a>
+				
+			</div>
+			
+
+		</li>
+
+
+		<li class="user-footer">
+		
+			<div class="pull-left">
+				
+				<a href="perfil" class="btn btn-default btn-flat">Perfil</a>
 			
 			</div>
 			

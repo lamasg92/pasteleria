@@ -8,7 +8,7 @@
  * Copyright 2014, Codrops
  * https://www.codrops.com
  */
-;( function( window ) {
+( function( window ) {
 	
 	'use strict';
 	//console.log('dsseuy');
@@ -363,10 +363,6 @@
 	window.CBPGridGallery = CBPGridGallery;
 
 })( window );
-
-
-
-
 
 
 new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
