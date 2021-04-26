@@ -29,7 +29,7 @@ class TablaCompras{
 	for($i = 0; $i < count($detalles); $i++){
 			
 				
-		 	$acciones="<button class='btn btn-warning btnEditarCompra' id_detalle_carrito='".$detalles[$i]['id_detalle_carrito']."' data-toggle='modal' data-target='#modalEditarCompra'><Span class = 'glyphicon glyphicon-pencil'> </span></button>";
+		 	$acciones="<button class='btn btn-danger btnEditarCompra' id_detalle_carrito='".$detalles[$i]['id_detalle_carrito']."' data-toggle='modal' data-target='#modalEditarCompra'><Span class = 'glyphicon glyphicon-remove-sign'> </span></button>";
 
 			$datosJson	 .= '[
 				      "'.($i+1).'",

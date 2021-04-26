@@ -80,6 +80,7 @@
          </div>
      </section>
   </div>
- 
-              
-          
+   <?php
+//require "ventasModales/crearVenta.modal.php";
+require "comprasModales/editarCompra.modal.php";
+?> 

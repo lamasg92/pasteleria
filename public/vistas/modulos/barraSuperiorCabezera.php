@@ -37,6 +37,17 @@ if(isset($_SESSION["validarSesion"])){
 								</button>
 							</a>	
 							</div>
+
+							<div class="col-lg-1 col-md-2 col-sm-2 col-xs-8" id="compras">
+				
+							<a href="<?php echo $url;?>compras">
+								<button class="btn btn-default pull-left backColor"> 
+									<i class="fa fa-list" aria-hidden="true"></i>
+								</button>
+							</a>	
+							</div>
+
+
 				
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8" id="carrito">
 				

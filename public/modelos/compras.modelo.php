@@ -8,33 +8,27 @@ class ModeloCompras{
 	MOSTRAR COMPRAS
 	=============================================*/
 
-	static public function mdlMostrarCompras($tabla, $item, $valor){
 
-		if($item != null){
+	static public function mdlMostrarCompras($item, $valor){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+			$stmt = Conexion::conectar()->prepare("SELECT id_detalle_carrito, fecha_pedido,nombre, nombre_producto, cantidad, subtotal, fecha_reserva, estado_reserva FROM productos 
+											INNER JOIN detalle_carrito ON productos.id=detalle_carrito.id_producto
+											INNER JOIN carrito ON detalle_carrito.id_carrito=carrito.id_carrito 
+											INNER JOIN usuarios ON usuarios.id=carrito.id_usuario
+											WHERE $item = :$item");
 
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-
-			$stmt -> execute();
-
-			return $stmt -> fetch();
-
-		}else{
-
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+	
 
 			$stmt -> execute();
 
 			return $stmt -> fetchAll();
 
-		}
-		
-		$stmt -> close();
-
+		$stmt->close();
 		$stmt = null;
 
-	}
+		}
 
 
 	/*=============================================

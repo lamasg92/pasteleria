@@ -26,8 +26,9 @@
 
               $usuario = ControladorAdministradores::ctrMostrarAdministradores($item,$valor);
 
-             echo '<img class="profile-user-img img-responsive img-circle" src="'.$admin.$usuario["foto"].'" alt="User profile picture">'
-              ?>
+             echo '<img class="profile-user-img img-responsive img-circle" src="'.$admin.$usuario["foto"].'" alt="User profile" onerror=this.src="sitioAdmin/vistas/img/usuarios/default/anonymous.png">'?>
+    
+              
               <h3 class="profile-username text-center"><?php echo $usuario["nombre"]; ?></h3>
 
               <ul class="list-group list-group-unbordered">
