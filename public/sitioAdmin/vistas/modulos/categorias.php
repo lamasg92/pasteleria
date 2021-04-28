@@ -57,4 +57,10 @@
 <?php
 require "categoriasModales/crearCategoria.modal.php";
 require "categoriasModales/editarCategoria.modal.php";
-?> 
+?>
+
+<?php      
+$eliminarCategoria = new ControladorCategorias();
+$eliminarCategoria -> ctrEliminarCategoria();
+
+  ?>

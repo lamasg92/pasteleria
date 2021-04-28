@@ -152,3 +152,30 @@ $(".tablaCategorias tbody").on("click",".btnEditarCategoria",function(){
 
 })
 
+/*=============================================
+ELIMINAR CATEGORIA
+=============================================*/
+$(".tablaCategorias tbody").on("click", ".btnEliminarCategoria", function(){
+
+	var idCategoria = $(this).attr("idCategoria");
+
+  	swal({
+    	title: '¿Está seguro de borrar la categoría?',
+    	text: "¡Si no lo está puede cancelar la accíón!",
+    	type: 'warning',
+    	showCancelButton: true,
+    	confirmButtonColor: '#3085d6',
+      	cancelButtonColor: '#d33',
+      	cancelButtonText: 'Cancelar',
+      	confirmButtonText: 'Si, borrar categoría!'
+	 }).then(function(result){
+
+    	if(result.value){
+
+      	window.location = "index.php?ruta=categorias&idCategoria="+idCategoria;
+
+    	}
+
+  	})
+
+})
