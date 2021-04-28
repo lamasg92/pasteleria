@@ -169,6 +169,7 @@ session_start();
            $_GET["ruta"]== "paginaPrincipal" ||
            $_GET["ruta"]== "categorias" ||
            $_GET["ruta"]== "productos" ||
+           $_GET["ruta"]== "galeria" ||
            $_GET["ruta"]== "stock" ||
            $_GET["ruta"]== "contactos" ||
            $_GET["ruta"]== "usuarios" ||
@@ -206,6 +207,7 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorAdministradores.js"></script>
 <script src="vistas/js/gestorStock.js"></script>
 <script src="vistas/js/gestorVentas.js"></script>
+<script src="vistas/js/gestorGaleria.js"></script>
 
 <!-- fullCalendar -->
 <script src="vistas/bower_components/moment/moment.js"></script>
