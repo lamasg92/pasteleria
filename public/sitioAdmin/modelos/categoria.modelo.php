@@ -94,4 +94,32 @@ class ModeloCategoria{
 
 	}
 
+  
+
+	/*=============================================
+	ELIMINAR CATEGORIA
+	=============================================*/
+
+	static public function mdlEliminarCategoria($tabla, $categoria){
+
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM  $tabla WHERE id_categoria=:id");
+
+		$stmt->bindParam(":id", $categoria, PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
  }

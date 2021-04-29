@@ -163,4 +163,59 @@ class ControladorCategorias{
 		}
 	}
 
+	 /*=============================================
+	ELIMINAR CATEGORIAS
+	=============================================*/
+
+	static public function ctrEliminarCategoria(){ 
+
+		if(isset($_GET["idCategoria"])){
+         
+        $traerProductos = ModeloProducto::mdlMostrarProductos("productos", "id_categoria", $_GET["idCategoria"]);
+
+		if(!$traerProductos){
+      
+
+        	$respuesta = ModeloCategoria::mdlEliminarCategoria("categorias", $_GET["idCategoria"]);
+        	if($respuesta == "ok"){
+
+					echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "La categoría ha sido eliminada",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
+
+							window.location = "categorias";
+
+							}
+						})
+
+					</script>';
+
+			
+			}
+        }else{
+        		echo'<script>
+
+					swal({
+						  type: "error",
+						  title: "¡La categoría no se puede eliminar, contiene productos!",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  })
+
+			  	</script>';
+
+			  	return;
+        }
+
+		
+
+		}
+	}
+
 }
