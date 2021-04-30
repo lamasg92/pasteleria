@@ -31,6 +31,8 @@
 									<ul class="nav navbar-nav">
 										<li class="menuItem active"><a href="#wrapper">Home</a></li>
 										<li class="menuItem"><a href="#aboutus">Sobre Nosotros</a></li>
+										<li class="menuItem"><a href="#misionvision">Misión y Visión </a></li>
+										<li class="menuItem"><a href="#valores">Valores </a></li>
 										<li class="menuItem"><a href="#contact">Contactanos</a></li>
 									</ul>
 								</div>

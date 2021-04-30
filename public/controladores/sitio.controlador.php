@@ -36,6 +36,15 @@ class ControladorSitio{
 
 	}
 
+	static public function ctrMostrarIdCorporativa(){
+
+		$tabla = "identidad_corporativa";
+
+		$respuesta = ModeloSitio::mdlMostrarIdCorporativa($tabla);
+
+		return $respuesta;
+	}
+
 
 	/*=============================================
 	REGISTRO DE USUARIO

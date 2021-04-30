@@ -48,6 +48,21 @@ static public function mdlMostrarRedesSociales($tabla){
 
 	}
 
+	static public function mdlMostrarIdCorporativa($tabla){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+		$stmt -> execute();
+
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+
 
 /*=============================================
 	REGISTRO DE USUARIO
