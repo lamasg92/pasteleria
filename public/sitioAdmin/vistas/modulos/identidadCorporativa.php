@@ -44,6 +44,11 @@
                 echo $item['id_ic'].'</th><th>';
                 echo $item['nombre_ic'].'</th><th>';
                 echo $item['descripcion_ic'].'</th><th>';
+                echo ' <div class="box-header with-border text-right">
+                  <button class="btn btn-primary btnEditarIdCorporativa" idCorporativa="'.$item['id_ic'].'" data-toggle="modal" data-target="#modalEditarIdCorporativa'.$item['id_ic'].'"> Cambiar información</button>
+                   </div>';
+
+                require "identidadCorporativaModales/editarIdentidadCorporativa.modal.php";
                
                
 
