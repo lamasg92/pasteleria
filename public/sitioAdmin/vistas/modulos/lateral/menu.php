@@ -20,6 +20,7 @@ MENU
         
         <li><a href="paginaPrincipal"><i class="fa fa-circle-o"></i> Pagina Principal</a></li>
         <li><a href="contactos"><i class="fa fa-circle-o"></i> Contactos</a></li>
+        <li><a href="identidadCorporativa"><i class="fa fa-circle-o"></i> Identidad Corporativa</a></li>
       
       </ul>
 
@@ -28,9 +29,8 @@ MENU
   <li><a href="categorias"><i class="fa fa-list-ul"></i> <span>Gestor Categorías</span></a></li>
   <li><a href="productos"><i class="fa fa-list-ul"></i> <span>Gestor Productos</span></a></li>
   <li><a href="stock"><i class="fa fa-list-ul"></i> <span>Gestor Stock</span></a></li>
-  <li><a href="galeria"><i class="fa fa-list-ul"></i> <span>Galeria</span></a></li>
   <li><a href="calendario"><i class="fa fa-list-ul"></i> <span>Calendario</span></a></li>
-  <li><a href="ventas"><i class="fa fa-list-ul"></i> <span>Ventas</span></a></li>
+    <li><a href="ventas"><i class="fa fa-list-ul"></i> <span>Ventas</span></a></li>
 
 
 

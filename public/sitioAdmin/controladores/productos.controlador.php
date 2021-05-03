@@ -169,4 +169,73 @@ class ControladorProductos{
 
 	}
 
+	 /*=============================================
+	ELIMINAR PRODUCTOS
+	=============================================*/
+
+	static public function ctrEliminarProducto(){ 
+
+		if(isset($_GET["idProducto"])){
+
+         
+           $traerProductos = ModeloProducto::mdlMostrarProductos("detalle_carrito", "id_producto",$_GET["idProducto"]);
+
+	       if(!$traerProductos){
+            
+
+        	$respuesta = ModeloProducto::mdlEliminarProducto("productos", $_GET["idProducto"]);
+
+        	/*=============================================
+			ELIMINAR FOTO PRINCIPAL
+			=============================================*/
+
+			if($_GET["img"] != ""){
+
+				unlink($_GET["img"]);		
+
+			}
+
+
+        	if($respuesta == "ok"){
+
+					echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "El producto ha sido eliminado",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
+
+							window.location = "productos";
+
+							}
+						})
+
+					</script>';
+
+			
+			}
+        }else{
+        		echo'<script>
+
+					swal({
+						  type: "error",
+						  title: "¡El producto no se puede eliminar, hay compras asociadas a este producto!",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  })
+
+			  	</script>';
+
+			  	return;
+        }
+
+		
+
+		}
+	}
+
+
 }

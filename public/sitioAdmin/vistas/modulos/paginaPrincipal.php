@@ -132,7 +132,7 @@ MODAL CAMBIAR INFORMACION
        
         <div class="modal-footer">
           
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-primary pull-left" data-dismiss="modal">Salir</button>
 
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
 

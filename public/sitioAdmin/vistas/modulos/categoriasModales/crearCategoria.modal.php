@@ -50,6 +50,22 @@ MODAL AGREGAR CATEGORIA
 
             </div>
 
+              <!--=====================================
+            ENTRADA PARA LA RUTA DE LA CATEGORÍA
+            ======================================-->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+                
+                <span class="input-group-addon"><i class="fa fa-link"></i></span>
+
+                <input type="text" class="form-control input-lg rutaCategoria" placeholder="Ruta url para la categoría" name="rutaCategoria" readonly required> 
+
+              </div> 
+
+            </div>
+
             <!--=====================================
             AGREGAR IMAGEN DE CATEGORIA
             ======================================-->

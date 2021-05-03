@@ -38,7 +38,7 @@
             <tr>
               <th style="width:10px">#</th>
               <th>Producto</th>
-              <th>Descripción</th>
+              <th style="width:200px">Descripción</th>
               <th>Precio</th>
               <th>Imagen</th>
               <th>Estado</th>
@@ -60,4 +60,7 @@
 <?php
 require "productosModales/crearProducto.modal.php";
 require "productosModales/editarProducto.modal.php";
+
+$eliminarProducto = new ControladorProductos();
+$eliminarProducto -> ctrEliminarProducto()
 ?> 
