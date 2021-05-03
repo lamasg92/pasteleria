@@ -17,13 +17,13 @@
 
         				echo '<div  class="col-lg-6">
 								 <h3 class="notopmarg nobotmarg">Mision</h3>
-								 <h5> '.$info[0]["descripcion_ic"].'</h5>
+								 <h5> '.nl2br($info[0]["descripcion_ic"]).'</h5>
 
 							 </div>
 
 							 <div  class="col-lg-6">
 								 <h3 class="notopmarg nobotmarg">Visión</h3>
-								 <h5> '.$info[1]["descripcion_ic"].'</h5>
+								 <h5> '.nl2br($info[1]["descripcion_ic"]).'</h5>
 
 							 </div>
 

@@ -18,7 +18,7 @@
         
                 				echo '<div  class="col-lg-12">
 								 <h5> Pastelería Doña Lupe se proyecta como organización empresarial estructurada en los siguientes valores:</h5>
-								 <h5> '.$info[2]["descripcion_ic"].'</h5>
+								 <h5> '.nl2br($info[2]["descripcion_ic"]).'</h5>
 
 							 </div>
 

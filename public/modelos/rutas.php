@@ -6,7 +6,7 @@ class Ruta{
 	RUTA INGRESO ADMIN
 	=============================================*/	
 
-	public function ctrRutaServidor(){
+	static public function ctrRutaServidor(){
 		//return "https://www.pastelerialupe.com/sitioAdmin/";
 
 		// return "http://localhost:8080/pasteleria/public/sitioadmin/";
@@ -19,7 +19,7 @@ class Ruta{
 	RUTA LADO DEL CLIENTE
 	=============================================*/	
 
-	public function ctrRuta(){
+	static public function ctrRuta(){
 		//return "https://www.pastelerialupe.com/";
 
 		// return "http://localhost:8080/pasteleria/public/";
