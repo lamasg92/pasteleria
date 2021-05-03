@@ -35,6 +35,35 @@ class ModeloGaleria{
 		
 		$stmt = null;
 	
+	} 
+
+	/*=============================================
+	CARGAR IMAGEN
+	=============================================*/
+
+	static public function mdlIngresarImagen($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(imagen,descripcion,categoria,fecha,estado) VALUES (:imagen,:descripcion,:categoria,:fecha,:estado)");
+
+		$stmt->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);  
+        $stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);      
+        $stmt->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":fecha", $datos["fecha"], PDO::PARAM_STR);
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
 	}
 
 }

@@ -37,10 +37,10 @@
             
             <tr>
               <th style="width:10px">#</th>
-              <th>Descripción</th>
               <th>Imagen</th>
-              <th>Creado</th>
+              <th>Descripción</th>
               <th>Categoria</th>
+              <th>Creado</th>
               <th>Estado</th>
               <th>Acciones</th>
             </tr>
@@ -57,6 +57,6 @@
   </div>
 
 <?php
-//require "productosModales/crearProducto.modal.php";
+require "galeriaModales/crearImagen.modal.php";
 //require "productosModales/editarProducto.modal.php";
 ?> 

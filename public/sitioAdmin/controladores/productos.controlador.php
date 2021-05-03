@@ -33,7 +33,7 @@ class ControladorProductos{
 
    	 	$datos = array("producto"=>strtoupper($_POST["tituloProducto"]),
    	 		     "idCategoria"=>$_POST["seleccionarCategoria"],
-   	 		     "descripcion"=>$_POST["descripcionProducto"],
+   	 		     "descripcion"=>"<p>".$_POST["descripcionProducto"]."</p>",
    	 		     "precio"=>$_POST["precio"],
    	 		    // "stock"=>$_POST["stock"],
    	 		     "imagen"=>$rutaFoto,
