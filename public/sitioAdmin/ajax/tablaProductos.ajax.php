@@ -45,8 +45,11 @@ class TablaProductos{
 
 		 	$imagen="<img src='".$productos[$i]["imagen"]."' width='50' heihth='50' >";
 
+			$fecha = date("d/m/Y h:m",strtotime($productos[$i]["fecha"]));
+
 		 	$acciones="<button class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]['id']."' data-toggle='modal' data-target='#modalEditarProducto'><Span class = 'glyphicon glyphicon-pencil'> </ span></button><button class='btn btn-danger btnEliminarProducto' idProducto='".$productos[$i]['id']."' img='".$productos[$i]["imagen"]."'><Span class = 'glyphicon glyphicon-remove'> </span></button>";
 				    
+
 			$datosJson	 .= '[
 				      "'.($i+1).'",
 				      "'.$productos[$i]["nombre_producto"].'",
@@ -54,7 +57,7 @@ class TablaProductos{
 				      "$'.$productos[$i]["precio"].'",
 				      "'.$imagen.'",
 				      "'.$estado.'",
-				      "'.$productos[$i]["fecha"].'" ,
+				      "'.$fecha.'" ,
 				      "'.$acciones.'"
 				    ],';
 

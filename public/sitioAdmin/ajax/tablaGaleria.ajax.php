@@ -40,19 +40,42 @@ class TablaGaleria{
 				$estadoGaleria = "inactivo";
 
 			}
+			    if ($galeria[$i]["categoria"]=="general"){
+			    	$categoria="General";
+			    }
+                if ($galeria[$i]["categoria"]=="cumpleanio"){
+                	$categoria="Cumpleaños";
+                }
+                if ($galeria[$i]["categoria"]=="casamientos"){
+                	$categoria="Casamientos";
+                }
+                if ($galeria[$i]["categoria"]=="bautismos"){
+                	$categoria="Bautismos";
+                }
+                if ($galeria[$i]["categoria"]=="comuniones"){
+                	$categoria="Comuniones";
+                }
+                if ($galeria[$i]["categoria"]=="aniversarios"){
+                	$categoria="Aniversarios";
+                }
+                if ($galeria[$i]["categoria"]=="donaciones"){
+                	$categoria="Donaciones";
+                }
 
 			$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoGaleria='".$estadoGaleria."' idGaleria='".$galeria[$i]["id"]."'>".$textoEstado."</button>";
 
 			$imagen="<img src='".$galeria[$i]["imagen"]."' width='50' heihth='50' >";
 
 			$acciones="<button class='btn btn-warning btnEditarGaleria' idGaleria='".$galeria[$i]['id']."' data-toggle='modal' data-target='#modalEditarGaleria'><Span class = 'glyphicon glyphicon-pencil'> </ span></button>";
+
+			$fecha = date("d/m/Y h:m",strtotime($galeria[$i]["fecha"]));
 					
 			$datosJson	 .= '[
 					  "'.($i+1).'",
-					  "'.$galeria[$i]["descripcion"].'",
 					  "'.$imagen.'",
-					  "'.$galeria[$i]["fecha"].'" ,
-					  "'.$galeria[$i]["categoria"].'",
+					  "'.$galeria[$i]["descripcion"].'",
+					  "'.$categoria.'",
+					  "'.$fecha.'" ,
 					  "'.$estado.'",
 					  "'.$acciones.'"
 					],';
