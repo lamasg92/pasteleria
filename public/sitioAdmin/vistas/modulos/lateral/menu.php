@@ -30,10 +30,35 @@ MENU
   <li><a href="stock"><i class="fa fa-list-ul"></i> <span>Gestor Stock</span></a></li>
   <li><a href="calendario"><i class="fa fa-list-ul"></i> <span>Calendario</span></a></li>
 
-  <li><a href="galeria"><i class="fa fa-list-ul"></i> <span>Gestor de Galeria</span></a></li>
-    <li><a href="ventas"><i class="fa fa-list-ul"></i> <span>Ventas</span></a></li>
+
+
+  <li class="treeview">
+      
+      <a href="#">
+        <i class="fa fa-th"></i>
+        <span>Gestor Galeria</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+
+      <ul class="treeview-menu">
+        
+        <li><a href="albumes"><i class="fa fa-circle-o"></i> Gestor de Albumes</a></li>
+        <li><a href="galeria"><i class="fa fa-circle-o"></i> Gestor de Fotos</a></li>
+     
+      
+      </ul>
+
+  </li>
+
+
+  <li><a href="ventas"><i class="fa fa-list-ul"></i> <span>Ventas</span></a></li>
 
 
 
 
 </ul>	
+
+
+

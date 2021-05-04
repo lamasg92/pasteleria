@@ -10,6 +10,8 @@ require_once "controladores/redesSociales.controlador.php";
 require_once "controladores/stock.controlador.php";
 require_once "controladores/ventas.controlador.php";
 require_once "controladores/identidadCorporativa.controlador.php";
+require_once "controladores/galeria.controlador.php";
+require_once "controladores/albumes.controlador.php";
 
 require_once "modelos/rutas.php";
 require_once "modelos/administradores.modelo.php";
@@ -20,7 +22,10 @@ require_once "modelos/contacto.modelo.php";
 require_once "modelos/redSocial.modelo.php";
 require_once "modelos/stock.modelo.php";
 require_once "modelos/ventas.modelo.php";
-require_once "modelos/identidadCorporativa.modelo.php";
+require_once "modelos/galeria.modelo.php";
+require_once "modelos/album.modelo.php";
+
+
 
 $plantilla=new ControladorPlantilla();
 $plantilla->plantilla();
