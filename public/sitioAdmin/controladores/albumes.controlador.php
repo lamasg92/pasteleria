@@ -10,7 +10,7 @@ class ControladorAlbumes{
 
 		$tabla = "albumes";
 
-		$respuesta = ModeloAlbum::mdlMostrarAlbumes($tabla,$item, $valor);
+		$respuesta = ModeloAlbum::mdlMostrarAlbumes($tabla,$item,$valor);
 
 		return $respuesta;
 

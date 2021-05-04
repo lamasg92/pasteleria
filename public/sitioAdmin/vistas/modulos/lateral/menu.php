@@ -45,7 +45,7 @@ MENU
       <ul class="treeview-menu">
         
         <li><a href="albumes"><i class="fa fa-circle-o"></i> Gestor de Albumes</a></li>
-        <li><a href="galeria"><i class="fa fa-circle-o"></i> Gestor de Fotos</a></li>
+        <li><a href="imagenes"><i class="fa fa-circle-o"></i> Gestor de Fotos</a></li>
      
       
       </ul>

@@ -1,4 +1,4 @@
-  <!--=====================================
+<!--=====================================
 MODAL AGREGAR IMAGEN
 ======================================-->
 
@@ -42,19 +42,28 @@ MODAL AGREGAR IMAGEN
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
                 <select class="form-control input-lg seleccionarCategoria" name="categoria" id="categoria" required> 
-                  <option value="">Selecionar categoría</option>
-                  <option value="general">General</option> 
-                  <option value="cumpleanio">Cumpleaños</option>
-                  <option value="casamientos">Casamientos</option>
-                  <option value="bautismos">Bautismos</option>
-                  <option value="comuniones">Comuniones</option>
-                  <option value="aniversarios">Aniversarios</option>
-                  <option value="donaciones">Donaciones</option>
+                  <option value="">Selecionar ambum</option>
+
+                  <?php
+
+                  $item = null;
+                  $valor = null;
+
+                  $categorias = ControladorAlbumes::ctrMostrarAlbumes($item, $valor);
+
+                  foreach ($categorias as $key => $value) {
+                    
+                    echo '<option value="'.$value["id_album"].'">'.$value["nombre_album"].'</option>';
+                  }
+
+                  ?>
+  
                 </select>
 
               </div>
 
             </div>
+
 
              <!--=====================================
             AGREGAR DESCRIPCIÓN
@@ -111,7 +120,7 @@ MODAL AGREGAR IMAGEN
             <?php
 
         
-          $crearImagen = new ControladorGaleria();
+          $crearImagen = new ControladorImagenes();
           $crearImagen -> ctrCrearImagen();
 
            ?>

@@ -1,8 +1,7 @@
 <?php
 
-require_once "../controladores/galeria.controlador.php";
-require_once "../modelos/galeria.modelo.php";
-
+require_once "../controladores/imagenes.controlador.php";
+require_once "../modelos/imagenes.modelo.php";
 
 class TablaGaleria{
 
@@ -15,7 +14,7 @@ class TablaGaleria{
 	$item = null;
 	$valor = null;
 	//traigo el total de las iamgenes que existenten
-	$galeria = ControladorGaleria::ctrMostrarGaleria($item, $valor);	
+	$galeria = ControladorImagenes::ctrMostrarImagenes($item, $valor);	
 
 	$datosJson = '{
 		 
@@ -40,27 +39,8 @@ class TablaGaleria{
 				$estadoGaleria = "inactivo";
 
 			}
-			    if ($galeria[$i]["categoria"]=="general"){
-			    	$categoria="General";
-			    }
-                if ($galeria[$i]["categoria"]=="cumpleanio"){
-                	$categoria="Cumpleaños";
-                }
-                if ($galeria[$i]["categoria"]=="casamientos"){
-                	$categoria="Casamientos";
-                }
-                if ($galeria[$i]["categoria"]=="bautismos"){
-                	$categoria="Bautismos";
-                }
-                if ($galeria[$i]["categoria"]=="comuniones"){
-                	$categoria="Comuniones";
-                }
-                if ($galeria[$i]["categoria"]=="aniversarios"){
-                	$categoria="Aniversarios";
-                }
-                if ($galeria[$i]["categoria"]=="donaciones"){
-                	$categoria="Donaciones";
-                }
+
+			$categoria = $galeria[$i]["nombre_album"];
 
 			$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoGaleria='".$estadoGaleria."' idGaleria='".$galeria[$i]["id"]."'>".$textoEstado."</button>";
 

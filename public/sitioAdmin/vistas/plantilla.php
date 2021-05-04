@@ -169,7 +169,7 @@ session_start();
            $_GET["ruta"]== "paginaPrincipal" ||
            $_GET["ruta"]== "categorias" ||
            $_GET["ruta"]== "productos" ||
-           $_GET["ruta"]== "galeria" ||
+           $_GET["ruta"]== "imagenes" ||
            $_GET["ruta"]== "albumes" ||
            $_GET["ruta"]== "stock" ||
            $_GET["ruta"]== "contactos" ||
