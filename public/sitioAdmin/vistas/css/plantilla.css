@@ -110,6 +110,11 @@ REDES SOCIALES
     background-color: #aa1248e6 !important;
     border-color: #92325e !important;
 }
+.btn-default {
+    background-color: #aa1248e6 !important;
+    border-color: #92325e !important;
+    color: white !important;
+}
 
 .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
     background-color: #1e0210 !important;

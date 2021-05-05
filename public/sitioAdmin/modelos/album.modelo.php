@@ -63,7 +63,32 @@ class ModeloAlbum{
 		$stmt = null;
 
 	}
+/*=============================================
+	EDITAR ALBUM
+	=============================================*/
 
+	static public function mdlEditarAlbum($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre_album=:album, estado_album=:estado WHERE id_album=:id");
+
+        $stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
+		$stmt->bindParam(":album", $datos["album"], PDO::PARAM_STR);
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
 
 	
 

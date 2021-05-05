@@ -75,6 +75,36 @@ $(".validarAlbum").change(function(){
 	  })
 });
 
+/*=========================================
+			EDITAR ALBUM
+==========================================*/
+
+$(".tablaAlbumes tbody").on("click",".btnEditarAlbum",function(){
+	var idAlbum=$(this).attr("idAlbum");
+
+	var datos = new FormData();
+	datos.append("idAlbum",idAlbum);
+
+	$.ajax({
+		url:"ajax/albumes.ajax.php",
+	    method:"POST",
+	    data: datos,
+	    cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType: "json",
+	    success:function(respuesta){
+	    	
+	    	console.log(respuesta);
+	    	$("#modalEditarAlbum .idAlbum").val(respuesta["id_album"]);
+	    	$("#modalEditarAlbum .estadoAlbum").val(respuesta["estado_album"]);
+	    	$("#modalEditarAlbum .tituloAlbum").val(respuesta["nombre_album"]);
+	    		    }
+	})
+
+})
+
+
 
 
 

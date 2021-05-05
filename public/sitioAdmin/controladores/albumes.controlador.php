@@ -28,6 +28,7 @@ class ControladorAlbumes{
 
 				
 					$datos = array("album"=>strtoupper($_POST["tituloAlbum"]),
+
 						           "estado"=>"activo");
 
 
@@ -76,5 +77,63 @@ class ControladorAlbumes{
    }
 
    
+
+/*=============================================
+	EDITAR ALBUM
+	=============================================*/
+
+	static public function ctrEditarAlbum(){ 
+
+		if(isset($_POST["idAlbum"])){
+
+				
+
+					$datos = array("id"=>$_POST["idAlbum"],
+								   "album"=>strtoupper($_POST["tituloAlbumEditado"]),
+						           "estado"=>$_POST["estadoAlbum"]);
+          
+
+
+
+		$respuesta = ModeloAlbum::mdlEditarAlbum("albumes", $datos);
+
+		if($respuesta == "ok"){
+
+					echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "El album ha sido modificada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
+
+							window.location = "albumes";
+
+							}
+						})
+
+					</script>';
+
+			}else{
+
+				echo'<script>
+
+					swal({
+						  type: "error",
+						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  })
+
+			  	</script>';
+
+			  	return;
+
+			}
+
+		}
+	}
 
 }

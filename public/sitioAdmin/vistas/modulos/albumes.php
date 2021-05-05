@@ -39,6 +39,7 @@
               <th style="width:10px">#</th>
               <th>Álbum</th>
               <th>Estado</th>
+              <th>Acción</th>
               
             </tr>
 
@@ -55,5 +56,6 @@
 
 <?php
 require "albumesModales/crearAlbum.modal.php";
+require "albumesModales/editarAlbum.modal.php";
 
 ?> 
