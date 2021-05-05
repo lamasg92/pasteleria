@@ -36,5 +36,45 @@ $(".tablaAlbumes").DataTable({
 
 });
 
+/*=============================================
+REVISAR SI el ALBUM YA EXISTE
+=============================================*/
+
+
+$(".validarAlbum").change(function(){
+
+	$(".alert").remove(); //quitamos la case alert q hace aparecer el cartel
+
+	var album = $(this).val();//obtenemos el valor del campo tituloAlbum
+	 console.log("album", album);
+
+	var datos = new FormData();
+	datos.append("validarAlbum", album);
+
+	$.ajax({
+	    url:"ajax/albumes.ajax.php",
+	    method:"POST",
+	    data: datos,
+	    cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType: "json",
+	    success:function(respuesta){
+	    	
+	    	 console.log("respuesta", respuesta);
+
+	    	if(respuesta){
+
+             //despues de la etiqueta padre de donde esta la clase validaralbumcolocar el cartel
+	    		$(".validarAlbum").parent().after('<div class="alert alert-warning">Este álbum ya existe</div>')
+	    		$(".validarAlbum").val(""); //vaciamos el campo de album
+	    	}   
+
+	    }
+
+	  })
+});
+
+
 
 

@@ -2,7 +2,7 @@
     
   <section class="content-header">
 
-    <h2 class="text-center">Álbumes</h2>
+    <h2 class="text-center">ALBUMES</h2>
  
     <ol class="breadcrumb">
 
@@ -22,25 +22,24 @@
            
        <div class="box-header with-border text-left">
          
-            <!--button class="btn btn-primary" name="agregarAlbum" data-toggle="modal" data-target="#modalAgregarAlbum">
+            <button class="btn btn-primary" data-toggle="modal" name="agregarAlbum" data-target="#modalAgregarAlbum">
 
             Agregar álbum
 
-          </button-->
+          </button>
       </div>
 
-       <div class="box-body">
+      <div class="box-body">
          
         <table class="table table-striped table-bordered dt-responsive tablaAlbumes" width="100%">
 
           <thead>
             
             <tr>
-              
               <th style="width:10px">#</th>
-              <th>Nombre</th>
+              <th>Álbum</th>
               <th>Estado</th>
-            
+              
             </tr>
 
           </thead>
@@ -53,3 +52,8 @@
     </div>
   </section>
   </div>
+
+<?php
+require "albumesModales/crearAlbum.modal.php";
+
+?> 

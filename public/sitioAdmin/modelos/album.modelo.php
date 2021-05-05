@@ -37,6 +37,33 @@ class ModeloAlbum{
 	
 	}
 
+	/*=============================================
+	CREAR ALBUM
+	=============================================*/
+
+	static public function mdlIngresarAlbum($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre_album,estado_album) VALUES (:album, :estado)");
+
+		$stmt->bindParam(":album", $datos["album"], PDO::PARAM_STR);
+	
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
 
 	
 
