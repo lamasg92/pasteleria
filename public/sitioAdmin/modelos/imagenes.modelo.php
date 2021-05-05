@@ -2,18 +2,18 @@
 
 require_once "conexion.php";
 
-class ModeloGaleria{
+class ModeloImagenes{
 
   /*=============================================
-	MOSTRAR IMAGENES DEGALERIA
+	MOSTRAR IMAGENES DEImagenes
 	=============================================*/
 
-	static public function mdlMostrarGaleria($tabla, $item, $valor){
+	static public function mdlMostrarImagenes($tabla1, $tabla2, $item, $valor){
 
 		if($item != null){
 			//solicito una iamgen
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla1,$tabla2 WHERE $tabla1.categoria = $tabla2.id_album AND $item = :$item");
 
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -21,9 +21,9 @@ class ModeloGaleria{
 
 			return $stmt -> fetch();
 
-		}else { //solicito todas las imagenes de galeria
+		}else { //solicito todas las imagenes de Imagenes
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY id DESC");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla1,$tabla2 WHERE $tabla1.categoria = $tabla2.id_album ORDER BY id DESC");
 
 			$stmt -> execute();
 

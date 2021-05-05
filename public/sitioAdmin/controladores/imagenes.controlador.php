@@ -1,12 +1,13 @@
 <?php
 
-class ControladorGaleria{
+class ControladorImagenes{
 
-   static public function ctrMostrarGaleria($item,$valor){
+   static public function ctrMostrarImagenes($item,$valor){
 
-        $tabla="galeria_imagenes";
+        $tabla1="galeria_imagenes";
+        $tabla2="albumes";
 
-        $respuesta=ModeloGaleria::mdlMostrarGaleria($tabla,$item,$valor);
+        $respuesta=ModeloImagenes::mdlMostrarImagenes($tabla1,$tabla2,$item,$valor);
 
         return $respuesta;
    }
@@ -38,7 +39,7 @@ class ControladorGaleria{
 					"estado"=>"activo"
    	 				);
 
-   	 	$respuesta = ModeloGaleria::mdlIngresarImagen("galeria_imagenes", $datos);
+   	 	$respuesta = ModeloImagenes::mdlIngresarImagen("galeria_imagenes", $datos);
 
 			if($respuesta == "ok"){
 
@@ -52,7 +53,7 @@ class ControladorGaleria{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "galeria";
+							window.location = "imagenes";
 
 							}
 						})

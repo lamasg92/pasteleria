@@ -57,6 +57,6 @@
   </div>
 
 <?php
-require "galeriaModales/crearImagen.modal.php";
+require "imagenesModales/crearImagen.modal.php";
 //require "productosModales/editarProducto.modal.php";
 ?> 
