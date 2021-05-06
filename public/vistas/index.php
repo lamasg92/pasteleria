@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
 <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/nav.css">
+<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/carousel.css">
 
 
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -104,6 +105,7 @@ if(isset($_GET["ruta"])){
 	  || $ruta == 'enviarCorreo'
 	  || $ruta == "carrito"
 	  || $ruta == "compras"
+    || $ruta == "galeria"
 	){
 		include "modulos/".$ruta.".php";
 	}else{

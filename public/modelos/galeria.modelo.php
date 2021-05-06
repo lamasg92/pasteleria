@@ -2,13 +2,13 @@
 
 require_once "conexion.php";
 
-class ModeloProductos{
+class ModeloGaleria{
 
 	/*=============================================
 	MOSTRAR CATEGORÍAS
 	=============================================*/
 
-	static public function mdlMostrarCategorias($tabla, $item, $valor){
+	static public function mdlMostrarAlbumes($tabla, $item, $valor){
 
 		if($item != null){
 
@@ -41,7 +41,7 @@ class ModeloProductos{
 	MOSTRAR PRODUCTOS
 	=============================================*/
 
-	static public function mdlMostrarProductosCategorias($tabla, $item, $valor){
+	static public function mdlMostrarImagenes($tabla, $item, $valor){
 
 	
       	if($item != null){
@@ -67,27 +67,6 @@ class ModeloProductos{
 
 		$stmt -> close();
 		
-		$stmt = null;
-
-	}
-
-	
-	/*=============================================
-	MOSTRAR INFOPRODUCTO
-	=============================================*/
-
-	static public function mdlMostrarInfoProducto($tabla, $item, $valor){
-
-		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
-
-		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-
-		$stmt -> execute();
-
-		return $stmt -> fetch();
-
-		$stmt -> close();
-
 		$stmt = null;
 
 	}

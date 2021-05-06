@@ -14,6 +14,9 @@
 					<a href="./catalogo"  style="text-decoration:none">
 						<div style="line-height:60px; background:#68e00e; width:50%; color:white:; margin-left: 25%;"><b>VER CATALOGO</b></div>     
                     </a>
+                    <a href="./galeria"  style="text-decoration:none">
+						<div style="line-height:60px; background:#005b8f; width:50%; color:white:; margin-left: 25%;"><b>GALERIA</b></div>     
+                    </a>
 
 				</div>
 			</div>
