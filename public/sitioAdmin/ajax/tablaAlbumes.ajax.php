@@ -7,14 +7,14 @@ require_once "../modelos/album.modelo.php";
 class TablaAlbumes{
 
   /*=============================================
-  MOSTRAR LA TABLA DE CATEGORÍAS
+  MOSTRAR LA TABLA DE ALBUMES
   =============================================*/ 
 
  	public function mostrarTabla(){	
 
  	$item = null;
  	$valor = null;
-    //traigo el total de categorias existentes
+    //traigo el total de albumes existentes
  	$albumes = ControladorAlbumes::ctrMostrarAlbumes($item, $valor);	
 
  	$datosJson = '{
@@ -44,11 +44,13 @@ class TablaAlbumes{
 
 		 	$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoAlbum='".$estadoAlbum."' idAlbum='".$albumes[$i]["id_album"]."'>".$textoEstado."</button>";
 
+		 	$accion="<button class='btn btn-warning btnEditarAlbum' idAlbum='".$albumes[$i]['id_album']."' data-toggle='modal' data-target='#modalEditarAlbum'><Span class = 'glyphicon glyphicon-pencil'> </span></button>";
 		 	
 			$datosJson	 .= '[
 				      "'.($i+1).'",
 				      "'.$albumes[$i]["nombre_album"].'",
-				      "'. $estado.'"
+				      "'. $estado.'",
+				      "'.$accion.'"    
 				     
 				    ],';
 
