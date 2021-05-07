@@ -1,9 +1,9 @@
 <!--=====================================
-MODAL AGREGAR IMAGEN
+MODAL EDITAR IMAGEN
 ======================================-->
 
-<div id="modalAgregarImagen" class="modal fade" role="dialog">
-  
+<div id="modalEditarGaleria" class="modal fade" role="dialog">
+
   <div class="modal-dialog">
     
     <div class="modal-content">
@@ -19,7 +19,7 @@ MODAL AGREGAR IMAGEN
           
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           
-          <h4 class="modal-title">Agregar imagen a galeria</h4>
+          <h4 class="modal-title">Editar imagen</h4>
 
         </div>
 
@@ -30,8 +30,23 @@ MODAL AGREGAR IMAGEN
         <div class="modal-body">
           
           <div class="box-body">
+             
 
-            <!--=====================================
+           <!--=====================================
+            IDENIFICADOR DELA IMAGEN
+            ======================================-->
+
+            <div class="form-group">
+              
+              <div class="input-group">
+
+                <input type="hidden" class="idImagen" name="idImagen">
+
+              </div> 
+
+            </div>
+
+              <!--=====================================
             ENTRADA PARA SELECCIONAR LA CATEGORÍA
             ======================================-->
 
@@ -41,8 +56,9 @@ MODAL AGREGAR IMAGEN
               
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <select class="form-control input-lg seleccionarCategoria" name="seleccionarCategoria" id="seleccionarCategoria" required> 
-                  <option value="">Selecionar ambum</option>
+                <select class="form-control input-lg categoria" name="categoria" id="categoria" required>
+                  
+                  <option value="">Selecionar categoría</option>
 
                   <?php
 
@@ -65,7 +81,6 @@ MODAL AGREGAR IMAGEN
 
             </div>
 
-
              <!--=====================================
             AGREGAR DESCRIPCIÓN
             ======================================-->
@@ -76,23 +91,51 @@ MODAL AGREGAR IMAGEN
               
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span> 
 
-                <textarea type="text" maxlength="500" rows="3" class="form-control input-lg descripcionImagen" placeholder="Ingresar descripción" name="descripcionImagen"></textarea>
+                <textarea type="text" maxlength="500" rows="3" class="form-control input-lg descripcionEditada" placeholder="Ingresar descripción" name="descripcionEditada"></textarea>
 
               </div>
 
             </div>
 
 
+            <!--=====================================
+            EDITAR ESTADO DE IMAGEN
+            ======================================-->
+
+
+            <div class="form-group">
+
+              <div class="panel">ESTADO</div>
+              
+              <div class="input-group">
+
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                    <select class="form-control estadoImagen" name="estadoImagen">
+                    <?php if (estadoImagen=='activo') { ?>
+                          <option value="activo" >Activo</option>
+                          <option value="inactivo" xselected >Inactivo</option>
+                    <?php    } else {     ?>
+                          <option value="activo" selected>Activo</option>
+                          <option value="inactivo" >Inactivo</option>
+                     <?php   }            ?>
+                    </select>
+
+                </div> 
+
+            </div>
+
 
             <!--=====================================
-            AGREGAR IMAGEN
+            AGREGAR IMAGEN DEL IMAGEN
             ======================================-->
 
             <div class="form-group">
               
-              <div class="panel">SUBIR IMAGEN</div>
+              <div class="panel">SUBIR NUEVA IMAGEN</div>
 
-              <input type="file" class="foto" name="foto" required>
+              <input type="file" class="foto" name="foto" >
+
+              <input type="hidden" class="antiguaFoto" name="antiguaFoto">
 
               <img src="" class="img-thumbnail previsualizarFoto" width="100%">
 
@@ -111,9 +154,9 @@ MODAL AGREGAR IMAGEN
        
         <div class="modal-footer">
           
-          <button type="button" class="btn btn-default pull-left" name="agregar" data-dismiss="modal">Salir</button>
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
 
         </div>
 
@@ -121,8 +164,8 @@ MODAL AGREGAR IMAGEN
             <?php
 
         
-          $crearImagen = new ControladorImagenes();
-          $crearImagen -> ctrCrearImagen();
+          $editarImagen = new ControladorImagenes();
+          $editarImagen -> ctrEditarImagen();
 
            ?>
 

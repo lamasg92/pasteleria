@@ -32,7 +32,7 @@ class ControladorImagenes{
 
 
    	 	$datos = array(
-					"categoria"=>$_POST["categoria"],
+					"categoria"=>$_POST["seleccionarCategoria"],
 					"descripcion"=>"<p>".$_POST["descripcionImagen"]."</p>",
 					"imagen"=>$rutaFoto,
 					"fecha"=>date('Y-m-d'),
@@ -77,4 +77,85 @@ class ControladorImagenes{
 			}
 		}
    	 }
+
+static public function ctrEditarImagen() {
+
+   if(isset($_POST["descripcionEditada"])){
+		/*=============================================
+		VALIDAR IMAGEN 
+		=============================================*/
+
+		$rutaFoto = $_POST["antiguaFoto"];
+		
+
+		if(isset($_FILES["foto"]["tmp_name"]) && !empty($_FILES["foto"]["tmp_name"])){
+
+			/*=============================================
+			BORRAMOS ANTIGUA FOTO
+			=============================================*/
+
+			unlink($_POST["antiguaFoto"]);
+
+			/*=============================================
+			GUARDAMOS LA IMAGEN EN EL DIRECTORIO
+			=============================================*/
+
+			$ruta_fichero_origen = $_FILES['foto']['tmp_name'];
+			$rutaFoto =  'vistas/img/galeria/' . $_FILES['foto']['name'];
+
+			move_uploaded_file($ruta_fichero_origen, $rutaFoto);
+
+		}
+
+		/*=============================================
+		Datos
+		=============================================*/	
+		$datos = array(
+			"id"=>$_POST["idImagen"],
+			"categoria"=>$_POST["categoria"],
+			"descripcion"=>"<p>".$_POST["descripcionEditada"]."</p>",
+			"imagen"=>$rutaFoto,
+			"estado"=>$_POST["estadoImagen"]
+		);			
+
+		$respuesta = ModeloImagenes::mdlEditarImagen("galeria_imagenes", $datos);
+
+		if($respuesta == "ok"){
+
+				echo'<script>
+
+				swal({
+					  type: "success",
+					  title: "La imagen ha sido modificada correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar"
+					  }).then(function(result){
+						if (result.value) {
+
+						window.location = "imagenes";
+
+						}
+					})
+
+				</script>';
+
+		}else{
+          
+          echo'<script>
+
+				swal({
+					  type: "error",
+					  title: "La imagen no se pudo modificar",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar"
+					  
+					})
+
+				</script>';
+
+		}
+
+	  }
+
+	}
 }

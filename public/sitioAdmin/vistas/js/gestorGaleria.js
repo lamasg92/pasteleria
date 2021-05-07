@@ -1,7 +1,7 @@
 /*=======================================
 TABLA PARA MOSTRAR PRODUCTOS
 =========================================*/
-$(".tablaGaleria").DataTable({
+$(".tablaGaleria").DataTable ({
 	 "ajax": "ajax/tablaGaleria.ajax.php",
 	 "deferRender": true,
 	 "retrieve": true,
@@ -33,5 +33,38 @@ $(".tablaGaleria").DataTable({
 
 	 }
 
+
+});
+
+/*=========================================
+			EDITAR PRODUCTO
+==========================================*/
+
+$(".tablaGaleria tbody").on("click",".btnEditarGaleria",function(){
+	var idImagen=$(this).attr("idImagen");
+
+	var datos = new FormData();
+	datos.append("idImagen",idImagen);
+
+	$.ajax({
+		url:"ajax/galeria.ajax.php",
+	    method:"POST",
+	    data: datos,
+	    cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType: "json",
+	    success:function(respuesta){
+	    	console.log("respuesta", respuesta);
+
+	    	$("#modalEditarGaleria .idImagen").val(respuesta["id"]);
+	    	$("#modalEditarGaleria .estadoImagen").val(respuesta["estado"]);
+	    	$("#modalEditarGaleria .categoria").val(respuesta["categoria"]);
+	    	$("#modalEditarGaleria .descripcionEditada").val(respuesta["descripcion"]);
+	    	$("#modalEditarGaleria .previsualizarFoto").attr("src",respuesta["imagen"]);
+	    	$("#modalEditarGaleria .antiguaFoto").val(respuesta["imagen"]);
+	    	
+	    }
+	})
 
 });
