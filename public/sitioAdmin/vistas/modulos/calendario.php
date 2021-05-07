@@ -90,6 +90,7 @@
         console.log(order);
      
         for(var i=0;i<order.length;i++){
+          
 
 
 
@@ -97,6 +98,7 @@
                 eventos.push({ id: order[i][0],
                         title: order[i][2],
                         start: order[i][1],
+                        url: 'http://localhost/pasteleria/public/sitioadmin/ventas',
                         backgroundColor: '#dd4b39',//red
                         borderColor    : '#dd4b39',//red
                         });
@@ -108,6 +110,7 @@
                 eventos.push({ id: order[i][0],
                         title: order[i][2],
                         start: order[i][1],
+                        url: 'http://localhost/pasteleria/public/sitioadmin/ventas',
                         backgroundColor: 'yellow', //Blue
                         borderColor    : 'yellow', //Blue                       
                         });
@@ -116,10 +119,14 @@
                 eventos.push({ id: order[i][0],
                         title: order[i][2],
                         start: order[i][1],
+                        url: 'http://localhost/pasteleria/public/sitioadmin/ventas',
                         backgroundColor: '#00a65a', //Success (green)
                         borderColor    : '#00a65a', //Success (green)
                         });
             }
+
+
+           
           }
 
           
@@ -145,7 +152,7 @@
       },
       //Random default events
 
-      events    : eventos,
+      events    : eventos,              // other events here
       editable  : false,
       droppable : true, // this allows things to be dropped onto the calendar !!!
       drop      : function (date, allDay) { // this function is called when something is dropped
@@ -172,8 +179,21 @@
           $(this).remove()
         }
 
-      }
+
+      },
+
+ 
+    eventClick: function(info) {
+    
+    if (info.event.url) {
+      window.open(info.event.url);
+    }
+  }
     })
+
+
+ 
+
 
     /* ADDING EVENTS */
     var currColor = '#3c8dbc' //Red by default
@@ -212,6 +232,11 @@
       $('#new-event').val('')
     })
   })
+
+
+
 </script>
+
+
 </body>
 </html>

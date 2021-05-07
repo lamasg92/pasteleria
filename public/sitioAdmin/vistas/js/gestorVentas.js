@@ -4,7 +4,9 @@ TABLA PARA MOSTRAR VENTAS
 $(".tablaVentasPendiente").DataTable({
 
 	 "ajax": {
-	 	"url"  : "ajax/tablaVentas.ajax.php?&estado_reserva=pendiente",
+	 	"url"  : "ajax/tablaVentas.ajax.php?&estado_reserva=pendiente&fecha_reserva="+fecha_reserva,
+
+
 	 	"type": "GET",
 	 },
 	 
@@ -43,7 +45,7 @@ $(".tablaVentasPendiente").DataTable({
 
 $(".tablaVentasParcial").DataTable({
 	  "ajax": {
-	 	"url"  : "ajax/tablaVentas.ajax.php?&estado_reserva=parcial",
+	 	"url"  : "ajax/tablaVentas.ajax.php?&estado_reserva=parcial&fecha_reserva="+fecha_reserva,
 	 	"type": "GET",
 	 },
 	 "deferRender": true,
@@ -81,7 +83,7 @@ $(".tablaVentasParcial").DataTable({
 
 $(".tablaVentasEntregado").DataTable({
 	  "ajax": {
-	 	"url"  : "ajax/tablaVentas.ajax.php?&estado_reserva=entregado",
+	 	"url"  : "ajax/tablaVentas.ajax.php?&estado_reserva=entregado&fecha_reserva="+fecha_reserva,
 	 	"type": "GET",
 	 },
 	 "deferRender": true,

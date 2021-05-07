@@ -13,7 +13,7 @@ public $estado_reserva;
  	public function mostrarTabla(){	
 
  	$item1 = "fecha_reserva";
- 	$valor1 = "2018-09-20";
+ 	$valor1 = $this->fecha_reserva;
  	$item2 = "estado_reserva";
  	$valor2 = $this->estado_reserva;
     //traigo vem
