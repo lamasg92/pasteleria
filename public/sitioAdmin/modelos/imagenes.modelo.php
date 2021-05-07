@@ -65,5 +65,26 @@ class ModeloImagenes{
 		$stmt = null;
 
 	}
+	static public function mdlEditarImagen($tabla,$datos){
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET imagen=:imagen,categoria=:categoria,descripcion=:descripcion,estado=:estado WHERE id=:id");
 
+        $stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
+		$stmt->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);  
+        $stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);      
+        $stmt->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+		
+		}
+
+		$stmt->close();
+		$stmt = null;
+	}
 }

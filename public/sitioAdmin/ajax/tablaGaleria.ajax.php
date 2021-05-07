@@ -42,11 +42,11 @@ class TablaGaleria{
 
 			$categoria = $galeria[$i]["nombre_album"];
 
-			$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoGaleria='".$estadoGaleria."' idGaleria='".$galeria[$i]["id"]."'>".$textoEstado."</button>";
+			$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoGaleria='".$estadoGaleria."' idImagen='".$galeria[$i]["id"]."'>".$textoEstado."</button>";
 
 			$imagen="<img src='".$galeria[$i]["imagen"]."' width='50' heihth='50' >";
 
-			$acciones="<button class='btn btn-warning btnEditarGaleria' idGaleria='".$galeria[$i]['id']."' data-toggle='modal' data-target='#modalEditarGaleria'><Span class = 'glyphicon glyphicon-pencil'> </ span></button>";
+			$acciones="<button class='btn btn-warning btnEditarGaleria' idImagen='".$galeria[$i]['id']."' data-toggle='modal' data-target='#modalEditarGaleria'><Span class = 'glyphicon glyphicon-pencil'> </ span></button>";
 
 			$fecha = date("d/m/Y h:m",strtotime($galeria[$i]["fecha"]));
 					

@@ -58,5 +58,5 @@
 
 <?php
 require "imagenesModales/crearImagen.modal.php";
-//require "productosModales/editarProducto.modal.php";
+require "imagenesModales/editarImagen.modal.php";
 ?> 

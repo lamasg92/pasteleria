@@ -40,18 +40,20 @@
 
 			$primero = 1;
 			foreach($imagenes as $imagen){
-				if($primero==1){
-					echo '<div class="item active text-center">';
-					$primero = 0;
+				if($imagen["estado"] != "inactivo"){
+					if($primero==1){
+						echo '<div class="item active text-center">';
+						$primero = 0;
+					}
+					else{
+						echo '<div class="item text-center">';
+					}
+					echo '<img src="'.$admin.$imagen["imagen"].'">
+					  <div class="carousel-caption">   
+	    				<b class="text-center" style="color:#FFFFFF";>'.$imagen["descripcion"].'</b>
+	  					</div>
+					</div>';
 				}
-				else{
-					echo '<div class="item text-center">';
-				}
-				echo '<img src="'.$admin.$imagen["imagen"].'">
-				  <div class="carousel-caption">   
-    				<b class="text-center" style="color:#FFFFFF";>'.$imagen["descripcion"].'</b>
-  					</div>
-				</div>';
 			}
 
 			echo			'</div>
