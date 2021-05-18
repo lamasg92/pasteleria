@@ -25,6 +25,9 @@
               <!-- EL CALENDARIO -->
               <div id="calendar"  ></div>
 
+
+              
+                
               
             </div>
             <!-- /.box-body -->
@@ -88,6 +91,8 @@
         <?php $detalles = ControladorVentas::ctrMostrarDetalle(); ?>;
         var order=<?php echo json_encode($detalles);?>;
         console.log(order);
+
+        
      
         for(var i=0;i<order.length;i++){
           
@@ -98,7 +103,6 @@
                 eventos.push({ id: order[i][0],
                         title: order[i][2],
                         start: order[i][1],
-                        url: 'http://localhost/pasteleria/public/sitioadmin/ventas',
                         backgroundColor: '#dd4b39',//red
                         borderColor    : '#dd4b39',//red
                         });
@@ -110,7 +114,6 @@
                 eventos.push({ id: order[i][0],
                         title: order[i][2],
                         start: order[i][1],
-                        url: 'http://localhost/pasteleria/public/sitioadmin/ventas',
                         backgroundColor: 'yellow', //Blue
                         borderColor    : 'yellow', //Blue                       
                         });
@@ -119,7 +122,6 @@
                 eventos.push({ id: order[i][0],
                         title: order[i][2],
                         start: order[i][1],
-                        url: 'http://localhost/pasteleria/public/sitioadmin/ventas',
                         backgroundColor: '#00a65a', //Success (green)
                         borderColor    : '#00a65a', //Success (green)
                         });
@@ -182,14 +184,17 @@
 
       },
 
- 
-    eventClick: function(info) {
-    
-    if (info.event.url) {
-      window.open(info.event.url);
-    }
-  }
-    })
+     dayClick: function(date,jsEvent, resourceObj){
+
+                  
+        var fecha_reserva=date.format();
+           
+        window.open("http://localhost/pasteleria/public/sitioadmin/ventas?fecha_reserva="+fecha_reserva, '_self');
+     }
+
+     })
+
+
 
 
  

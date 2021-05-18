@@ -28,16 +28,18 @@ class ControladorVentas{
 	}
 
 	static public function ctrEditarVenta(){ 
+
+		
 	
 		if(isset($_POST["id_detalle_carrito"])){
 
-			
+			       
 					$datos = array("id_detalle_carrito"=>$_POST["id_detalle_carrito"],
 								  "estado_reserva"=>$_POST["estado_reserva"]);
 
 	
 		$respuesta = ModeloVentas::mdlEditarVenta("detalle_carrito", $datos);
-		var_dump($respuesta);
+
 		
 		if($respuesta == "ok"){
 
@@ -51,7 +53,7 @@ class ControladorVentas{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "ventas";
+							window.location.href = window.location.href;
 
 							}
 						})

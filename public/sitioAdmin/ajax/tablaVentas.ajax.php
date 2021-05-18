@@ -10,6 +10,9 @@ class TablaVentas{
   MOSTRAR LA TABLA DE Ventas
   =============================================*/ 
 public $estado_reserva;
+
+public $fecha_reserva;
+
  	public function mostrarTabla(){	
 
  	$item1 = "fecha_reserva";
@@ -89,5 +92,6 @@ $acciones="<button class='btn btn-warning btnEditarVenta' id_detalle_carrito='".
 ACTIVAR TABLA DE STOCK
 =============================================*/ 
 $activar = new TablaVentas();
+$activar-> fecha_reserva= $_GET["fecha_reserva"];
 $activar-> estado_reserva= $_GET["estado_reserva"];
 $activar -> mostrarTabla();

@@ -1,3 +1,4 @@
+
 <div class="content-wrapper">
     
   <section class="content-header">
@@ -19,6 +20,8 @@
  
     <div class="box">  
                 <h2 class="text-center">Ventas Pendientes</h2>
+
+            <input name="id_detalle_carrito" type="hidden" class=<?php $fecha_reserva ?>> 
         
              <table class="table table-striped table-bordered dt-responsive tablaVentasPendiente" width="100%">
 
@@ -91,8 +94,29 @@
           </table>
          </div>
      </section>
+
+ <?php 
+
+  $dire=$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+  $componente=parse_url($dire);
+
+  parse_str($componente['query'], $results);
+
+  $fecha_reserva=$results['fecha_reserva'];
+  
+    ?>
+
+   <input type="hidden" id="fecha_reserva" value="<?php echo $fecha_reserva; ?>">
+  
   </div>
+
+
+     
+
+
   <?php
 //require "ventasModales/crearVenta.modal.php";
 require "ventasModales/editarVenta.modal.php";
 ?> 
+

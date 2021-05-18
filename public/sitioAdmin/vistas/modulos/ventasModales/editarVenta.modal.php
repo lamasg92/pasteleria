@@ -46,7 +46,7 @@ MODAL EDITAR Stock
             </div>
             </div>
             <!--=====================================
-            AGREGAR usuario
+            mostrar usuario
             ======================================-->
             <div class="form-group">
                 <div class="panel">Cliente</div>
@@ -58,7 +58,7 @@ MODAL EDITAR Stock
 
 
               <!--=====================================
-            AGREGAR producto
+            mostrar producto
             ======================================-->
             <div class="form-group">
   
@@ -74,7 +74,7 @@ MODAL EDITAR Stock
             </div>
 
               <!--=====================================
-            AGREGAR cantidad
+            mostrar cantidad
             ======================================-->
             <div class="form-group">
                 <div class="panel">Cantidad</div>
@@ -85,7 +85,7 @@ MODAL EDITAR Stock
             </div>
 
               <!--=====================================
-            AGREGAR subtotal
+           mostrar subtotal
             ======================================-->
             <div class="form-group">
                 <div class="panel">Subtotal</div>
@@ -100,7 +100,7 @@ MODAL EDITAR Stock
             </div>
 
               <!--=====================================
-            AGREGAR fecha
+            mostar fecha
             ======================================-->
             <div class="form-group">
   
@@ -110,7 +110,7 @@ MODAL EDITAR Stock
                 
                   <span class="input-group-addon"></span> 
 
-                 <input type="text" class="form-control input-lg fecha_reserva" placeholder="fecha_reserva" name="fecha_reserva" disabled> 
+                 <input type="text" class="form-control input-lg fecha_reserva" name="fecha_reserva" value="fecha_reserva" disabled> 
 
               </div>
             </div>
@@ -175,4 +175,7 @@ MODAL EDITAR Stock
            ?>
            </div>
       </div>
-</div>
+
+
+  
+  </div>

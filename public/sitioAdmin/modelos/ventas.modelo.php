@@ -84,18 +84,14 @@ class ModeloVentas{
         
       
 		$stmt->bindParam(":id_detalle_carrito", $datos["id_detalle_carrito"], PDO::PARAM_STR);
+
 		$stmt->bindParam(":estado_reserva", $datos["estado_reserva"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
 			return "ok";
 
-		}else{
-
-			return "error";
-		
 		}
-
 		$stmt->close();
 		$stmt = null;
 	}
